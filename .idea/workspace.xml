@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34bb4e86-3ca2-4480-945a-371423a43fd6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Db.class.php" afterPath="$PROJECT_DIR$/classes/Db.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/User.class.php" afterPath="$PROJECT_DIR$/classes/User.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="php1-satchmo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,17 +34,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.class.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="User.class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/classes/User.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-39.375">
-              <caret line="63" column="28" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.78085643">
+              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
               <folding>
-                <marker date="1459003505000" expanded="true" signature="1570:1609" placeholder="SELECT * FRO... user" />
-                <marker date="1459003505000" expanded="true" signature="1570:1610" placeholder="SELECT email... user" />
-                <marker date="1459003505000" expanded="true" signature="1570:1614" placeholder="SELECT * FRO... user" />
-                <marker date="1459003505000" expanded="true" signature="2021:2540" placeholder="INSERT INTO user... " />
-                <marker date="1459003505000" expanded="true" signature="2058:2176" placeholder="INSERT INTO user... " />
+                <marker date="1459003932000" expanded="true" signature="1570:1609" placeholder="SELECT * FRO... user" />
+                <marker date="1459003932000" expanded="true" signature="1570:1610" placeholder="SELECT email... user" />
+                <marker date="1459003932000" expanded="true" signature="1570:1614" placeholder="SELECT * FRO... user" />
+                <marker date="1459003932000" expanded="true" signature="2021:2540" placeholder="INSERT INTO user... " />
+                <marker date="1459003932000" expanded="true" signature="2058:2176" placeholder="INSERT INTO user... " />
               </folding>
             </state>
           </provider>
@@ -62,16 +60,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42065492">
+            <state vertical-scroll-proportion="-21.25">
               <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
               <folding>
-                <marker date="1459003872000" expanded="true" signature="1394:1417" placeholder="..." />
-                <marker date="1459003872000" expanded="true" signature="1672:1818" placeholder="..." />
-                <marker date="1459003872000" expanded="true" signature="1672:2488" placeholder="..." />
-                <marker date="1459003872000" expanded="true" signature="1686:1818" placeholder="..." />
+                <marker date="1459003932000" expanded="true" signature="1394:1417" placeholder="..." />
+                <marker date="1459003932000" expanded="true" signature="1672:1818" placeholder="..." />
+                <marker date="1459003932000" expanded="true" signature="1672:2488" placeholder="..." />
+                <marker date="1459003932000" expanded="true" signature="1686:1818" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -127,8 +125,8 @@
         <option value="$PROJECT_DIR$/classes/Comment.class.php" />
         <option value="$PROJECT_DIR$/styles/style.css" />
         <option value="$PROJECT_DIR$/classes/Db.class.php" />
-        <option value="$PROJECT_DIR$/classes/User.class.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/classes/User.class.php" />
       </list>
     </option>
   </component>
@@ -337,29 +335,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/User.class.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-39.375">
-          <caret line="63" column="28" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
+        <state vertical-scroll-proportion="-21.25">
+          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
           <folding>
-            <marker date="1459003505000" expanded="true" signature="1570:1609" placeholder="SELECT * FRO... user" />
-            <marker date="1459003505000" expanded="true" signature="1570:1610" placeholder="SELECT email... user" />
-            <marker date="1459003505000" expanded="true" signature="1570:1614" placeholder="SELECT * FRO... user" />
-            <marker date="1459003505000" expanded="true" signature="2021:2540" placeholder="INSERT INTO user... " />
-            <marker date="1459003505000" expanded="true" signature="2058:2176" placeholder="INSERT INTO user... " />
+            <marker date="1459003932000" expanded="true" signature="1394:1417" placeholder="..." />
+            <marker date="1459003932000" expanded="true" signature="1672:1818" placeholder="..." />
+            <marker date="1459003932000" expanded="true" signature="1672:2488" placeholder="..." />
+            <marker date="1459003932000" expanded="true" signature="1686:1818" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/classes/User.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42065492">
-          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.78085643">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding>
-            <marker date="1459003872000" expanded="true" signature="1394:1417" placeholder="..." />
-            <marker date="1459003872000" expanded="true" signature="1672:1818" placeholder="..." />
-            <marker date="1459003872000" expanded="true" signature="1672:2488" placeholder="..." />
-            <marker date="1459003872000" expanded="true" signature="1686:1818" placeholder="..." />
+            <marker date="1459003932000" expanded="true" signature="1570:1609" placeholder="SELECT * FRO... user" />
+            <marker date="1459003932000" expanded="true" signature="1570:1610" placeholder="SELECT email... user" />
+            <marker date="1459003932000" expanded="true" signature="1570:1614" placeholder="SELECT * FRO... user" />
+            <marker date="1459003932000" expanded="true" signature="2021:2540" placeholder="INSERT INTO user... " />
+            <marker date="1459003932000" expanded="true" signature="2058:2176" placeholder="INSERT INTO user... " />
           </folding>
         </state>
       </provider>
