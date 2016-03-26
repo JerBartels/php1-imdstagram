@@ -1,9 +1,8 @@
 <?php
 
-include_once("classes/Comment.class.php");
-include_once("classes/Post.class.php");
-include_once("classes/User.class.php");
-include_once("classes/Db.class.php");
+spl_autoload_register(function ($class){
+   include 'classes/' . $class . '.class.php';
+});
 
 ?>
 
