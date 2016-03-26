@@ -4,6 +4,8 @@ spl_autoload_register(function ($class){
    include 'classes/' . $class . '.class.php';
 });
 
+$db = new Db();
+
 ?>
 
 <!doctype html>
@@ -19,7 +21,11 @@ spl_autoload_register(function ($class){
     </head>
 
     <body>
-
+        <p>
+            <?php
+                echo $db->m_Error;
+            ?>
+        </p>
     </body>
 
 </html>
