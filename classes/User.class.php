@@ -17,16 +17,16 @@ class User
     {
         switch($p_sProperty){
             case 'Username':
-                $this->m_sUsername = $p_vValue;
+                $this->m_sUsername = strtolower($p_vValue);
                 break;
             case 'Firstname':
-                $this->m_sFirstname = $p_vValue;
+                $this->m_sFirstname = strtolower($p_vValue);
                 break;
             case 'Lastname':
-                $this->m_sLastname = $p_vValue;
+                $this->m_sLastname = strtolower($p_vValue);
                 break;
             case 'Email':
-                $this->m_sEmail = $p_vValue;
+                $this->m_sEmail = strtolower($p_vValue);
                 break;
             case 'Pass':
                 $this->m_sPass = $p_vValue;
@@ -55,6 +55,7 @@ class User
         }
     }
 
+    //controleer of user met emailadres of username bestaat
     public function Exists($p_sProperty, $p_vDbColumn){
         $p_dDb = Db::getInstance();
 
