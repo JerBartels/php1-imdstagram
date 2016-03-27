@@ -2,8 +2,12 @@
 
 include_once("classes/Db.class.php");
 include_once("classes/User.class.php");
+include_once("session.php");
 
 $feedback = "";
+
+//kijken of user al ingelogd is
+alreadyLoggedIn();
 
 //check of button geklikt wordt
 if(isset($_POST["signup"])){
@@ -32,8 +36,14 @@ if(isset($_POST["signup"])){
             //twee maal false, nu effectief aanmaken in db
             else
             {
+                //user bewaren in DB
                 $user->Save();
-                $feedback= "Booeyaaaaaaa! Welkom op Satchmo.cc, " . $user->Firstname . "!";
+
+                //sessie aanmaken zodat tijdens zelfde sessie niet opnieuw ingelogd moet worden
+                $_SESSION["username"] = $user->Username;
+
+                //redirect naar applicatie
+                header("location: satchmo.php");
             }
         }
         catch(Exception $e)
