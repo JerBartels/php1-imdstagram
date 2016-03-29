@@ -7,6 +7,6 @@ function alreadyLoggedIn()
 {
     if(isset($_SESSION["username"]) && !empty($_SESSION["username"]))
     {
-        header("location: satchmo.php");
+        header("location: pages/satchmo.php");
     }
 }

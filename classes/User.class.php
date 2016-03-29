@@ -56,7 +56,8 @@ class User
     }
 
     //controleer of user met emailadres of username bestaat
-    public function Exists($p_sProperty, $p_vDbColumn){
+    public function Exists($p_sProperty, $p_vDbColumn)
+    {
         $p_dDb = Db::getInstance();
 
         $p_sStmt = $p_dDb->prepare("SELECT * FROM user WHERE $p_vDbColumn = :val");
@@ -72,8 +73,34 @@ class User
         {
             return false;
         }
+    }
 
-        $p_dDb = null;
+    //methode om user op te zoeken op unieke username
+    public function getUserByUsername($p_sUsername)
+    {
+        $p_dDb = Db::getInstance();
+
+        $p_sStmt = $p_dDb->prepare("SELECT username, firstname, lastname, email, pass FROM user WHERE username = :val");
+        $p_sStmt->bindParam(':val', $p_sUsername);
+        $p_sStmt->execute();
+
+        $result = $p_sStmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    //methode om in te loggen (controle op hash/password)
+    public function LogIn($p_sUsername, $p_sPassword)
+    {
+        $result = $this->getUserByUsername($p_sUsername);
+
+        if(password_verify($p_sPassword, $result['pass']))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     //methode om user te bewaren in DB

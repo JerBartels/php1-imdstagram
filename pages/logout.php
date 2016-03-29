@@ -6,5 +6,5 @@ include_once("session.php");
 session_destroy();
 
 //redirect naar homepage
-header('location: index.php');
+header('location: ../index.php');
 ?>
