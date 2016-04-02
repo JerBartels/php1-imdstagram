@@ -15,12 +15,12 @@ if(isset($_POST['action']))
 
 function change()
 {
-    print_r("change");
+    echo "change";
     exit;
 }
 
 function save()
 {
-    print_r("save");
+    echo "save";
     exit;
 }

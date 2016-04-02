@@ -4,7 +4,7 @@ $(document).ready(function()
     {
         //op welke knop wordt geklikt?
         var btn_value = $(this).val();
-        var url_ajax = '../pages/ajax.php';
+        var url_ajax = "ajax.php";
 
         data =
         {
@@ -13,7 +13,14 @@ $(document).ready(function()
 
         $.post(url_ajax, data, function(response)
         {
-            alert(btn_value)
+            if(btn_value == "change")
+            {
+                $(".input_profile").attr("readonly", false);
+            }
+            else
+            {
+                $(".input_profile").attr("readonly", true);
+            }
         });
     });
 

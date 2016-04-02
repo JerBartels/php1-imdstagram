@@ -43,15 +43,14 @@ $user->Pass = $db_user["pass"];
     <div id="profile">
         <h2>this is you!</h2>
         <form action="" method="post">
-            <input type="text" readonly value="<?php print $user->Username; ?>">
-            <input type="text" readonly value="<?php print $user->Firstname; ?>">
-            <input type="text" readonly value="<?php print $user->Lastname; ?>">
-            <input type="text" readonly value="<?php print $user->Email; ?>">
-            <input type="password" readonly value="<?php print $user->Pass; ?>">
+            <input type="text" class="input_profile" readonly value="<?php print $user->Username; ?>">
+            <input type="text" class="input_profile" readonly value="<?php print $user->Firstname; ?>">
+            <input type="text" class="input_profile" readonly value="<?php print $user->Lastname; ?>">
+            <input type="text" class="input_profile" readonly value="<?php print $user->Email; ?>">
+            <input type="password" class="input_profile" readonly value="<?php print $user->Pass; ?>">
             <input type="submit" class="button" name="change" value="change" />
             <input type="submit" class="button" name="save" value="save" />
         </form>
-        <p id="profile_feedback"> <?php echo $profile_feedback ?></p>
     </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
