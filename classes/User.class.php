@@ -104,7 +104,8 @@ class User
     }
 
     //methode om user te bewaren in DB
-    public function Save(){
+    public function Save()
+    {
         //nieuw object van klasse DB aanmaken
         $p_dDb = Db::getInstance();
 
@@ -119,5 +120,26 @@ class User
         $p_sStmt->execute();
 
         $p_dDb = null;
+    }
+
+    public function Update($p_sUsername)
+    {
+        //nieuw object van klasse DB aanmaken
+        $p_dDb = Db::getInstance();
+
+        //updatequery
+        $p_sStmt = $p_dDb->prepare("UPDATE user SET username = :username, firstname = :firstname, lastname = :lastname, email = :email, pass = :pass WHERE username = :user_name");
+
+        $p_sStmt->bindParam(':username', $this->m_sUsername);
+        $p_sStmt->bindParam(':firstname', $this->m_sFirstname);
+        $p_sStmt->bindValue(':lastname', $this->m_sLastname);
+        $p_sStmt->bindParam(':email', $this->m_sEmail);
+        $p_sStmt->bindParam(':pass', $this->m_sPass);
+        $p_sStmt->bindParam(':user_name', $p_sUsername);
+
+        $p_sStmt->execute();
+
+        $p_dDb = null;
+
     }
 }

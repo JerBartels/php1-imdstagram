@@ -2,7 +2,6 @@
 
 include_once("../classes/Db.class.php");
 include_once("../classes/User.class.php");
-include_once("ajax.php");
 include_once("session.php");
 
 //nieuwe user aanmaken
@@ -15,6 +14,33 @@ $user->Lastname = $db_user["lastname"];
 $user->Username = $db_user["username"];
 $user->Email = $db_user["email"];
 $user->Pass = $db_user["pass"];
+
+if(!empty($_POST['username_profile']))
+{
+    try
+    {
+        if($user->Username == $_POST['username_profile'])
+        {
+            $feedback = "Er is niets veranderd :)";
+        }
+
+        else if(!$user->Exists($_POST['username_profile'], "username") )
+        {
+            $old_username = $user->Username;
+            $user->Username = $_POST['username_profile'];
+
+            $user->Update($old_username);
+        }
+        else
+        {
+            $feedback = "Deze usernaam is al in gebruik flipper!";
+        }
+    }
+    catch(Exception $e)
+    {
+        $feedback = $e->getMessage();
+    }
+}
 
 ?>
 
@@ -43,14 +69,16 @@ $user->Pass = $db_user["pass"];
     <div id="profile">
         <h2>this is you!</h2>
         <form action="" method="post">
-            <input type="text" class="input_profile" readonly value="<?php print $user->Username; ?>">
-            <input type="text" class="input_profile" readonly value="<?php print $user->Firstname; ?>">
-            <input type="text" class="input_profile" readonly value="<?php print $user->Lastname; ?>">
-            <input type="text" class="input_profile" readonly value="<?php print $user->Email; ?>">
-            <input type="password" class="input_profile" readonly value="<?php print $user->Pass; ?>">
-            <input type="submit" class="button" name="change" value="change" />
-            <input type="submit" class="button" name="save" value="save" />
+            <input type="text" class="input_profile" name="username_profile" id="username_profile" readonly value="<?php print $user->Username; ?>">
+            <input type="text" class="input_profile" name="firstname_profile" id="firstname_profile" readonly value="<?php print $user->Firstname; ?>">
+            <input type="text" class="input_profile" name="lastname_profile" id="lastname_profile" readonly value="<?php print $user->Lastname; ?>">
+            <input type="text" class="input_profile" name="email_profile" id="email_profile" readonly value="<?php print $user->Email; ?>">
+            <input type="password" class="input_profile" name="pass_profile" id="pass_profile" readonly value="<?php print $user->Pass; ?>">
+            <input type="submit" class="button" name="save" id="save" value="save" />
         </form>
+        <p id="feedback">
+            <?php echo $feedback ?>
+        </p>
     </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
