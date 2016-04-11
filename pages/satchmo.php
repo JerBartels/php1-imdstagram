@@ -56,30 +56,37 @@ if(!empty($_POST['username_profile']))
 </head>
 
 <body>
-    <nav>
-        <a href=""><?php echo $_SESSION["username"] ?></a>
-        <a href="logout.php">Log out</a>
-    </nav>
 
-    <div id="feed">
-        <h1>SATCHMO.CC</h1>
-        <h2><?php echo "Booeyaaaaaaa! Happy to see you, " . $_SESSION["username"] . "!"; ?></h2>
-    </div>
+<nav class="nav">
+    <a href="index.php" class="logo_app">logo</a>
+    <a href="logout.php" class="logout_app">log out</a>
+</nav>
+
+<div class="clearfix"></div>
+
+<div class="container">
 
     <div id="profile">
-        <h2>this is you!</h2>
-        <form action="" method="post">
-            <input type="text" class="input_profile" name="username_profile" id="username_profile" readonly value="<?php print $user->Username; ?>">
-            <input type="text" class="input_profile" name="firstname_profile" id="firstname_profile" readonly value="<?php print $user->Firstname; ?>">
-            <input type="text" class="input_profile" name="lastname_profile" id="lastname_profile" readonly value="<?php print $user->Lastname; ?>">
-            <input type="text" class="input_profile" name="email_profile" id="email_profile" readonly value="<?php print $user->Email; ?>">
-            <input type="password" class="input_profile" name="pass_profile" id="pass_profile" readonly value="<?php print $user->Pass; ?>">
-            <input type="submit" class="button" name="save" id="save" value="save" />
-        </form>
-        <p id="feedback">
-            <?php echo $feedback ?>
-        </p>
+        <div id="profile_content">
+            <h2><?php print $user->Firstname . " " . $user->Lastname?></h2>
+            <button id="btn_change_profile">profiel bewerken</button>
+            <div id="profile_form">
+                <form action="" method="post">
+                    <input type="text" class="input_profile" name="username_profile" id="username_profile" value="<?php print $user->Username; ?>">
+                    <input type="text" class="input_profile" name="firstname_profile" id="firstname_profile" value="<?php print $user->Firstname; ?>">
+                    <input type="text" class="input_profile" name="lastname_profile" id="lastname_profile" value="<?php print $user->Lastname; ?>">
+                    <input type="text" class="input_profile" name="email_profile" id="email_profile" value="<?php print $user->Email; ?>">
+                    <input type="password" class="input_profile" name="pass_profile" id="pass_profile" value="<?php print $user->Pass; ?>">
+                    <input type="submit" class="button" name="save" id="save" value="save" />
+                </form>
+            </div>
+            <p id="feedback">
+                <?php echo $feedback ?>
+            </p>
+        </div>
     </div>
+</div>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script src="../scripts/script.js"></script>

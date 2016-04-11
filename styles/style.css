@@ -1,21 +1,138 @@
-body
+html,body
 {
-    background-color: white;
+    background-color: #EEEEEE;
     font-family: 'Lato', sans-serif;
     font-size: 15px;
+    width: 100%
 }
 
-#container
+.container
 {
+    width: 100%
+}
+
+.clearfix
+{
+    width: 1px;
+    visibility: hidden;
+    clear: both;
+}
+
+/*satchmo applicatie pagina*/
+.nav
+{
+    width: 100%;
+    margin-top: 25px;
     max-width: 960px;
     margin-left: auto;
     margin-right: auto;
 }
 
+#profile
+{
+    background-color: #fff;
+    margin-top: 25px;
+}
+
+#profile_content
+{
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px 10px;
+}
+
+button
+{
+    box-sizing: content-box;
+    background-color: #E26A6A;
+    color: white;
+    font-weight: 800;
+    border: 1px solid #E26A6A;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    padding: 7px;
+}
+
+button:hover
+{
+    background-color: #E08283;
+    border: 1px solid #E08283;
+}
+
+.hr
+{
+
+
+}
+
+#profile_form
+{
+    display: none;
+}
+
+/*speciaal andere class, daar logo anders gepositioneerd wordt*/
+.logo_app
+{
+    display: block;
+    float: left;
+
+    text-indent: -999px;
+    background-image: url(../assets/logo.svg);
+    background-repeat: no-repeat;
+
+    width: 82.73px;
+    height: 24.26px;
+
+    margin-left: 10px;
+}
+
+.logout_app
+{
+    display: inline-block;
+    float: right;
+
+    font-variant: small-caps;
+    font-weight: 800;
+    text-decoration: none;
+
+    width: 82.73px;
+    text-align: right;
+
+    color: black;
+    margin-right: 10px;
+}
+
+
+/*startpagina - login of registreer*/
+#div_content
+{
+    min-height: 100vh;
+    display: table;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#div_center
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#div_form
+{
+    background-color: #fff;
+    padding: 25px;
+    border: 1px solid #ECECEC;
+    border-radius: 5px;
+}
+
 header
 {
-    width: 100%;
-    margin-top: 20px;
+    border-bottom: 1px solid #ECECEC;
+    padding-bottom: 25px;
 }
 
     .logo
@@ -33,64 +150,73 @@ header
         margin-right: auto;
     }
 
-#div_content
-{
-    margin-top: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-top: 1px solid #F0F0F0;
-}
-
-    h1
+    .slogan
     {
-        font-family: Lato;
-        font-weight: 800;
-
-        margin-top: 20px;
+        text-align: center;
+        padding-top: 25px;
     }
 
-    h2
+    form
     {
-        margin-top: 10px;
-        font-size: 0.75em;
+        margin-top: 25px;
     }
 
-#register form
-{
-    margin-top: 20px;
-    font-size: 0.75em;
-    text-align: center;
+        input
+        {
+            display: block;
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 5px;
+            margin-top: 15px;
+            padding: 7px;
+            border: 1px solid #ECECEC;
+            border-radius: 5px;
+        }
 
-}
+        input:focus
+        {
+            border: 1px solid #E26A6A;
+            outline: 0;
+        }
+
+        input[type=submit]
+        {
+            box-sizing: content-box;
+            background-color: #E26A6A;
+            color: white;
+            font-weight: 800;
+            border: 1px solid #E26A6A;
+        }
+
+        input[type=submit]:hover
+        {
+            background-color: #E08283;
+            border: 1px solid #E08283;
+        }
+
     .form_error
     {
-        margin-top: 5px;
-        margin-bottom: 5px;
+        font-size: 0.7em;
+        font-style: italic;
     }
 
-    #register form input
+    .form_feedback
     {
+        font-size: 0.7em;
+        font-style: italic;
+        padding-top: 5px;
         display: block;
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto;
+        text-align: center;
+    }
 
-        margin-top: 10px;
-    }
-    
-    #signup
-    {
-        border: none;
-        background-color: #b1b1b1;
-        color: white;
-    }
+
+#register
+{
+    display: none;
+
+}
 
 #login
 {
-    display: none;
-}
-
-#save
-{
-    display: none;
 }
