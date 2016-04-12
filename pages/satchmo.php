@@ -51,23 +51,26 @@ if(!empty($_POST['username_profile']))
     <meta charset="UTF-8">
     <title>Satchmo.cc</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700italic,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 
 <body>
 
-<nav class="nav">
-    <a href="index.php" class="logo_app">logo</a>
-    <a href="logout.php" class="logout_app">log out</a>
+<nav id="nav">
+    <div id="nav_content">
+        <a href="index.php" class="logo_app">logo</a>
+        <a href="logout.php" class="logout_app">log out</a>
+    </div>
 </nav>
 
 <div class="clearfix"></div>
 
 <div class="container">
-
     <div id="profile">
         <div id="profile_content">
+            <img src="../assets/noprofilepict.jpg" alt="profilepict" class="profile_pict">
             <h2><?php print $user->Firstname . " " . $user->Lastname?></h2>
             <button id="btn_change_profile">profiel bewerken</button>
             <div id="profile_form">

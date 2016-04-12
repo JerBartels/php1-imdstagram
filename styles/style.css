@@ -1,14 +1,15 @@
 html,body
 {
-    background-color: #EEEEEE;
     font-family: 'Lato', sans-serif;
     font-size: 15px;
-    width: 100%
+    width: 100%;
+    color: #2C2C2C;
 }
 
 .container
 {
-    width: 100%
+    width: 100%;
+    background-color: #F0F0F0;
 }
 
 .clearfix
@@ -18,58 +19,75 @@ html,body
     clear: both;
 }
 
+h2
+{
+    font-weight: 600;
+}
+
+p
+{
+    color: #2C2C2C;
+}
+
 /*satchmo applicatie pagina*/
-.nav
+#nav
 {
     width: 100%;
     margin-top: 25px;
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
 }
+
+    #nav_content
+    {
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
 #profile
 {
-    background-color: #fff;
     margin-top: 25px;
+    text-align: center;
 }
 
-#profile_content
-{
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 25px 10px;
-}
+    #profile_content
+    {
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 50px 10px;
+    }
+
+    .profile_pict
+    {
+        border-radius: 100px;
+        margin-bottom: 50px;
+    }
+
+    #profile_form
+    {
+        display: none;
+        margin-top: 25px;
+    }
 
 button
 {
     box-sizing: content-box;
-    background-color: #E26A6A;
+    background-color: #4080A8;
     color: white;
     font-weight: 800;
-    border: 1px solid #E26A6A;
+    border: 1px solid #4080A8;
     border-radius: 5px;
     margin-bottom: 5px;
-    margin-top: 15px;
+    margin-top: 25px;
     padding: 7px;
+    min-width: 25%;
+    max-width: 50%;
 }
 
 button:hover
 {
-    background-color: #E08283;
-    border: 1px solid #E08283;
-}
-
-.hr
-{
-
-
-}
-
-#profile_form
-{
-    display: none;
+    background-color: #1A5A85;
+    border: 1px solid #1A5A85;
 }
 
 /*speciaal andere class, daar logo anders gepositioneerd wordt*/
@@ -82,8 +100,8 @@ button:hover
     background-image: url(../assets/logo.svg);
     background-repeat: no-repeat;
 
-    width: 82.73px;
-    height: 24.26px;
+    width: 60px;
+    height: 20px;
 
     margin-left: 10px;
 }
@@ -97,7 +115,7 @@ button:hover
     font-weight: 800;
     text-decoration: none;
 
-    width: 82.73px;
+    width: 60px;
     text-align: right;
 
     color: black;
@@ -110,7 +128,7 @@ button:hover
 {
     min-height: 100vh;
     display: table;
-    width: 75%;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -124,15 +142,13 @@ button:hover
 #div_form
 {
     background-color: #fff;
-    padding: 25px;
+    padding: 50px 50px 75px 50px;
     border: 1px solid #ECECEC;
     border-radius: 5px;
 }
 
 header
 {
-    border-bottom: 1px solid #ECECEC;
-    padding-bottom: 25px;
 }
 
     .logo
@@ -143,22 +159,26 @@ header
         background-image: url(../assets/logo.svg);
         background-repeat: no-repeat;
 
-        width: 82.73px;
-        height: 24.26px;
+        width: 120px;
+        height: 40px;
 
+        margin-left: auto;
+        margin-right: auto;
+
+        padding-bottom: 25px;
+    }
+
+    .hr
+    {
+        width: 20%;
+        border-top: 1px solid #6DACD4;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .slogan
-    {
-        text-align: center;
-        padding-top: 25px;
-    }
-
     form
     {
-        margin-top: 25px;
+        margin-top: 50px;
     }
 
         input
@@ -169,36 +189,38 @@ header
             margin-right: auto;
             margin-bottom: 5px;
             margin-top: 15px;
-            padding: 7px;
+            padding: 10px;
             border: 1px solid #ECECEC;
             border-radius: 5px;
         }
 
         input:focus
         {
-            border: 1px solid #E26A6A;
+            border: 1px solid #4080A8;
             outline: 0;
         }
 
         input[type=submit]
         {
             box-sizing: content-box;
-            background-color: #E26A6A;
+            background-color: #4080A8;
             color: white;
             font-weight: 800;
-            border: 1px solid #E26A6A;
+            border: 1px solid #4080A8;
         }
 
         input[type=submit]:hover
         {
-            background-color: #E08283;
-            border: 1px solid #E08283;
+            background-color: #1A5A85;
+            border: 1px solid #1A5A85;
         }
 
     .form_error
     {
         font-size: 0.7em;
         font-style: italic;
+        display: block;
+        text-align: center;
     }
 
     .form_feedback

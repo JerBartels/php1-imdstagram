@@ -33,10 +33,11 @@ alreadyLoggedIn();
                         <a href="index.php" class="logo">logo</a>
                     </header>
 
-                    <p class="slogan">Capture and share the worlds moments! </p>
+                    <div class="hr">
+
+                    </div>
 
                     <div id="register">
-
                         <!-- verwijzing naar register.php -->
                         <form action="" method="post">
                             <input type="text" name="username" id="username" placeholder="username" value="<?php if(isset($_POST['username'])){ print $_POST['username']; } ?>">
@@ -58,10 +59,10 @@ alreadyLoggedIn();
 
                     <div id="login">
                         <form action="" method="post">
-                            <?php if(isset($_POST['l_username']) && !validateUsername($_POST['l_username'])){echo $err_username;} ?>
                             <input type="text" name="l_username" id="l_username" placeholder="username" value="<?php if(isset($_POST['l_username'])){ print $_POST['l_username']; } ?>">
-                            <?php if(isset($_POST['l_pass']) && !validatePass($_POST['l_pass'])){echo $err_pass;} ?>
+                            <?php if(isset($_POST['l_username']) && !validateUsername($_POST['l_username'])){echo $err_username;} ?>
                             <input type="password" name="l_pass" id="l_pass" placeholder="******" value="<?php if(isset($_POST['l_pass'])){ print $_POST['l_pass']; } ?>">
+                            <?php if(isset($_POST['l_pass']) && !validatePass($_POST['l_pass'])){echo $err_pass;} ?>
                             <input type="submit" name="signin" id="signin" value="sign in">
                         </form>
                         <p class="form_feedback">
