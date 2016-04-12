@@ -11,6 +11,7 @@ class User
     private $m_sLastname;
     private $m_sEmail;
     private $m_sPass;
+    private $m_sProfilePic;
 
     //set-methode
     public function __set($p_sProperty, $p_vValue)
@@ -31,6 +32,9 @@ class User
             case 'Pass':
                 $this->m_sPass = $p_vValue;
                 break;
+            case 'ProfilePic':
+                $this->m_sProfilePic = $p_vValue;
+                break;
             default:
                 echo "Error: " . $p_sProperty . " does not exist.";
         }
@@ -50,6 +54,8 @@ class User
                 return $this->m_sEmail;
             case 'Pass':
                 return $this->m_sPass;
+            case 'ProfilePic':
+                return $this->m_sProfilePic;
             default:
                 echo "Error: " . $p_sProperty . " does not exist.";
         }
@@ -80,7 +86,7 @@ class User
     {
         $p_dDb = Db::getInstance();
 
-        $p_sStmt = $p_dDb->prepare("SELECT username, firstname, lastname, email, pass FROM user WHERE username = :val");
+        $p_sStmt = $p_dDb->prepare("SELECT * FROM user WHERE username = :val");
         $p_sStmt->bindParam(':val', $p_sUsername);
         $p_sStmt->execute();
 
@@ -109,7 +115,7 @@ class User
         //nieuw object van klasse DB aanmaken
         $p_dDb = Db::getInstance();
 
-        $p_sStmt = $p_dDb->prepare("INSERT INTO user (username, firstname, lastname, email, pass) VALUES (:username, :firstname, :lastname, :email, :pass)");
+        $p_sStmt = $p_dDb->prepare("INSERT INTO user (username, firstname, lastname, email, pass) VALUES (:username, :firstname, :lastname, :email, :pass, :profilepic)");
 
         $p_sStmt->bindParam(':username', $this->m_sUsername);
         $p_sStmt->bindParam(':firstname', $this->m_sFirstname);
@@ -141,5 +147,19 @@ class User
 
         $p_dDb = null;
 
+    }
+
+    public function SaveProfilePicture($p_sUsername, $p_sProfilePic)
+    {
+        $p_dDb = Db::getInstance();
+
+        $p_sStmt = $p_dDb->prepare("UPDATE user SET profilepic = :profilepic WHERE username = :user_name");
+
+        $p_sStmt->bindParam(':user_name', $p_sUsername);
+        $p_sStmt->bindParam(':profilepic', $p_sProfilePic);
+
+        $p_sStmt->execute();
+
+        $p_dDb = null;
     }
 }
