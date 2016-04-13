@@ -2,8 +2,10 @@
 
 include_once("../classes/Db.class.php");
 include_once("../classes/User.class.php");
+include_once("../classes/Post.class.php");
 include_once("session.php");
 include_once("reglog.php");
+
 
 //upload path
 define('GW_UPLOADPATH', '../assets/');
@@ -20,6 +22,30 @@ $user->Email = $db_user["email"];
 $user->Pass = $db_user["pass"];
 $user->ProfilePic = $db_user["profilepic"];
 
+//foto posten
+if(isset($_POST["btn_profile_pic"]))
+{
+    try
+    {
+        $profile_picture = $_FILES['profile_pic']['name'];
+
+        if(!empty($profile_picture))
+        {
+            $target = GW_UPLOADPATH . $profile_picture;
+
+            if(move_uploaded_file($_FILES['profile_pic']['tmp_name'], $target))
+            {
+                $user->SaveProfilePicture($user->Username, $profile_picture);
+                $feedback_profile_pic = "you're still ugly!";
+
+            }
+        }
+    }
+    catch(Exception $e)
+    {
+        $feedback_profile_pic = $e->getMessage();
+    }
+}
 
 ?>
 
@@ -54,9 +80,20 @@ $user->ProfilePic = $db_user["profilepic"];
             <a class="btn_a" href="profile.php">change profile</a>
         </div>
     </div>
+    <div id="post_zone">
+        <div id="post_zone_content">
+            <form enctype="multipart/form-data" method="post" action="">
+                <!--<input type="hidden" name="MAX_FILE_SIZE" value="32768"/>-->
+                <input type="file" class="post_post" name="post_post" id="post_post"><br>
+                <input type="input" class="post_post" name="input_post" id="input_post"><br>
+                <input type="submit" value="post" name="btn_post" id="btn_post">
+            </form>
+        </div>
+    </div>
     <div id="feed">
         <div id="feed_content"></div>
     </div>
+
 </div>
 
 
