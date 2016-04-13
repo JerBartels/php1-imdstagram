@@ -19,11 +19,14 @@ if(isset($_POST["signup"]))
     {
         try
         {
+            $default_profilepic = "noprofilepict.jpg";
+
             $user = new User();
             $user->Username = $_POST["username"];
             $user->Firstname = $_POST["firstname"];
             $user->Lastname = $_POST["lastname"];
             $user->Email = $_POST["email"];
+            $user->ProfilePic = $default_profilepic;
 
             $pass = password_hash($_POST["pass"], PASSWORD_DEFAULT);
             $user->Pass = $pass;

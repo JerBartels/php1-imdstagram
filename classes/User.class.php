@@ -115,13 +115,14 @@ class User
         //nieuw object van klasse DB aanmaken
         $p_dDb = Db::getInstance();
 
-        $p_sStmt = $p_dDb->prepare("INSERT INTO user (username, firstname, lastname, email, pass) VALUES (:username, :firstname, :lastname, :email, :pass, :profilepic)");
+        $p_sStmt = $p_dDb->prepare("INSERT INTO user (username, firstname, lastname, email, pass, profilepic) VALUES (:username, :firstname, :lastname, :email, :pass, :profilepic)");
 
         $p_sStmt->bindParam(':username', $this->m_sUsername);
         $p_sStmt->bindParam(':firstname', $this->m_sFirstname);
-        $p_sStmt->bindValue(':lastname', $this->m_sLastname);
+        $p_sStmt->bindParam(':lastname', $this->m_sLastname);
         $p_sStmt->bindParam(':email', $this->m_sEmail);
         $p_sStmt->bindParam(':pass', $this->m_sPass);
+        $p_sStmt->bindParam(':profilepic', $this->m_sProfilePic);
 
         $p_sStmt->execute();
 
@@ -138,7 +139,7 @@ class User
 
         $p_sStmt->bindParam(':username', $this->m_sUsername);
         $p_sStmt->bindParam(':firstname', $this->m_sFirstname);
-        $p_sStmt->bindValue(':lastname', $this->m_sLastname);
+        $p_sStmt->bindParam(':lastname', $this->m_sLastname);
         $p_sStmt->bindParam(':email', $this->m_sEmail);
         $p_sStmt->bindParam(':pass', $this->m_sPass);
         $p_sStmt->bindParam(':user_name', $p_sUsername);

@@ -9,7 +9,7 @@ html,body
 .container
 {
     width: 100%;
-    background-color: #F0F0F0;
+    /*background-color: #F0F0F0;*/
 }
 
 .clearfix
@@ -19,8 +19,15 @@ html,body
     clear: both;
 }
 
+h1
+{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
 h2
 {
+    margin-top: 75px;
     font-weight: 600;
 }
 
@@ -42,9 +49,10 @@ p
         margin-left: auto;
         margin-right: auto;
     }
-
-#profile
+    
+#profile, #feed
 {
+    border-top: 1px solid #F0F0F0;
     margin-top: 25px;
     text-align: center;
 }
@@ -65,20 +73,32 @@ p
         height: 150px;
     }
 
-    /*tijdelijk*/
-    #profile_pict_form
-    {
-        margin-top: 0px;
-        width: 75%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 50px;
-    }
-
     #profile_form
     {
         display: none;
         margin-top: 25px;
+    }
+
+#edit_profile
+{
+    text-align: left;
+    border-top: 1px solid #F0F0F0;
+    margin-top: 25px;
+}
+
+    .edit_profile_content
+    {
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 25px 10px;
+    }
+
+    .full_hr
+    {
+        border-bottom: 1px solid #F0F0F0;
+        width: 100%;
+        margin-top: 50px;
     }
 
 button
@@ -100,6 +120,22 @@ button:hover
 {
     background-color: #1A5A85;
     border: 1px solid #1A5A85;
+}
+
+.btn_a
+{
+    display: block;
+    text-decoration: none;
+    color: #2C2C2C;
+    border: 1px solid #2C2C2C;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-top: 25px;
+    padding: 10px;
+    min-width: 15%;
+    max-width: 20%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /*speciaal andere class, daar logo anders gepositioneerd wordt*/
@@ -159,10 +195,6 @@ button:hover
     border-radius: 5px;
 }
 
-header
-{
-}
-
     .logo
     {
         display: block;
@@ -206,6 +238,34 @@ header
             border-radius: 5px;
         }
 
+        input.input_change_profile
+        {
+            display: inline-block;
+            width: 70%;
+            margin-bottom: 5px;
+            margin-top: 15px;
+            padding: 10px;
+            border: 1px solid #ECECEC;
+            border-radius: 5px;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        input[type=submit].input_change_profile
+        {
+            display: block;
+            margin-left: auto;
+            margin-right: 5px;
+            width: 10%;
+        }
+
+        label.label_change_profile
+        {
+            display: inline-block;
+            width: 25%;
+            font-size: 0.8em;
+        }
+
         input:focus
         {
             border: 1px solid #4080A8;
@@ -244,13 +304,22 @@ header
         text-align: center;
     }
 
+    .change_feedback
+    {
+        font-size: 1em;
+        font-variant: small-caps;
+        padding-top: 10px;
+        display: block;
+        color: #61AC7E;
+    }
+
 
 #register
 {
     display: none;
-
 }
 
 #login
 {
+
 }
