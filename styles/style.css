@@ -50,10 +50,16 @@ p
         margin-right: auto;
     }
     
-#profile, #feed
+#profile
 {
     border-top: 1px solid #F0F0F0;
-    padding-top: 25px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+#feed
+{
+    border-top: 1px solid #F0F0F0;
     text-align: center;
 }
 
