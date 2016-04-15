@@ -36,6 +36,59 @@ p
     color: #2C2C2C;
 }
 
+/*profile page*/
+#profile
+{
+    border-top: 1px solid #F0F0F0;
+    margin-top: 25px;
+    text-align: center;
+}
+
+
+#profile_content
+{
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px 10px;
+}
+
+.profile_pict
+{
+    border-radius: 100px;
+    margin-bottom: 10px;
+    width: 150px;
+    height: 150px;
+}
+
+#profile_form
+{
+    display: none;
+    margin-top: 25px;
+}
+
+#edit_profile
+{
+    text-align: left;
+    border-top: 1px solid #F0F0F0;
+    margin-top: 25px;
+}
+
+.edit_profile_content
+{
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px 10px;
+}
+
+.full_hr
+{
+    border-bottom: 1px solid #F0F0F0;
+    width: 100%;
+    margin-top: 50px;
+}
+
 /*satchmo applicatie pagina*/
 #nav
 {
@@ -45,23 +98,42 @@ p
 
     #nav_content
     {
-        max-width: 960px;
+        max-width: 1080px;
         margin-left: auto;
         margin-right: auto;
     }
-    
-#profile
-{
-    border-top: 1px solid #F0F0F0;
-    margin-top: 25px;
-    text-align: center;
-}
 
-#feed
-{
-    border-top: 1px solid #F0F0F0;
-    text-align: center;
-}
+        /*speciaal andere class, daar logo anders gepositioneerd wordt*/
+        .logo_app
+        {
+            display: block;
+            float: left;
+
+            text-indent: -999px;
+            background-image: url(../assets/logo.svg);
+            background-repeat: no-repeat;
+
+            width: 60px;
+            height: 20px;
+
+            margin-left: 10px;
+        }
+
+        .logout_app
+        {
+            display: inline-block;
+            float: right;
+
+            font-variant: small-caps;
+            font-weight: 800;
+            text-decoration: none;
+
+            width: 60px;
+            text-align: right;
+
+            color: black;
+            margin-right: 10px;
+        }
 
 #post_zone
 {
@@ -72,49 +144,85 @@ p
     padding-bottom: 50px;
 }
 
-    #profile_content
+    #post_zone_content
     {
-        max-width: 960px;
+        border-top: 1px solid #F0F0F0;
+        max-width: 600px;
         margin-left: auto;
         margin-right: auto;
-        padding: 50px 10px;
     }
 
-    .profile_pict
-    {
-        border-radius: 100px;
-        margin-bottom: 10px;
-        width: 150px;
-        height: 150px;
-    }
+#feed
+{
+    border-top: 1px solid #F0F0F0;
+    width: 100%;
+}
 
-    #profile_form
+    .feed_feed
     {
-        display: none;
+        border: 1px solid #F0F0F0;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
         margin-top: 25px;
     }
 
-#edit_profile
-{
-    text-align: left;
-    border-top: 1px solid #F0F0F0;
-    margin-top: 25px;
-}
+        .feed_username
+        {
+            display: inline-block;
+            width: 50%;
+            margin-top: 25px;
+            margin-bottom:25px;
+        }
 
-    .edit_profile_content
-    {
-        max-width: 960px;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 25px 10px;
-    }
+            .feed_username span
+            {
+                font-weight: 800;
+                color: #1A5A85;
+                padding-left: 15px;
+            }
 
-    .full_hr
-    {
-        border-bottom: 1px solid #F0F0F0;
-        width: 100%;
-        margin-top: 50px;
-    }
+        .feed_date
+        {
+            display: inline-block;
+            width: 50%;
+            text-align: right;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+            .feed_date span
+            {
+                color: lightgrey;
+                margin-right: 15px;
+            }
+
+        .feed_pict_img
+        {
+            width: 100%;
+        }
+
+        .feed_comment
+        {
+            margin-top: 25px;
+            margin-left: 25px;
+            margin-bottom: 25px;
+        }
+
+            .comment_username
+            {
+                font-weight: 800;
+                color: #1A5A85;
+                margin-left: 15px;
+            }
+
+            .comment_text
+            {
+                color: #2C2C2C;
+                font-weight: 400;
+                margin-left: 10px;
+            }
+
 
 button
 {
@@ -151,38 +259,6 @@ button:hover
     max-width: 20%;
     margin-left: auto;
     margin-right: auto;
-}
-
-/*speciaal andere class, daar logo anders gepositioneerd wordt*/
-.logo_app
-{
-    display: block;
-    float: left;
-
-    text-indent: -999px;
-    background-image: url(../assets/logo.svg);
-    background-repeat: no-repeat;
-
-    width: 60px;
-    height: 20px;
-
-    margin-left: 10px;
-}
-
-.logout_app
-{
-    display: inline-block;
-    float: right;
-
-    font-variant: small-caps;
-    font-weight: 800;
-    text-decoration: none;
-
-    width: 60px;
-    text-align: right;
-
-    color: black;
-    margin-right: 10px;
 }
 
 
@@ -251,6 +327,12 @@ button:hover
             padding: 10px;
             border: 1px solid #ECECEC;
             border-radius: 5px;
+        }
+
+        #post_zone input
+        {
+            width: 100%;
+            padding: 10px 0px;
         }
 
         input.input_change_profile

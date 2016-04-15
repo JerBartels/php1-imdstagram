@@ -98,9 +98,7 @@ if(isset($_POST["signin"]))
     {
         $feedback = $e->getMessage();
     }
-
 }
-
 
 // --------- ** VALIDATE INPUT ** --------- //
 

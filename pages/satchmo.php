@@ -8,7 +8,7 @@ include_once("reglog.php");
 
 
 //upload path
-define('GW_UPLOADPATH', '../assets/');
+define('GW_UPLOADPATH', '../assets/posts/');
 
 //nieuwe user aanmaken
 $user =  new User();
@@ -22,30 +22,52 @@ $user->Email = $db_user["email"];
 $user->Pass = $db_user["pass"];
 $user->ProfilePic = $db_user["profilepic"];
 
-//foto posten
-if(isset($_POST["btn_profile_pic"]))
+//post posten
+if(isset($_POST["btn_post"]))
 {
     try
     {
-        $profile_picture = $_FILES['profile_pic']['name'];
+        //naam van de foto die opgeladen wordt
+        //time zorgt ervoor dat het opladen van foto's met dezelfde naam geen overwrite met zich meebrengt
+        $post_post = time() . $_FILES['post_post']['name'];
+        $input_post = $_POST['input_post'];
+        $date_post = date('Y-m-d H:i:s', time());
 
-        if(!empty($profile_picture))
+
+
+        if(!($_FILES['post_post']['size'] == 0) && !empty($input_post))
         {
-            $target = GW_UPLOADPATH . $profile_picture;
+            $target = GW_UPLOADPATH . $post_post;
 
-            if(move_uploaded_file($_FILES['profile_pic']['tmp_name'], $target))
+            if(move_uploaded_file($_FILES['post_post']['tmp_name'], $target))
             {
-                $user->SaveProfilePicture($user->Username, $profile_picture);
-                $feedback_profile_pic = "you're still ugly!";
+                $post = new Post();
+                $post->Photo = $post_post;
+                $post->Comment = $input_post;
+                $post->Username = $user->Username;
+                $post->Date = $date_post;
 
+                $post->Save();
+                $feedback_post = "You rock!";
             }
+        }
+        else
+        {
+            $feedback_post = "All fields need input, doefus!";
         }
     }
     catch(Exception $e)
     {
-        $feedback_profile_pic = $e->getMessage();
+        $feedback_post = $e->getMessage();
     }
 }
+
+//alle posts ophalen uit DB + Count op 20 zetten
+//na post posten laten, zodat de nieuwe foto direct getoond wordt
+$post1 = new Post();
+$posts = array_reverse($post1->getAllPosts());
+$count = 20;
+
 
 ?>
 
@@ -87,11 +109,36 @@ if(isset($_POST["btn_profile_pic"]))
                 <input type="file" class="post_post" name="post_post" id="post_post"><br>
                 <input type="input" class="post_post" name="input_post" id="input_post"><br>
                 <input type="submit" value="post" name="btn_post" id="btn_post">
+                <p class="form_feedback"><?php echo $feedback_post ?></p>
             </form>
         </div>
     </div>
     <div id="feed">
-        <div id="feed_content"></div>
+
+            <?php
+                foreach($posts as $post)
+                {
+            ?>
+
+            <div class="feed_feed">
+
+            <?
+                    print '<div class="feed_username"><span>' . $post["username"] . '</span></div>';
+                    print '<div class="feed_date"><span>' . $post["date"] . '</span></div>';
+                    print '<img src="../assets/posts/' . $post["photo"] . '"alt="feed_pict_img" class="feed_pict_img">';
+                    print '<div class="feed_comment"><span class="comment_username">' . $post["username"] . "</span><span class='comment_text'>" . $post["comment"] . '</span></div></div>';
+
+                    if($count <= 0)
+                    {
+                        break;
+                    }
+
+                    $count --;
+
+                }
+            ?>
+
+
     </div>
 
 </div>

@@ -9,6 +9,7 @@ class Post
     private $m_sPhoto;
     private $m_sComment;
     private $m_sUsername;
+    private $m_sDate;
 
     //set methode
     public function __set($p_sProperty, $p_vValue)
@@ -23,6 +24,9 @@ class Post
                 break;
             case 'Username':
                 $this->m_sUsername = $p_vValue;
+                break;
+            case 'Date':
+                $this->m_sDate = $p_vValue;
                 break;
             default:
                 echo "Error: " . $p_sProperty . " does not exist.";
@@ -40,6 +44,8 @@ class Post
                 return $this->m_sComment;
             case 'Username':
                 return $this->m_sUsername;
+            case 'Date':
+                return $this->m_sDate;
             default:
                 echo "Error: " . $p_sProperty . " does not exist.";
         }
@@ -59,16 +65,28 @@ class Post
         return $result;
     }
 
+    public function getAllPosts()
+    {
+        $p_dDb = DB::getInstance();
+
+        $p_sStmt = $p_dDb->prepare("SELECT photo, comment, username, date FROM post");
+        $p_sStmt->execute();
+
+        $result = $p_sStmt->fetchAll();
+        return $result;
+    }
+
     //methode om te bewaren
     public function Save()
     {
         $p_dDb = Db::getInstance();
 
-        $p_sStmt = $p_dDb->prepare("INSERT INTO post (photo, comment, username) VALUES(:photo, :comment, :username)");
+        $p_sStmt = $p_dDb->prepare("INSERT INTO post (photo, comment, username, date) VALUES(:photo, :comment, :username, :date)");
 
         $p_sStmt->bindParam(':photo', $this->Photo);
         $p_sStmt->bindParam(':comment', $this->Comment);
         $p_sStmt->bindParam(':username', $this->Username);
+        $p_sStmt->bindParam(':date', $this->Date);
 
         $p_sStmt->execute();
 

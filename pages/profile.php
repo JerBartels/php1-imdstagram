@@ -75,7 +75,8 @@ if(isset($_POST["btn_profile_pic"]))
 {
     try
     {
-        $profile_picture = $_FILES['profile_pic']['name'];
+        //time zorgt ervoor dat het opladen van foto's met dezelfde naam geen overwrite met zich meebrengt
+        $profile_picture = time() . $_FILES['profile_pic']['name'];
 
         if(!empty($profile_picture))
         {
@@ -94,7 +95,6 @@ if(isset($_POST["btn_profile_pic"]))
         $feedback_profile_pic = $e->getMessage();
     }
 }
-
 
 ?>
 
