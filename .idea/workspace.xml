@@ -2,14 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34bb4e86-3ca2-4480-945a-371423a43fd6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/IMG_0434.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/IMG_0435.JPG" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Post.class.php" afterPath="$PROJECT_DIR$/classes/Post.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/profile.php" afterPath="$PROJECT_DIR$/pages/profile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/reglog.php" afterPath="$PROJECT_DIR$/pages/reglog.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/satchmo.php" afterPath="$PROJECT_DIR$/pages/satchmo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/style.css" afterPath="$PROJECT_DIR$/styles/style.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/1460704595IMG_0431.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/posts/1460704634IMG_0435.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/posts/1460705591IMG_0430.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/posts/1460707853IMG_0434.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/posts/1460707867IMG_0434.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/posts/1460708055IMG_0434.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/posts/1460708067IMG_0434.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/posts/1460708091IMG_0428.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/posts/1460715126IMG_0430.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/posts/1460715178IMG_0435.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/posts/1460715220IMG_0435.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/posts/1460715429IMG_0431.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/posts/1460715570IMG_0434.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/posts/1460715626DSC_0067.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/posts/1460716085DSC_0015.JPG" afterPath="" />
     </list>
     <ignored path="php1-satchmo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -311,24 +318,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="php1-satchmo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="php1-satchmo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="posts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -393,9 +382,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="643" y="23" width="1574" height="1335" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16772553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16772553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984716" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08975377" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
