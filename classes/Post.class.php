@@ -65,6 +65,17 @@ class Post
         return $result;
     }
 
+    public function getPosts($p_iValue1, $p_iValue2)
+    {
+        $p_dDb = DB::getInstance();
+
+        $p_sStmt = $p_dDb->prepare("SELECT photo, comment, username, date FROM post LIMIT $p_iValue1,$p_iValue2");
+        $p_sStmt->execute();
+
+        $result = $p_sStmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     public function getAllPosts()
     {
         $p_dDb = DB::getInstance();
@@ -72,7 +83,7 @@ class Post
         $p_sStmt = $p_dDb->prepare("SELECT photo, comment, username, date FROM post");
         $p_sStmt->execute();
 
-        $result = $p_sStmt->fetchAll();
+        $result = $p_sStmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
 

@@ -5,6 +5,7 @@ include_once("../classes/User.class.php");
 include_once("../classes/Post.class.php");
 include_once("session.php");
 include_once("reglog.php");
+include_once("../ajax/load-more.php");
 
 
 //upload path
@@ -32,7 +33,6 @@ if(isset($_POST["btn_post"]))
         $post_post = time() . $_FILES['post_post']['name'];
         $input_post = $_POST['input_post'];
         $date_post = date('Y-m-d H:i:s', time());
-
 
 
         if(!($_FILES['post_post']['size'] == 0) && !empty($input_post))
@@ -66,8 +66,6 @@ if(isset($_POST["btn_post"]))
 //na post posten laten, zodat de nieuwe foto direct getoond wordt
 $post1 = new Post();
 $posts = array_reverse($post1->getAllPosts());
-$count = 20;
-
 
 ?>
 
@@ -115,31 +113,36 @@ $count = 20;
     </div>
     <div id="feed">
 
+
             <?php
+
+                $counter = 0;
+
                 foreach($posts as $post)
                 {
-            ?>
-
-            <div class="feed_feed">
-
-            <?
-                    print '<div class="feed_username"><span>' . $post["username"] . '</span></div>';
-                    print '<div class="feed_date"><span>' . $post["date"] . '</span></div>';
-                    print '<img src="../assets/posts/' . $post["photo"] . '"alt="feed_pict_img" class="feed_pict_img">';
-                    print '<div class="feed_comment"><span class="comment_username">' . $post["username"] . "</span><span class='comment_text'>" . $post["comment"] . '</span></div></div>';
-
-                    if($count <= 0)
+                    if($counter < 4)
                     {
-                        break;
+                        print '<div class="feed_feed"><div class="feed_username"><span>' . $post["username"] . '</span></div>';
+                        print '<div class="feed_date"><span>' . $post["date"] . '</span></div>';
+                        print '<img src="../assets/posts/' . $post["photo"] . '"alt="feed_pict_img" class="feed_pict_img">';
+                        print '<div class="feed_comment"><span class="comment_username">' . $post["username"] . "</span><span class='comment_text'>" . $post["comment"] . '</span></div></div>';
                     }
 
-                    $count --;
-
+                    $counter = $counter + 1 ;
                 }
             ?>
 
+    </div>
+
+    <div class="feed_more">
+        <input type="hidden" id="result_no" value="2">
+        <input type="button" id="load" value="Load More Results" name="load">
+    </div>
+
+    <div id="footer">
 
     </div>
+
 
 </div>
 

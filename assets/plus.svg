@@ -4,11 +4,12 @@
 	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#6DACD4;}
+	.st1{fill:#6DACD4;stroke:#6DACD4;stroke-width:5;stroke-miterlimit:10;}
 </style>
 <g>
-	<path class="st0" d="M50,2c26.5,0,48,21.5,48,48S76.5,98,50,98S2,76.5,2,50S23.5,2,50,2 M50,0C22.4,0,0,22.4,0,50s22.4,50,50,50
+	<path class="st0" d="M50,5c24.8,0,45,20.2,45,45S74.8,95,50,95S5,74.8,5,50S25.2,5,50,5 M50,0C22.4,0,0,22.4,0,50s22.4,50,50,50
 		s50-22.4,50-50S77.6,0,50,0L50,0z"/>
 </g>
-<rect x="49" y="25" class="st0" width="2" height="50"/>
-<rect x="49" y="25" transform="matrix(4.547480e-11 -1 1 4.547480e-11 -2.274192e-09 100)" class="st0" width="2" height="50"/>
+<rect x="49" y="25" class="st1" width="2" height="50"/>
+<rect x="49" y="25" transform="matrix(4.547480e-11 -1 1 4.547480e-11 -2.274192e-09 100)" class="st1" width="2" height="50"/>
 </svg>

@@ -135,6 +135,15 @@ p
             margin-right: 10px;
         }
 
+#footer
+{
+    height: 200px;
+    background-color: #2C2C2C;
+    text-align: center;
+    margin-top: 50px;
+
+}
+
 #post_zone
 {
     border-top: 1px solid #F0F0F0;
@@ -170,7 +179,7 @@ p
         .feed_username
         {
             display: inline-block;
-            width: 50%;
+            width: 45%;
             margin-top: 25px;
             margin-bottom:25px;
         }
@@ -185,7 +194,7 @@ p
         .feed_date
         {
             display: inline-block;
-            width: 50%;
+            width: 45%;
             text-align: right;
             margin-top: 25px;
             margin-bottom: 25px;
@@ -221,6 +230,23 @@ p
                 color: #2C2C2C;
                 font-weight: 400;
                 margin-left: 10px;
+            }
+
+        .feed_more
+        {
+            margin-top: 50px;
+        }
+
+            .feed_more a
+            {
+                display: block;
+                text-indent: -999px;
+                background-image: url(../assets/plus.svg);
+                background-repeat: no-repeat;
+                width: 50px;
+                height: 50px;
+                margin-left: auto;
+                margin-right: auto;
             }
 
 
@@ -418,5 +444,7 @@ button:hover
 
 #login
 {
-    display: none;
+
 }
+
+

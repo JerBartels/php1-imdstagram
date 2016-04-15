@@ -2,6 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34bb4e86-3ca2-4480-945a-371423a43fd6" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ajax/load-more.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/plus.svg" afterPath="$PROJECT_DIR$/assets/plus.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Post.class.php" afterPath="$PROJECT_DIR$/classes/Post.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/satchmo.php" afterPath="$PROJECT_DIR$/pages/satchmo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/script.js" afterPath="$PROJECT_DIR$/scripts/script.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/style.css" afterPath="$PROJECT_DIR$/styles/style.css" />
     </list>
     <ignored path="php1-satchmo.iws" />
@@ -40,8 +48,8 @@
       <file leaf-file-name="User.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/User.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-27.458334">
-              <caret line="104" column="9" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
+            <state vertical-scroll-proportion="-14.958333">
+              <caret line="84" column="51" selection-start-line="84" selection-start-column="51" selection-end-line="84" selection-end-column="51" />
               <folding>
                 <marker date="1460565160000" expanded="true" signature="1891:1935" placeholder="SELECT * FRO... user" />
                 <marker date="1460565160000" expanded="true" signature="2354:2394" placeholder="SELECT * FRO... user" />
@@ -66,8 +74,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.4583335">
-              <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+            <state vertical-scroll-proportion="-38.75">
+              <caret line="62" column="35" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -76,32 +84,41 @@
       <file leaf-file-name="satchmo.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/satchmo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.5">
-              <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+            <state vertical-scroll-proportion="-9.745098">
+              <caret line="112" column="10" selection-start-line="112" selection-start-column="10" selection-end-line="112" selection-end-column="10" />
               <folding>
-                <marker date="1460716068000" expanded="true" signature="3587:3760" placeholder="..." />
-                <marker date="1460716068000" expanded="true" signature="3717:3760" placeholder="..." />
-                <marker date="1460716068000" expanded="true" signature="3788:3954" placeholder="..." />
+                <marker date="1460732551000" expanded="true" signature="3611:4378" placeholder="..." />
+                <marker date="1460732551000" expanded="true" signature="3740:4378" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/profile.php">
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.0">
-              <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.2907916">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="load-more.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ajax/load-more.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.0">
+              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/styles/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9011532">
-              <caret line="420" column="18" selection-start-line="420" selection-start-column="18" selection-end-line="420" selection-end-column="18" />
+            <state vertical-scroll-proportion="-36.208332">
+              <caret line="196" column="21" selection-start-line="196" selection-start-column="21" selection-end-line="196" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -110,12 +127,16 @@
       <file leaf-file-name="Post.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/Post.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-34.958332">
-              <caret line="74" column="37" selection-start-line="74" selection-start-column="37" selection-end-line="74" selection-end-column="37" />
+            <state vertical-scroll-proportion="-34.333332">
+              <caret line="85" column="53" selection-start-line="85" selection-start-column="53" selection-end-line="85" selection-end-column="53" />
               <folding>
-                <marker date="1460706161000" expanded="true" signature="1412:1452" placeholder="SELECT * FRO... post" />
-                <marker date="1460706161000" expanded="true" signature="1735:1782" placeholder="SELECT photo... " />
-                <marker date="1460706161000" expanded="true" signature="2021:2113" placeholder="INSERT INTO post... " />
+                <marker date="1460732815000" expanded="true" signature="1412:1452" placeholder="SELECT * FRO... post" />
+                <marker date="1460732815000" expanded="true" signature="1754:1808" placeholder="SELECT photo... " />
+                <marker date="1460732815000" expanded="true" signature="1754:1817" placeholder="SELECT photo... " />
+                <marker date="1460732815000" expanded="true" signature="1754:1819" placeholder="SELECT photo... " />
+                <marker date="1460732815000" expanded="true" signature="1754:1820" placeholder="SELECT photo... " />
+                <marker date="1460732815000" expanded="true" signature="2063:2110" placeholder="SELECT photo... " />
+                <marker date="1460732815000" expanded="true" signature="2365:2457" placeholder="INSERT INTO post... " />
               </folding>
             </state>
           </provider>
@@ -150,13 +171,14 @@
         <option value="$PROJECT_DIR$/pages/ajax.php" />
         <option value="$PROJECT_DIR$/ajax/check_username.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/scripts/script.js" />
         <option value="$PROJECT_DIR$/classes/User.class.php" />
         <option value="$PROJECT_DIR$/pages/reglog.php" />
-        <option value="$PROJECT_DIR$/classes/Post.class.php" />
         <option value="$PROJECT_DIR$/pages/profile.php" />
-        <option value="$PROJECT_DIR$/pages/satchmo.php" />
         <option value="$PROJECT_DIR$/styles/style.css" />
+        <option value="$PROJECT_DIR$/ajax/load-more.php" />
+        <option value="$PROJECT_DIR$/pages/satchmo.php" />
+        <option value="$PROJECT_DIR$/classes/Post.class.php" />
+        <option value="$PROJECT_DIR$/scripts/script.js" />
       </list>
     </option>
   </component>
@@ -170,9 +192,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="643" />
-    <option name="y" value="23" />
-    <option name="width" value="1574" />
+    <option name="x" value="342" />
+    <option name="y" value="325" />
+    <option name="width" value="2022" />
     <option name="height" value="1335" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -304,6 +326,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php1-satchmo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php1-satchmo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="posts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php1-satchmo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php1-satchmo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ajax" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -367,13 +421,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="643" y="23" width="1574" height="1335" extended-state="1" />
-    <editor active="false" />
+    <frame x="342" y="325" width="2022" height="1335" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16772553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28041542" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984716" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08975377" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32931727" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -384,7 +439,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3998391" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32931727" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -424,14 +478,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/styles/reset.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/User.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -488,9 +534,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
           <folding>
-            <marker date="1460716068000" expanded="true" signature="3587:3760" placeholder="..." />
-            <marker date="1460716068000" expanded="true" signature="3717:3760" placeholder="..." />
-            <marker date="1460716068000" expanded="true" signature="3788:3954" placeholder="..." />
+            <marker date="1460732551000" expanded="true" signature="3611:4378" placeholder="..." />
+            <marker date="1460732551000" expanded="true" signature="3740:4378" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -574,9 +619,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
           <folding>
-            <marker date="1460716068000" expanded="true" signature="3587:3760" placeholder="..." />
-            <marker date="1460716068000" expanded="true" signature="3717:3760" placeholder="..." />
-            <marker date="1460716068000" expanded="true" signature="3788:3954" placeholder="..." />
+            <marker date="1460732551000" expanded="true" signature="3611:4378" placeholder="..." />
+            <marker date="1460732551000" expanded="true" signature="3740:4378" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -769,13 +813,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/Db.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24711697">
@@ -784,30 +821,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Post.class.php">
+    <entry file="file://$PROJECT_DIR$/pages/profile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-34.958332">
-          <caret line="74" column="37" selection-start-line="74" selection-start-column="37" selection-end-line="74" selection-end-column="37" />
-          <folding>
-            <marker date="1460706161000" expanded="true" signature="1412:1452" placeholder="SELECT * FRO... post" />
-            <marker date="1460706161000" expanded="true" signature="1735:1782" placeholder="SELECT photo... " />
-            <marker date="1460706161000" expanded="true" signature="2021:2113" placeholder="INSERT INTO post... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/reglog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.7916667">
-          <caret line="66" column="1" selection-start-line="66" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
+        <state vertical-scroll-proportion="-0.82866555">
+          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/User.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.458334">
-          <caret line="104" column="9" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
+        <state vertical-scroll-proportion="-14.958333">
+          <caret line="84" column="51" selection-start-line="84" selection-start-column="51" selection-end-line="84" selection-end-column="51" />
           <folding>
             <marker date="1460565160000" expanded="true" signature="1891:1935" placeholder="SELECT * FRO... user" />
             <marker date="1460565160000" expanded="true" signature="2354:2394" placeholder="SELECT * FRO... user" />
@@ -820,36 +845,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.4583335">
-          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        <state vertical-scroll-proportion="-38.75">
+          <caret line="62" column="35" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/profile.php">
+    <entry file="file://$PROJECT_DIR$/pages/reglog.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.0">
-          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        <state vertical-scroll-proportion="3.7916667">
+          <caret line="66" column="1" selection-start-line="66" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-36.208332">
+          <caret line="196" column="21" selection-start-line="196" selection-start-column="21" selection-end-line="196" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/satchmo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.5">
-          <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+        <state vertical-scroll-proportion="-9.745098">
+          <caret line="112" column="10" selection-start-line="112" selection-start-column="10" selection-end-line="112" selection-end-column="10" />
           <folding>
-            <marker date="1460716068000" expanded="true" signature="3587:3760" placeholder="..." />
-            <marker date="1460716068000" expanded="true" signature="3717:3760" placeholder="..." />
-            <marker date="1460716068000" expanded="true" signature="3788:3954" placeholder="..." />
+            <marker date="1460732551000" expanded="true" signature="3611:4378" placeholder="..." />
+            <marker date="1460732551000" expanded="true" signature="3740:4378" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/style.css">
+    <entry file="file://$PROJECT_DIR$/classes/Post.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9011532">
-          <caret line="420" column="18" selection-start-line="420" selection-start-column="18" selection-end-line="420" selection-end-column="18" />
+        <state vertical-scroll-proportion="-34.333332">
+          <caret line="85" column="53" selection-start-line="85" selection-start-column="53" selection-end-line="85" selection-end-column="53" />
+          <folding>
+            <marker date="1460732815000" expanded="true" signature="1412:1452" placeholder="SELECT * FRO... post" />
+            <marker date="1460732815000" expanded="true" signature="1754:1808" placeholder="SELECT photo... " />
+            <marker date="1460732815000" expanded="true" signature="1754:1817" placeholder="SELECT photo... " />
+            <marker date="1460732815000" expanded="true" signature="1754:1819" placeholder="SELECT photo... " />
+            <marker date="1460732815000" expanded="true" signature="1754:1820" placeholder="SELECT photo... " />
+            <marker date="1460732815000" expanded="true" signature="2063:2110" placeholder="SELECT photo... " />
+            <marker date="1460732815000" expanded="true" signature="2365:2457" placeholder="INSERT INTO post... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/load-more.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2907916">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
