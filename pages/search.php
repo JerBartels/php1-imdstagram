@@ -44,7 +44,7 @@ if(isset($_POST["submit_search"]))
 <div id="search">
     <div id="search_content">
         <form method="post" action="search.php" class ="form_nav">
-            <input type="text" value="search" name="input_search">
+            <input type="text" placeholder="search" name="input_search">
             <!-- Wordt display:none in css, daar zoeken via enter zal gebeuren -->
             <input type="submit" value="find" name="submit_search" id="submit_search">
         </form>
@@ -67,7 +67,7 @@ if(isset($_POST["submit_search"]))
                 {
                     {
                         print '<div class="results_results" style="background-image: url(../assets/posts/' . $result["photo"] . ')">';
-                        print '<form><input type="text" value="'. $result["photo"] . '"><input type="submit" id="submit_detail" name="submit_detail" value="detail"/></form></div>';
+                        print '<form method="post" action="detail.php"><input name="input_detail" class="input_detail" type="text" value="'. $result["photo"] . '"><input type="submit" class="submit_detail" name="submit_detail" value="detail"/></form></div>';
                     }
                 }
             ?>

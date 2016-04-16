@@ -91,7 +91,7 @@ class Post
     {
         $p_dDb = DB::getInstance();
 
-        $p_sStmt = $p_dDb->prepare("SELECT * FROM post WHERE comment LIKE '%{$p_sTerm}%' OR username LIKE '%{$p_sTerm}%' OR date LIKE '%{$p_sTerm}%' ");
+        $p_sStmt = $p_dDb->prepare("SELECT * FROM post WHERE photo LIKE '%{$p_sTerm}%' OR comment LIKE '%{$p_sTerm}%' OR username LIKE '%{$p_sTerm}%' OR date LIKE '%{$p_sTerm}%'");
         $p_sStmt->execute();
 
         $result = $p_sStmt->fetchAll(PDO::FETCH_ASSOC);

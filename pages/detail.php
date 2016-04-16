@@ -1,5 +1,16 @@
 <?php
 
+require_once("../classes/Post.class.php");
+
+$post = new Post();
+
+$result = $post->searchPosts($_POST["input_detail"]);
+
+$post->Photo = $result[0]["photo"];
+$post->Username = $result[0]["username"];
+$post->Date = $result[0]["date"];
+$post->Comment = $result[0]["comment"];
+
 ?>
 
 <!doctype html>
@@ -28,12 +39,14 @@
 <div class="container">
 
     <div id="detail_comment">
-        <div id="detail_photo">
-
-        </div>
-        <div id="detail_comment">
-
-
+        <div id="detail_comment_content">
+            <div id="detail_photo">
+                <?php print '<img src="../assets/posts/' . $post->Photo . '"alt="feed_pict_img" class="feed_pict_img">'; ?>
+            </div>
+            <div id="detail_user">
+                <?php print '<h1 class="detail_username_h1">' . $post->Username . '</h1>' ?>
+                <?php print '<p class="detail_comment_p">' .$post->Comment . '</p>' ?>
+            </div>
         </div>
     </div>
 

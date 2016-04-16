@@ -321,7 +321,6 @@ button:hover
 #summary
 {
     border-top: 1px solid #f0F0F0;
-
     margin-top: 25px;
     padding-top: 75px;
     padding-bottom: 50px;
@@ -343,8 +342,6 @@ button:hover
 #results
 {
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
     #results_content
@@ -365,6 +362,59 @@ button:hover
             background-repeat:no-repeat;
             background-size:cover;
         }
+
+        .results_results form
+        {
+
+        }
+
+        .input_detail
+        {
+            display: none;
+        }
+
+        .submit_detail
+        {
+        }
+
+    #detail_comment
+    {
+        border-top: 1px solid #f0F0F0;
+        margin-top: 25px;
+    }
+
+        #detail_comment_content
+        {
+            margin-top: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #detail_user
+        {
+            margin-top: 25px;
+        }
+
+            .detail_username_h1
+            {
+                font-weight: 800;
+                font-size: 1em;
+                color: #1A5A85;
+                width: 25%;
+                display: inline-block;
+                margin-left: 15px;
+            }
+
+            .detail_comment_p
+            {
+                font-weight: 300;
+                font-size: 1em;
+                color: #2C2C2C;
+                width: 50%;
+                display: inline-block;
+            }
+
 
 /*startpagina - login of registreer*/
 #div_content
