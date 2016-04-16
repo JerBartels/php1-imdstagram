@@ -69,7 +69,7 @@ class Post
     {
         $p_dDb = DB::getInstance();
 
-        $p_sStmt = $p_dDb->prepare("SELECT photo, comment, username, date FROM post LIMIT $p_iValue1,$p_iValue2");
+        $p_sStmt = $p_dDb->prepare("SELECT photo, comment, username, date FROM post ORDER BY id DESC LIMIT $p_iValue1, $p_iValue2");
         $p_sStmt->execute();
 
         $result = $p_sStmt->fetchAll(PDO::FETCH_ASSOC);

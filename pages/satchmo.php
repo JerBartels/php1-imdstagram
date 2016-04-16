@@ -5,7 +5,7 @@ include_once("../classes/User.class.php");
 include_once("../classes/Post.class.php");
 include_once("session.php");
 include_once("reglog.php");
-include_once("../ajax/load-more.php");
+//include_once("../ajax/load-more.php");
 
 
 //upload path
@@ -61,12 +61,6 @@ if(isset($_POST["btn_post"]))
         $feedback_post = $e->getMessage();
     }
 }
-
-//alle posts ophalen uit DB + Count op 20 zetten
-//na post posten laten, zodat de nieuwe foto direct getoond wordt
-$post1 = new Post();
-$posts = array_reverse($post1->getAllPosts());
-
 ?>
 
 <!doctype html>
@@ -116,11 +110,14 @@ $posts = array_reverse($post1->getAllPosts());
 
             <?php
 
-                $counter = 0;
+                //alle posts ophalen uit DB + Count op 20 zetten
+                //na post posten laten, zodat de nieuwe foto direct getoond wordt
+                $post = new Post();
+                $posts = $post->getPosts(0,5);
+                $count = 5;
 
                 foreach($posts as $post)
                 {
-                    if($counter < 4)
                     {
                         print '<div class="feed_feed"><div class="feed_username"><span>' . $post["username"] . '</span></div>';
                         print '<div class="feed_date"><span>' . $post["date"] . '</span></div>';
@@ -128,15 +125,24 @@ $posts = array_reverse($post1->getAllPosts());
                         print '<div class="feed_comment"><span class="comment_username">' . $post["username"] . "</span><span class='comment_text'>" . $post["comment"] . '</span></div></div>';
                     }
 
-                    $counter = $counter + 1 ;
+                    if($count <= 0)
+                    {
+                        break;
+                    }
+
+                    $count--;
                 }
             ?>
 
     </div>
 
     <div class="feed_more">
-        <input type="hidden" id="result_no" value="2">
-        <input type="button" id="load" value="Load More Results" name="load">
+        <div class="feed_more_content">
+            <form action="../ajax/load-more.php" method="post">
+                <input type="hidden" id="result_no" value="2">
+                <input type="submit" id="load" value="load more" name="load">
+            </form>
+        </div>
     </div>
 
     <div id="footer">

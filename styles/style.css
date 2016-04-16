@@ -249,6 +249,12 @@ p
                 margin-right: auto;
             }
 
+        .feed_more_content
+        {
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
 button
 {
@@ -402,6 +408,7 @@ button:hover
             color: white;
             font-weight: 800;
             border: 1px solid #4080A8;
+            font-variant: small-caps;
         }
 
         input[type=submit]:hover
@@ -409,6 +416,36 @@ button:hover
             background-color: #1A5A85;
             border: 1px solid #1A5A85;
         }
+        
+        #load
+        {
+            color: #2C2C2C;
+            background-color: #FFFFFF;
+            border: 1px solid #2C2C2C;
+            font-variant: small-caps;
+            width: 20%;
+        }
+
+            #load:hover
+            {
+                background-color: #2C2C2C;
+                border: 1px solid #F0F0F0;
+                color: #FFFFFF;
+            }
+
+                #load:disabled
+                {
+                    background-color: #ffffff;
+                    color: #F0F0F0;
+                    border: 1px solid #F0F0F0;
+                }
+
+                #load:disabled:hover
+                {
+                    background-color: #ffffff;
+                    color: #F0F0F0;
+                    border: 1px solid #F0F0F0;
+                }
 
     .form_error
     {
