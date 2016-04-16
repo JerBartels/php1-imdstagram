@@ -87,6 +87,17 @@ class Post
         return $result;
     }
 
+    public function searchPosts($p_sTerm)
+    {
+        $p_dDb = DB::getInstance();
+
+        $p_sStmt = $p_dDb->prepare("SELECT * FROM post WHERE comment LIKE '%{$p_sTerm}%' OR username LIKE '%{$p_sTerm}%' OR date LIKE '%{$p_sTerm}%' ");
+        $p_sStmt->execute();
+
+        $result = $p_sStmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     //methode om te bewaren
     public function Save()
     {

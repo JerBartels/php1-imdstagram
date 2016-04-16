@@ -5,6 +5,7 @@ include_once("../classes/User.class.php");
 include_once("../classes/Post.class.php");
 include_once("session.php");
 include_once("reglog.php");
+//include_once("search.php");
 //include_once("../ajax/load-more.php");
 
 
@@ -79,12 +80,22 @@ if(isset($_POST["btn_post"]))
 
 <nav id="nav">
     <div id="nav_content">
-        <a href="index.php" class="logo_app">logo</a>
+        <a href="../index.php" class="logo_app">logo</a>
         <a href="logout.php" class="logout_app">log out</a>
     </div>
 </nav>
 
 <div class="clearfix"></div>
+
+<div id="search">
+    <div id="search_content">
+        <form method="post" action="search.php" class ="form_nav">
+            <input type="text" value="search" name="input_search">
+            <!-- Wordt display:none in css, daar zoeken via enter zal gebeuren -->
+            <input type="submit" value="find" name="submit_search" id="submit_search">
+        </form>
+    </div>
+</div>
 
 <div class="container">
     <div id="profile">

@@ -9,4 +9,5 @@ function alreadyLoggedIn()
     {
         header("location: pages/satchmo.php");
     }
+
 }

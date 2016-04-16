@@ -5,6 +5,8 @@ include_once("../classes/User.class.php");
 include_once("session.php");
 include_once("reglog.php");
 
+alreadyLoggedIn();
+
 //upload path
 define('GW_UPLOADPATH', '../assets/');
 
