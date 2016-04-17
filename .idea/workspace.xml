@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="34bb4e86-3ca2-4480-945a-371423a43fd6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Comment.class.php" afterPath="$PROJECT_DIR$/classes/Comment.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Post.class.php" afterPath="$PROJECT_DIR$/classes/Post.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/satchmo.php" afterPath="$PROJECT_DIR$/pages/satchmo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/script.js" afterPath="$PROJECT_DIR$/scripts/script.js" />
-    </list>
+    <list default="true" id="34bb4e86-3ca2-4480-945a-371423a43fd6" name="Default" comment="" />
     <ignored path="php1-satchmo.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -138,8 +133,8 @@
       <file leaf-file-name="satchmo.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/satchmo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48449287">
-              <caret line="136" column="152" selection-start-line="136" selection-start-column="152" selection-end-line="136" selection-end-column="152" />
+            <state vertical-scroll-proportion="0.17015927">
+              <caret line="112" column="47" selection-start-line="112" selection-start-column="47" selection-end-line="112" selection-end-column="47" />
               <folding>
                 <marker date="1460887525000" expanded="true" signature="5844:6135" placeholder="..." />
                 <marker date="1460887525000" expanded="true" signature="5884:6124" placeholder="..." />
@@ -933,8 +928,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/satchmo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48449287">
-          <caret line="136" column="152" selection-start-line="136" selection-start-column="152" selection-end-line="136" selection-end-column="152" />
+        <state vertical-scroll-proportion="0.17015927">
+          <caret line="112" column="47" selection-start-line="112" selection-start-column="47" selection-end-line="112" selection-end-column="47" />
           <folding>
             <marker date="1460887525000" expanded="true" signature="5844:6135" placeholder="..." />
             <marker date="1460887525000" expanded="true" signature="5884:6124" placeholder="..." />
