@@ -1,5 +1,28 @@
 $(document).ready(function() {
 
+
+    //------------------- AJAX - POST COMMENT -------------------//
+
+    $(".submit_comment_form").on("click", function(){
+
+        //de gelikte button
+        var btn_clicked = $(this).attr('id');
+
+        //id van btn, zodat we de juiste input kunnen selecteren
+        var id = btn_clicked.substr(btn_clicked.length-1);
+
+        //het betrokken inputfield
+        var input_clicked = $("#input_comment_form" + id);
+        var comment_on = $("")
+
+        //de commentaar in het inputfield
+        var comment = input_clicked.val();
+
+
+        return(false);
+
+    });
+
     //------------------- AJAX - LOAD MORE -------------------//
 
     var number_of_clicks = 0;

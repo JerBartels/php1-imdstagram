@@ -51,6 +51,19 @@ class Post
         }
     }
 
+    public function getPostIdByPhoto($p_sPhoto)
+    {
+        $p_dDb = Db::getInstance();
+
+        $p_sStmt = $p_dDb->prepare("SELECT id FROM post WHERE photo = :val");
+
+        $p_sStmt->bindParam(':val', $p_sPhoto);
+        $p_sStmt->execute();
+
+        $result = $p_sStmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     //posts per user opvragen
     public function getPostByUsername($p_sUSername)
     {
@@ -69,7 +82,7 @@ class Post
     {
         $p_dDb = DB::getInstance();
 
-        $p_sStmt = $p_dDb->prepare("SELECT photo, comment, username, date FROM post ORDER BY id DESC LIMIT $p_iValue1, $p_iValue2");
+        $p_sStmt = $p_dDb->prepare("SELECT photo, comment, username, date FROM post ORDER BY id DESC LIMIT $p_iValue1,$p_iValue2");
         $p_sStmt->execute();
 
         $result = $p_sStmt->fetchAll(PDO::FETCH_ASSOC);

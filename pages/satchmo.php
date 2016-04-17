@@ -133,7 +133,13 @@ if(isset($_POST["btn_post"]))
                         print '<div class="feed_feed"><div class="feed_username"><span>' . $post["username"] . '</span></div>';
                         print '<div class="feed_date"><span>' . $post["date"] . '</span></div>';
                         print '<img src="../assets/posts/' . $post["photo"] . '"alt="feed_pict_img" class="feed_pict_img">';
-                        print '<div class="feed_comment"><span class="comment_username">' . $post["username"] . "</span><span class='comment_text'>" . $post["comment"] . '</span></div></div>';
+                        print '<div class="feed_comment"><span class="comment_username">' . $post["username"] . "</span><span class='comment_text'>" . $post["comment"] . '</span></div>';
+                        print '<div class="feed_comment_form"><form method="post" action="../ajax/post-comment.php" autocomplete="off"><input type="text" name="input_comment_form" class="input_comment_form" id="input_comment_form' . $count . '">';
+                        //id 'count' meegeven aan submit button, zodat we weten op welke geklikt werd
+                        print '<input type="text" name="comment_on" "class="comment_on" value="' . $post["photo"] . '">';
+                        print '<input type="text" name="comment_by" "class="comment_by" value="' . $post["username"] . '">';
+                        print '<input type="submit" value="comment" name="submit_comment_form "class="submit_comment_form" id="submit_comment_form' . $count . '"></form></div>';
+                        print '</div>';
                     }
 
                     if($count <= 0)
