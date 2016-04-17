@@ -89,7 +89,7 @@ if(isset($_POST["btn_post"]))
 
 <div id="search">
     <div id="search_content">
-        <form method="post" action="search.php" class ="form_nav">
+        <form method="post" action="search.php" class ="form_nav" autocomplete="off">
             <input type="text" placeholder="search" name="input_search">
             <!-- Wordt display:none in css, daar zoeken via enter zal gebeuren -->
             <input type="submit" value="find" name="submit_search" id="submit_search">
@@ -107,7 +107,7 @@ if(isset($_POST["btn_post"]))
     </div>
     <div id="post_zone">
         <div id="post_zone_content">
-            <form enctype="multipart/form-data" method="post" action="">
+            <form enctype="multipart/form-data" method="post" action="" autocomplete="off">
                 <!--<input type="hidden" name="MAX_FILE_SIZE" value="32768"/>-->
                 <input type="file" class="post_post" name="post_post" id="post_post"><br>
                 <input type="input" class="post_post" name="input_post" id="input_post"><br>

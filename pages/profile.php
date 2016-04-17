@@ -5,8 +5,6 @@ include_once("../classes/User.class.php");
 include_once("session.php");
 include_once("reglog.php");
 
-alreadyLoggedIn();
-
 //upload path
 define('GW_UPLOADPATH', '../assets/');
 
@@ -30,8 +28,9 @@ if(isset($_POST["save"]))
     $old_email = $user->Email;
     $old_lastname = $user->Lastname;
     $old_firstname = $user->Firstname;
+    $old_pass = $user->Pass;
 
-    if(($old_username === $user->Username) && ($old_email === $user->Email) && ($old_lastname === $user->Lastname) && ($old_firstname === $user->Firstname))
+    if(($old_username === $_POST["username"]) && ($old_email === $_POST["email"]) && ($old_lastname === $_POST["lastname"]) && ($old_firstname === $_POST["firstname"]) && ($old_pass === $_POST["pass"]))
     {
         $feedback = "nothing has changed dweepo";
     }
@@ -45,8 +44,11 @@ if(isset($_POST["save"]))
                 $user->Lastname = $_POST["lastname"];
                 $user->Email = $_POST["email"];
 
-                $pass = password_hash($_POST["pass"], PASSWORD_DEFAULT);
-                $user->Pass = $pass;
+                if($old_pass !==  $_POST["pass"])
+                {
+                    $pass = password_hash($_POST["pass"], PASSWORD_DEFAULT);
+                    $user->Pass = $pass;
+                }
 
                 if (!($old_username === $user->Username) && !($old_email === $user->Email)) {
                     //controleren of er al een user bestaat met dit emailadres
@@ -140,11 +142,12 @@ if(isset($_POST["btn_profile_pic"]))
 
         <div class="edit_profile_content">
             <h2>Change profile</h2>
-            <p class="change_feedback"><?php echo $feedback ?></p>
+            <p class="change_feedback" id="change_feedback"><?php echo $feedback ?></p>
 
-            <form action="" method="post">
-                <label class=label_change_profile for="username">Username</label><input type="text" name="username" id="username" class="input_change_profile" value="<?php print $user->Username; ?>"><br>
+            <form action="" method="post" autocomplete="off">
+                <label class=label_change_profile for="input_change_username">Username</label><input type="text" name="username" id="input_change_username" class="input_change_profile" value="<?php print $user->Username; ?>"><br>
                 <?php if(isset($_POST['username']) && !validateUsername($_POST['username'])){echo $err_username;} ?>
+                <p id="username_ajax_feedback"></p>
                 <label class=label_change_profile for="firstname">Firstname</label><input type="text" name="firstname" id="firstname" class="input_change_profile" value="<?php print $user->Firstname; ?>"><br>
                 <?php if(isset($_POST['firstname']) && !validateFirstname($_POST['firstname'])){echo $err_firstname;} ?>
                 <label class=label_change_profile for="lastname">Lastname</label><input type="text" name="lastname" id="lastname" class="input_change_profile" value="<?php print $user->Lastname; ?>"><br>

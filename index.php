@@ -39,7 +39,7 @@ alreadyLoggedIn();
 
                     <div id="register">
                         <!-- verwijzing naar register.php -->
-                        <form action="" method="post">
+                        <form action="" method="post" autocomplete="off">
                             <input type="text" name="username" id="username" placeholder="username" value="<?php if(isset($_POST['username'])){ print $_POST['username']; } ?>">
                             <?php if(isset($_POST['username']) && !validateUsername($_POST['username'])){echo $err_username;} ?>
                             <input type="text" name="firstname" id="firstname" placeholder="firstname" value="<?php if(isset($_POST['firstname'])){ print $_POST['firstname']; } ?>">
@@ -58,7 +58,7 @@ alreadyLoggedIn();
                     </div>
 
                     <div id="login">
-                        <form action="" method="post">
+                        <form action="" method="post" autocomplete="off">
                             <input type="text" name="l_username" id="l_username" placeholder="username" value="<?php if(isset($_POST['l_username'])){ print $_POST['l_username']; } ?>">
                             <?php if(isset($_POST['l_username']) && !validateUsername($_POST['l_username'])){echo $err_username;} ?>
                             <input type="password" name="l_pass" id="l_pass" placeholder="******" value="<?php if(isset($_POST['l_pass'])){ print $_POST['l_pass']; } ?>">

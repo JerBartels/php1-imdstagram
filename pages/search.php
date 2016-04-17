@@ -43,7 +43,7 @@ if(isset($_POST["submit_search"]))
 
 <div id="search">
     <div id="search_content">
-        <form method="post" action="search.php" class ="form_nav">
+        <form method="post" action="search.php" class ="form_nav" autocomplete="off">
             <input type="text" placeholder="search" name="input_search">
             <!-- Wordt display:none in css, daar zoeken via enter zal gebeuren -->
             <input type="submit" value="find" name="submit_search" id="submit_search">
