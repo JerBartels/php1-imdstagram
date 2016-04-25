@@ -63,7 +63,7 @@ class Post
         return $result;
     }
 
-    public function getAllPosts()
+    public function getAllComments()
     {
         $p_dDb = DB::getInstance();
 

@@ -1,27 +1,32 @@
 $(document).ready(function() {
 
 
-    //------------------- AJAX - POST COMMENT -------------------//
+    //------------------- AJAX - LIKE COMMENT -------------------//
 
-    $(".submit_comment_form").on("click", function(){
+    $(".btn_feed_like").on("click", function(){
 
-        //de gelikte button
-        var btn_clicked = $(this).attr('id');
+        var current_id = $(this).attr("id").slice(4);
+        alert(current_id);
 
-        //id van btn, zodat we de juiste input kunnen selecteren
-        var id = btn_clicked.substr(btn_clicked.length-1);
+       $.ajax({
+            type: 'POST',
+            url: '../ajax/like-post.php',
+            data: {id: current_id},
+            dataType: "JSON",
 
-        //het betrokken inputfield
-        var input_clicked = $("#input_comment_form" + id);
-        var comment_on = $("")
+            success: function(data){
+                console.log(data);
 
-        //de commentaar in het inputfield
-        var comment = input_clicked.val();
+                var likes = data["likes"] + 1;
 
+                $("#spn_" + current_id).html(likes);
 
-        return(false);
+            }
+        });
 
+        return false;
     });
+
 
     //------------------- AJAX - LOAD MORE -------------------//
 

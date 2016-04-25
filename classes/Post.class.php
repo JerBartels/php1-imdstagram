@@ -9,6 +9,7 @@ class Post
     private $m_sPhoto;
     private $m_sComment;
     private $m_sUsername;
+    private $m_iLikes;
     private $m_sDate;
 
     //set methode
@@ -28,6 +29,9 @@ class Post
             case 'Date':
                 $this->m_sDate = $p_vValue;
                 break;
+            case 'Likes':
+                $this->m_iLikes = $p_vValue;
+                break;
             default:
                 echo "Error: " . $p_sProperty . " does not exist.";
         }
@@ -46,21 +50,25 @@ class Post
                 return $this->m_sUsername;
             case 'Date':
                 return $this->m_sDate;
+            case 'Likes':
+                return $this->m_iLikes;
             default:
                 echo "Error: " . $p_sProperty . " does not exist.";
         }
     }
 
-    public function getPostIdByPhoto($p_sPhoto)
+
+    public function getPostByPhoto($p_sPhoto)
     {
         $p_dDb = Db::getInstance();
 
-        $p_sStmt = $p_dDb->prepare("SELECT id FROM post WHERE photo = :val");
+        $p_sStmt = $p_dDb->prepare("SELECT * FROM post WHERE photo = :val");
 
         $p_sStmt->bindParam(':val', $p_sPhoto);
         $p_sStmt->execute();
 
         $result = $p_sStmt->fetch(PDO::FETCH_ASSOC);
+
         return $result;
     }
 
@@ -82,7 +90,7 @@ class Post
     {
         $p_dDb = DB::getInstance();
 
-        $p_sStmt = $p_dDb->prepare("SELECT photo, comment, username, date FROM post ORDER BY id DESC LIMIT $p_iValue1,$p_iValue2");
+        $p_sStmt = $p_dDb->prepare("SELECT * FROM post ORDER BY id DESC LIMIT $p_iValue1,$p_iValue2");
         $p_sStmt->execute();
 
         $result = $p_sStmt->fetchAll(PDO::FETCH_ASSOC);
@@ -93,7 +101,7 @@ class Post
     {
         $p_dDb = DB::getInstance();
 
-        $p_sStmt = $p_dDb->prepare("SELECT photo, comment, username, date FROM post");
+        $p_sStmt = $p_dDb->prepare("SELECT * FROM post");
         $p_sStmt->execute();
 
         $result = $p_sStmt->fetchAll(PDO::FETCH_ASSOC);
@@ -111,16 +119,33 @@ class Post
         return $result;
     }
 
+    public function saveLikes($p_iNumber, $p_pPhoto)
+    {
+        //nieuw object van klasse DB aanmaken
+        $p_dDb = Db::getInstance();
+
+        //updatequery
+        $p_sStmt = $p_dDb->prepare("UPDATE post SET likes = :likes WHERE photo = :photo");
+
+        $p_sStmt->bindParam(':likes', $p_iNumber);
+        $p_sStmt->bindParam(':photo', $p_pPhoto);
+
+        $p_sStmt->execute();
+
+        $p_dDb = null;
+    }
+
     //methode om te bewaren
     public function Save()
     {
         $p_dDb = Db::getInstance();
 
-        $p_sStmt = $p_dDb->prepare("INSERT INTO post (photo, comment, username, date) VALUES(:photo, :comment, :username, :date)");
+        $p_sStmt = $p_dDb->prepare("INSERT INTO post (photo, comment, username, likes, date) VALUES(:photo, :comment, :username, :likes, :date)");
 
         $p_sStmt->bindParam(':photo', $this->Photo);
         $p_sStmt->bindParam(':comment', $this->Comment);
         $p_sStmt->bindParam(':username', $this->Username);
+        $p_sStmt->bindParam(':likes', $this->Likes);
         $p_sStmt->bindParam(':date', $this->Date);
 
         $p_sStmt->execute();
