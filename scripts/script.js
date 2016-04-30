@@ -3,28 +3,29 @@ $(document).ready(function() {
 
     //------------------- AJAX - LIKE COMMENT -------------------//
 
-    $(".btn_feed_like").on("click", function(){
+    $(document).on("click", ".btn_feed_like", function(){
 
-        var current_id = $(this).attr("id").slice(4);
-        alert(current_id);
+        var $current_post = $(this);
+        var current_id = $current_post.attr("id").slice(4);
 
-       $.ajax({
+        $.ajax({
             type: 'POST',
-            url: '../ajax/like-post.php',
-            data: {id: current_id},
+            url: "../ajax/like-post.php",
+            data: {current_id: current_id},
             dataType: "JSON",
 
-            success: function(data){
-                console.log(data);
-
-                var likes = data["likes"] + 1;
-
-                $("#spn_" + current_id).html(likes);
-
+            success: function (data) {
+                var id = data["photo"];
+                var $span = $($current_post).next("span");
+                $span.text(data["likes"]);
+            },
+           error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
             }
         });
 
-        return false;
+        return (false);
     });
 
 
@@ -60,7 +61,13 @@ $(document).ready(function() {
                     var new_post = "<div class='feed_feed'><div class='feed_username'><span>" + data[i]["username"] + "</span></div>";
                     new_post += '<div class="feed_date"><span>' + data[i]["date"] + '</span></div>';
                     new_post += '<img src="../assets/posts/' + data[i]["photo"] + '" alt="feed_pict_img" class="feed_pict_img">';
-                    new_post += '<div class="feed_comment"><span class="comment_username">' + data[i]["username"] + "</span><span class='comment_text'>" + data[i]["comment"] + '</span></div></div>';
+                    new_post += '<div class="feed_comment"><span class="comment_username">' + data[i]["username"] + "</span><span class='comment_text'>" + data[i]["comment"] + '</span></div>';
+
+                    new_post += '<div class="feed_likes_form">';
+                    new_post += '<span class="btn_feed_like" id="btn_' + data[i]["photo"] + '">like</span>';
+                    new_post += '<br ><span class="number_feed_like" id="spn_' + data[i]["photo"] +  '">' + data[i]["likes"] + ' likes</span>';
+
+                    new_post += '</div>';
                     $(".feed_feed").last().after(new_post);
 
                     console.log(number_of_clicks);
@@ -116,7 +123,6 @@ $(document).ready(function() {
             function(result){
                 if(result ==1){
                     $username_ajax_feedback.css("color", "#61AC7E").html("stupid name, but available!");
-
                     $username_ajax_feedback.show();
                 }
                 else
@@ -126,5 +132,6 @@ $(document).ready(function() {
                 }
             })
     }
+
 });
 

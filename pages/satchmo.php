@@ -3,10 +3,10 @@
 include_once("../classes/Db.class.php");
 include_once("../classes/User.class.php");
 include_once("../classes/Post.class.php");
+include_once("../classes/Likes.class.php");
+
 include_once("session.php");
 include_once("reglog.php");
-//include_once("search.php");
-//include_once("../ajax/load-more.php");
 
 
 //upload path
@@ -132,6 +132,11 @@ if(isset($_POST["btn_post"]))
                 foreach($posts as $post)
                 {
                     {
+                        $like = new Likes();
+                        $like->Username = $post["username"];
+                        $like->Picture = $post["photo"];
+
+
                         print '<div class="feed_feed"><div class="feed_username"><span>' . $post["username"] . '</span></div>';
                         print '<div class="feed_date"><span>' . $post["date"] . '</span></div>';
                         print '<img src="../assets/posts/' . $post["photo"] . '"alt="feed_pict_img" class="feed_pict_img">';
@@ -139,8 +144,8 @@ if(isset($_POST["btn_post"]))
 
 
                         print '<div class="feed_likes_form">';
-                        print '<span class="btn_feed_like" id="btn_' . $post["photo"] . '">like</span>';
-                        print '<br ><span class="number_feed_like" id="spn_' . $post["photo"] .  '">' . $post["likes"] . ' likes</span>';
+                            print '<span class="btn_feed_like" id="btn_' . $post["photo"] . '">like</span>';
+                            print '<span class="number_feed_like" id="spn' . $post["photo"] .  '">' . $post["likes"] . '</span>';
                         print '</div>';
 
                         print '</div>';

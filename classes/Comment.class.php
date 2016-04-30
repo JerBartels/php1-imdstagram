@@ -4,7 +4,7 @@
 
 include_once("Db.class.php");
 
-class Post
+class Comment
 {
     private $m_sUsername;
     private $m_iPost;
