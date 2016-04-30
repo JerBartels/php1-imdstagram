@@ -4,6 +4,7 @@ include_once("../classes/Db.class.php");
 include_once("../classes/User.class.php");
 include_once("../classes/Post.class.php");
 include_once("../classes/Likes.class.php");
+include_once("../classes/Comment.class.php");
 
 include_once("session.php");
 include_once("reglog.php");
@@ -120,7 +121,6 @@ if(isset($_POST["btn_post"]))
     </div>
     <div id="feed">
 
-
             <?php
 
                 //alle posts ophalen uit DB + Count op 20 zetten
@@ -137,18 +137,72 @@ if(isset($_POST["btn_post"]))
                         $like->Picture = $post["photo"];
 
 
-                        print '<div class="feed_feed"><div class="feed_username"><span>' . $post["username"] . '</span></div>';
+                        ?>
+
+                        <div class="feed-feed">
+                            <div class="feed-id">
+                                <div class="feed-id-username"><span><?php echo $post["username"] ?></span></div>
+                                <div class="feed-id-date"><span><?php echo $post["date"] ?></span></div>
+                            </div>
+                            <div class="feed-image">
+                                <?php print '<img src="../assets/posts/' . $post["photo"] . '"alt="feed_pict_img" class="feed_pict_img">' ?>
+                            </div>
+
+                            <div class="feed-comment-list">
+                                <div class="feed-like-form">
+                                    <span class="number_feed_like"><?php echo $post["likes"] ?> likes</span>
+                                    <?php print '<span class="btn_feed_like" id="btn_' . $post["photo"] . '">like</span>' ?>
+                                </div>
+                                <?php print '<ul id="' . $post["id"] . '">' ?>
+                                    <li><span class="feed-comment-list-username"><?php echo $post["username"]?></span> <?php echo $post["comment"] ?></li>
+
+                                         <?php
+
+                                            $post_id = $post["id"];
+                                            $comment = new Comment();
+                                            $comments = $comment->getComments($post_id);
+
+                                            foreach($comments as $comment)
+                                            {
+                                                $user = new User();
+                                                $username = $user->getUserById($comment["user"]);
+
+                                                print '<li><span class="feed-comment-list-username">' . $username["username"] . '</span>' . $comment["comment"] . '</li>';
+                                            }
+
+                                        ?>
+
+                                </ul>
+                                <form action="" method="post">
+                                    <?php print '<input type="input" name="input_post_comment" class="input_post_comment" id="input_'. $post["id"] . '">' ; ?>
+                                    <?php print '<input type="submit" name="btn_post_comment" class="btn_post_comment" id="btn_' . $post["id"] . '">'; ?>
+                                </form>
+                            </div>
+                        </div>
+
+                        <?php
+
+
+/*                      print '<div class="feed_feed"><div class="feed_username"><span>' . $post["username"] . '</span></div>';
                         print '<div class="feed_date"><span>' . $post["date"] . '</span></div>';
                         print '<img src="../assets/posts/' . $post["photo"] . '"alt="feed_pict_img" class="feed_pict_img">';
                         print '<div class="feed_comment"><span class="comment_username">' . $post["username"] . "</span><span class='comment_text'>" . $post["comment"] . '</span></div>';
 
-
                         print '<div class="feed_likes_form">';
                             print '<span class="btn_feed_like" id="btn_' . $post["photo"] . '">like</span>';
-                            print '<span class="number_feed_like" id="spn' . $post["photo"] .  '">' . $post["likes"] . '</span>';
+                            print '<span class="number_feed_like">' . $post["likes"] . '</span>';
                         print '</div>';
 
+                        print '<div class ="feed_comment_feed" id="' . $post["id"] . '">';
+
                         print '</div>';
+
+                        print '<div class="feed_comment_form"><form method="post" autocomplete="off">';
+                            print '<input type="input" name="input_post_comment" class="input_post_comment" id="input_'. $post["id"] . '">';
+                            print '<input type="submit" name="btn_post_comment" class="btn_post_comment" id="btn_' . $post["id"] . '">';
+                        print '</form></div>';
+
+                        print '</div>';*/
                     }
 
                     if($count <= 0)

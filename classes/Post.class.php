@@ -72,6 +72,20 @@ class Post
         return $result;
     }
 
+    public function getPostById($p_iId)
+    {
+        $p_dDb = Db::getInstance();
+
+        $p_sStmt = $p_dDb->prepare("SELECT * FROM post WHERE id = :val");
+
+        $p_sStmt->bindParam(':val', $p_iId);
+        $p_sStmt->execute();
+
+        $result = $p_sStmt->fetch(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
     //posts per user opvragen
     public function getPostByUsername($p_sUSername)
     {

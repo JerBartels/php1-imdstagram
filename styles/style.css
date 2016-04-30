@@ -202,7 +202,7 @@ p
     width: 100%;
 }
 
-    .feed_feed
+    .feed-feed
     {
         border: 1px solid #F0F0F0;
         max-width: 600px;
@@ -211,25 +211,24 @@ p
         margin-top: 25px;
     }
 
-        .feed_username
+        .feed-id-username
         {
             display: inline-block;
-            width: 45%;
+            width: 50%;
             margin-top: 25px;
             margin-bottom:25px;
         }
 
-            .feed_username span
+            .feed-id-username span
             {
                 font-weight: 800;
                 color: #1A5A85;
-                padding-left: 15px;
             }
 
-        .feed_date
+        .feed-id-date
         {
             display: inline-block;
-            width: 45%;
+            width: 49%;
             text-align: right;
             margin-top: 25px;
             margin-bottom: 25px;
@@ -238,7 +237,6 @@ p
             .feed_date span
             {
                 color: lightgrey;
-                margin-right: 15px;
             }
 
         .feed_pict_img
@@ -246,25 +244,39 @@ p
             width: 100%;
         }
 
-        .feed_comment
+
+        .feed-comment-list
         {
             margin-top: 25px;
-            margin-left: 25px;
-            margin-bottom: 25px;
         }
 
-            .comment_username
+            .number_feed_like
+            {
+                margin-left: 15px;
+                font-weight: 800;
+            }
+
+            ul
+            {
+                margin-top: 15px;
+            }
+
+            .feed-comment-list-username
             {
                 font-weight: 800;
                 color: #1A5A85;
                 margin-left: 15px;
+                width: 25%;
             }
 
-            .comment_text
+        .feed-action
+        {
+
+        }
+
+            .btn_post_comment
             {
-                color: #2C2C2C;
-                font-weight: 400;
-                margin-left: 10px;
+                display: none;
             }
 
         .feed_more
@@ -374,11 +386,6 @@ button:hover
             background-size:cover;
         }
 
-        .results_results form
-        {
-
-        }
-
         .input_detail
         {
             display: none;
@@ -477,7 +484,7 @@ button:hover
 
     form
     {
-        margin-top: 50px;
+        /*margin-top: 50px;*/
     }
 
         input
@@ -620,5 +627,4 @@ button:hover
 {
 
 }
-
 

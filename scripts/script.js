@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 
-    //------------------- AJAX - LIKE COMMENT -------------------//
+    //------------------- AJAX - LIKE POST -------------------//
 
     $(document).on("click", ".btn_feed_like", function(){
 
@@ -15,9 +15,8 @@ $(document).ready(function() {
             dataType: "JSON",
 
             success: function (data) {
-                var id = data["photo"];
-                var $span = $($current_post).next("span");
-                $span.text(data["likes"]);
+                var $span = $($current_post).prev("span");
+                $span.text(data["likes"] + " likes");
             },
            error: function (xhr, ajaxOptions, thrownError) {
                 alert(xhr.status);
@@ -26,6 +25,40 @@ $(document).ready(function() {
         });
 
         return (false);
+    });
+
+
+    //------------------- AJAX - COMMENT -------------------//
+
+    $(document).on("click", ".btn_post_comment", function(){
+
+        var $current_comment = $(this);
+        var current_post_id = $current_comment.attr("id").slice(4);
+        var comment = $("#input_" + current_post_id).val();
+
+        $.ajax({
+            type: 'POST',
+            url: "../ajax/post-comment.php",
+            data: {current_post_id: current_post_id, comment: comment},
+            dataType: "JSON",
+
+            success: function(data){
+
+                console.log(data);
+
+                $("#input_" + current_post_id).val("");
+
+                var id = data["id"];
+                var comment = data["comment"];
+
+                var new_comment = '<li><span class="feed-comment-list-username">' + id + '</span>' + comment + '</li>';
+
+                $("#" + data["post"]).append(new_comment);
+
+            }
+        });
+
+        return(false);
     });
 
 
@@ -65,7 +98,7 @@ $(document).ready(function() {
 
                     new_post += '<div class="feed_likes_form">';
                     new_post += '<span class="btn_feed_like" id="btn_' + data[i]["photo"] + '">like</span>';
-                    new_post += '<br ><span class="number_feed_like" id="spn_' + data[i]["photo"] +  '">' + data[i]["likes"] + ' likes</span>';
+                    new_post += '<span class="number_feed_like">' + data[i]["likes"] + '</span>';
 
                     new_post += '</div>';
                     $(".feed_feed").last().after(new_post);

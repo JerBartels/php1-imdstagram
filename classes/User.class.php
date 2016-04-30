@@ -82,6 +82,19 @@ class User
     }
 
     //methode om user op te zoeken op unieke username
+    public function getUserById($p_iId)
+    {
+        $p_dDb = Db::getInstance();
+
+        $p_sStmt = $p_dDb->prepare("SELECT * FROM user WHERE id = :id");
+        $p_sStmt->bindParam(':id', $p_iId);
+        $p_sStmt->execute();
+
+        $result = $p_sStmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    //methode om user op te zoeken op unieke username
     public function getUserByUsername($p_sUsername)
     {
         $p_dDb = Db::getInstance();
