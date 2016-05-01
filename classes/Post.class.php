@@ -64,7 +64,6 @@ class Post
         }
     }
 
-
     public function getPostByPhoto($p_sPhoto)
     {
         $p_dDb = Db::getInstance();
@@ -185,6 +184,20 @@ class Post
         $p_sStmt->bindParam(':likes', $this->Likes);
         $p_sStmt->bindParam(':date', $this->Date);
         $p_sStmt->bindParam(':inapp', $this->Inapp);
+
+        $p_sStmt->execute();
+
+        $p_dDb = null;
+    }
+
+    //verwijder post uit db
+    public function Delete($p_iId)
+    {
+        $p_dDb = Db::getInstance();
+
+        $p_sStmt = $p_dDb->prepare("DELETE FROM post WHERE id = :id");
+
+        $p_sStmt->bindParam(':id', $p_iId);
 
         $p_sStmt->execute();
 

@@ -283,6 +283,16 @@ p
                 display: none;
             }
 
+
+            .feed-delete-button
+            {
+                background-color: #fff;
+                color: #1A5A85;
+                width: 60px;
+                margin-left: 15px;
+                margin-bottom: 15px;
+            }
+
         .feed_more
         {
             margin-top: 50px;

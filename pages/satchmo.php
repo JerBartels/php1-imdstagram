@@ -66,6 +66,21 @@ if(isset($_POST["btn_post"]))
     }
 }
 
+//post deleten
+if(isset($_POST["feed-delete-button"]))
+{
+    try
+    {
+        $postToDelete = $_POST["feed-delete-post"];
+        $post = new Post();
+        $post->Delete($postToDelete);
+    }
+    catch(Exception $e)
+    {
+        echo $e->getMessage();
+    }
+}
+
 ?>
 
 <!doctype html>
@@ -134,7 +149,6 @@ if(isset($_POST["btn_post"]))
                 {
                     if($post["inapp"] < 3)
                     {
-
                         {
                             $like = new Likes();
                             $like->Username = $post["username"];
@@ -143,23 +157,28 @@ if(isset($_POST["btn_post"]))
                             ?>
 
                             <div class="feed-feed">
+
                                 <div class="feed-id">
                                     <div class="feed-id-username"><span><?php echo $post["username"] ?></span></div>
                                     <div class="feed-id-date"><span><?php echo $post["date"] ?></span></div>
                                 </div>
+
                                 <div class="feed-image">
                                     <?php print '<img src="../assets/posts/' . $post["photo"] . '"alt="feed_pict_img" class="feed_pict_img">' ?>
                                 </div>
 
                                 <div class="feed-comment-list">
+
                                     <div class="feed-like-form">
                                         <span class="number_feed_like"><?php echo $post["likes"] ?> likes</span>
                                         <?php print '<span class="btn_feed_like" id="btn_' . $post["photo"] . '"> ** like ** </span>' ?>
                                     </div>
+
                                     <div class="feed_inap_form">
                                         <span class="number_feed_inapp"><?php echo $post["inapp"] ?> inapps</span>
                                         <?php print '<span class="btn_feed_inapp" id="btn_inapp_' . $post["photo"] . '"> ** inapp ** </span>' ?>
                                     </div>
+
                                     <?php print '<ul id="' . $post["id"] . '">' ?>
                                         <li><span class="feed-comment-list-username"><?php echo $post["username"]?></span> <?php echo $post["comment"] ?></li>
 
@@ -177,11 +196,26 @@ if(isset($_POST["btn_post"]))
                                             ?>
 
                                     </ul>
+
                                     <form action="" method="post" class="feed_comment_form">
                                         <?php print '<input type="input" placeholder="Add a comment..." name="input_post_comment" class="input_post_comment" id="input_'. $post["id"] . '">' ; ?>
                                         <?php print '<input type="submit" name="btn_post_comment" class="btn_post_comment" id="btn_' . $post["id"] . '">'; ?>
                                     </form>
+
                                 </div>
+
+                                <div class="feed-delete">
+                                    <?php
+                                        if($post["username"] == $_SESSION["username"])
+                                        {
+                                            print '<form class="feed-delete-form" action="" method="post">';
+                                                print '<input type="hidden" class="feed-delete-post" name="feed-delete-post" value="' . $post["id"] . '">';
+                                                print '<input class="feed-delete-button" name="feed-delete-button" type="submit" value="delete post">';
+                                            print '</form>';
+                                        }
+                                    ?>
+                                </div>
+
                             </div>
 
                             <?php
