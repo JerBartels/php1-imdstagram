@@ -1,5 +1,35 @@
 $(document).ready(function() {
 
+    //------------------- AJAX - INAPP POST -------------------//
+
+    $(document).on("click", ".btn_feed_inapp", function(){
+
+        var $current_post = $(this);
+        var current_id = $current_post.attr("id").slice(10);
+
+        $.ajax({
+            type: 'POST',
+            url: "../ajax/inapp-post.php",
+            data: {current_id: current_id},
+            dataType: "JSON",
+
+            success: function (data) {
+                var $span = $($current_post).prev("span");
+                $span.text(data["inapp"] + " inapps");
+
+                if(data["inapp"] > 2){
+                    $current_post.parents('.feed-feed').fadeOut();
+                }
+
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+        });
+
+        //return (false);
+    });
 
     //------------------- AJAX - LIKE POST -------------------//
 

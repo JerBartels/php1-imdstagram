@@ -250,7 +250,7 @@ p
             margin-top: 25px;
         }
 
-            .number_feed_like
+            .number_feed_like, .number_feed_inapp
             {
                 margin-left: 15px;
                 font-weight: 800;
@@ -269,9 +269,13 @@ p
                 width: 25%;
             }
 
-        .feed-action
+        .feed_comment_form
         {
-
+            display: inline-block;
+            width: 100%;
+            margin-left: -50px;
+            padding-top: 15px;
+            padding-bottom: 15px;
         }
 
             .btn_post_comment
