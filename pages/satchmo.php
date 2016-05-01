@@ -144,6 +144,7 @@ if(isset($_POST["feed-delete-button"]))
                 $post = new Post();
                 $posts = $post->getAllPosts();
                 $count = 5;
+                $actualTime = new DateTime();
 
                 foreach($posts as $post)
                 {
@@ -154,13 +155,27 @@ if(isset($_POST["feed-delete-button"]))
                             $like->Username = $post["username"];
                             $like->Picture = $post["photo"];
 
+                            $postTime = new DateTime($post["date"]);
+                            $sincePost = $postTime->diff($actualTime);
+                            $formattedTime;
+
+                            if($sincePost->d >= 1)
+                            {
+                                $formattedTime = $sincePost->d . ' dagen';
+                            }
+                            else
+                            {
+                                $formattedTime = $sincePost->h . ' uren, ' . $sincePost->i . ' min';
+                            }
+
+
                             ?>
 
                             <div class="feed-feed">
 
                                 <div class="feed-id">
                                     <div class="feed-id-username"><span><?php echo $post["username"] ?></span></div>
-                                    <div class="feed-id-date"><span><?php echo $post["date"] ?></span></div>
+                                    <div class="feed-id-date"><span><?php echo $formattedTime ?></span></div>
                                 </div>
 
                                 <div class="feed-image">
