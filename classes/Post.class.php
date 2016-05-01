@@ -11,6 +11,7 @@ class Post
     private $m_sUsername;
     private $m_iLikes;
     private $m_sDate;
+    private $m_iInapp;
 
     //set methode
     public function __set($p_sProperty, $p_vValue)
@@ -32,6 +33,9 @@ class Post
             case 'Likes':
                 $this->m_iLikes = $p_vValue;
                 break;
+            case 'Inapp':
+                $this->m_iInapp = $p_vValue;
+                break;
             default:
                 echo "Error: " . $p_sProperty . " does not exist.";
         }
@@ -52,6 +56,9 @@ class Post
                 return $this->m_sDate;
             case 'Likes':
                 return $this->m_iLikes;
+            case 'Inapp':
+                return $this->m_iInapp;
+                break;
             default:
                 echo "Error: " . $p_sProperty . " does not exist.";
         }
@@ -149,18 +156,35 @@ class Post
         $p_dDb = null;
     }
 
+    public function saveInapp($p_iNumber, $p_pPhoto)
+    {
+        //nieuw object van klasse DB aanmaken
+        $p_dDb = Db::getInstance();
+
+        //updatequery
+        $p_sStmt = $p_dDb->prepare("UPDATE post SET inapp = :inapp WHERE photo = :photo");
+
+        $p_sStmt->bindParam(':inapp', $p_iNumber);
+        $p_sStmt->bindParam(':photo', $p_pPhoto);
+
+        $p_sStmt->execute();
+
+        $p_dDb = null;
+    }
+
     //methode om te bewaren
     public function Save()
     {
         $p_dDb = Db::getInstance();
 
-        $p_sStmt = $p_dDb->prepare("INSERT INTO post (photo, comment, username, likes, date) VALUES(:photo, :comment, :username, :likes, :date)");
+        $p_sStmt = $p_dDb->prepare("INSERT INTO post (photo, comment, username, likes, date, inapp) VALUES(:photo, :comment, :username, :likes, :date, :inapp)");
 
         $p_sStmt->bindParam(':photo', $this->Photo);
         $p_sStmt->bindParam(':comment', $this->Comment);
         $p_sStmt->bindParam(':username', $this->Username);
         $p_sStmt->bindParam(':likes', $this->Likes);
         $p_sStmt->bindParam(':date', $this->Date);
+        $p_sStmt->bindParam(':inapp', $this->Inapp);
 
         $p_sStmt->execute();
 

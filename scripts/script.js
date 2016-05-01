@@ -48,13 +48,12 @@ $(document).ready(function() {
 
                 $("#input_" + current_post_id).val("");
 
-                var id = data["id"];
+                var username = data["username"];
                 var comment = data["comment"];
 
-                var new_comment = '<li><span class="feed-comment-list-username">' + id + '</span>' + comment + '</li>';
+                var new_comment = '<li><span class="feed-comment-list-username">' + username + '</span>' + comment + '</li>';
 
                 $("#" + data["post"]).append(new_comment);
-
             }
         });
 

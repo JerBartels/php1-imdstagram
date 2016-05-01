@@ -164,17 +164,14 @@ if(isset($_POST["btn_post"]))
 
                                             foreach($comments as $comment)
                                             {
-                                                $user = new User();
-                                                $username = $user->getUserById($comment["user"]);
-
-                                                print '<li><span class="feed-comment-list-username">' . $username["username"] . '</span>' . $comment["comment"] . '</li>';
+                                                print '<li><span class="feed-comment-list-username">' . $comment["username"] . '</span>' . $comment["comment"] . '</li>';
                                             }
 
                                         ?>
 
                                 </ul>
                                 <form action="" method="post">
-                                    <?php print '<input type="input" name="input_post_comment" class="input_post_comment" id="input_'. $post["id"] . '">' ; ?>
+                                    <?php print '<input type="input" placeholder="Add a comment..." name="input_post_comment" class="input_post_comment" id="input_'. $post["id"] . '">' ; ?>
                                     <?php print '<input type="submit" name="btn_post_comment" class="btn_post_comment" id="btn_' . $post["id"] . '">'; ?>
                                 </form>
                             </div>

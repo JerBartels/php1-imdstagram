@@ -6,7 +6,7 @@ include_once("Db.class.php");
 
 class Comment
 {
-    private $m_iUser;
+    private $m_sUsername;
     private $m_iPost;
     private $m_sComment;
     private $m_sDate;
@@ -16,8 +16,8 @@ class Comment
     {
         switch($p_sProperty)
         {
-            case 'User':
-                $this->m_iUser = $p_vValue;
+            case 'Username':
+                $this->m_sUsername = $p_vValue;
                 break;
             case 'Post':
                 $this->m_iPost = $p_vValue;
@@ -38,8 +38,8 @@ class Comment
     {
         switch($p_sProperty)
         {
-            case 'User':
-                return $this->m_iUser;
+            case 'Username':
+                return $this->m_sUsername;
             case 'Post':
                 return $this->m_iPost;
             case 'Comment':
@@ -75,13 +75,13 @@ class Comment
         return $result;
     }
 
-    public function getCommentByParam($p_iUser, $p_sDate)
+    public function getCommentByParam($p_sUsername, $p_sDate)
     {
         $p_dDb = Db::getInstance();
 
-        $p_sStmt = $p_dDb->prepare("SELECT * FROM comments WHERE user = :user AND date = :date");
+        $p_sStmt = $p_dDb->prepare("SELECT * FROM comments WHERE username = :username AND date = :date");
 
-        $p_sStmt->bindParam(':user', $p_iUser);
+        $p_sStmt->bindParam(':username', $p_sUsername);
         $p_sStmt->bindParam(':date', $p_sDate);
         $p_sStmt->execute();
 
@@ -95,9 +95,9 @@ class Comment
     {
         $p_dDb = Db::getInstance();
 
-        $p_sStmt = $p_dDb->prepare("INSERT INTO comments (user, post, comment, date) VALUES(:user, :post, :comment, :date)");
+        $p_sStmt = $p_dDb->prepare("INSERT INTO comments (username, post, comment, date) VALUES(:username, :post, :comment, :date)");
 
-        $p_sStmt->bindParam(':user', $this->User);
+        $p_sStmt->bindParam(':username', $this->Username);
         $p_sStmt->bindParam(':post', $this->Post);
         $p_sStmt->bindParam(':comment', $this->Comment);
         $p_sStmt->bindParam(':date', $this->Date);
