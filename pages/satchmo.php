@@ -5,6 +5,7 @@ include_once("../classes/User.class.php");
 include_once("../classes/Post.class.php");
 include_once("../classes/Likes.class.php");
 include_once("../classes/Comment.class.php");
+include_once("../classes/Follow.class.php");
 
 include_once("session.php");
 include_once("reglog.php");
@@ -145,121 +146,124 @@ if(isset($_POST["feed-delete-button"]))
                 $posts = $post->getAllPosts();
                 $actualTime = new DateTime();
 
+                $follow = new Follow();
+
                 foreach($posts as $post)
                 {
-                    if($post["inapp"] < 3)
+                    if($follow->AlreadyFan($user->Username, $post["username"]))
                     {
-                        {
-                            $like = new Likes();
-                            $like->Username = $post["username"];
-                            $like->Picture = $post["photo"];
-
-                            $postTime = new DateTime($post["date"]);
-                            $sincePost = $postTime->diff($actualTime);
-                            $formattedTime;
-
-                            if($sincePost->d >= 1)
+                        if ($post["inapp"] < 3) {
                             {
-                                $formattedTime = $sincePost->d . ' dagen';
-                            }
-                            else
-                            {
-                                $formattedTime = $sincePost->h . ' uren, ' . $sincePost->i . ' min';
-                            }
+                                $like = new Likes();
+                                $like->Username = $post["username"];
+                                $like->Picture = $post["photo"];
+
+                                $postTime = new DateTime($post["date"]);
+                                $sincePost = $postTime->diff($actualTime);
+                                $formattedTime;
+
+                                if ($sincePost->d >= 1) {
+                                    $formattedTime = $sincePost->d . ' dagen';
+                                } else {
+                                    $formattedTime = $sincePost->h . ' uren, ' . $sincePost->i . ' min';
+                                }
 
 
-                            ?>
+                                ?>
 
-                            <div class="feed-feed">
+                                <div class="feed-feed">
 
-                                <div class="feed-id">
-                                    <div class="feed-id-username"><span><a href="user.php?username=<?php echo $post["username"]?>"><?php echo $post["username"] ?></a></span></div>
-                                    <div class="feed-id-date"><span><?php echo $formattedTime ?></span></div>
-                                </div>
-
-                                <div class="feed-image">
-                                    <?php print '<img src="../assets/posts/' . $post["photo"] . '"alt="feed_pict_img" class="feed_pict_img">' ?>
-                                </div>
-
-                                <div class="feed-comment-list">
-
-                                    <div class="feed-like-form">
-                                        <span class="number_feed_like"><?php echo $post["likes"] ?> likes</span>
-                                        <?php print '<span class="btn_feed_like" id="btn_' . $post["photo"] . '"> ** like ** </span>' ?>
+                                    <div class="feed-id">
+                                        <div class="feed-id-username">
+                                            <span><a href="user.php?username=<?php echo $post["username"] ?>"><?php echo $post["username"] ?></a></span>
+                                        </div>
+                                        <div class="feed-id-date"><span><?php echo $formattedTime ?></span></div>
                                     </div>
 
-                                    <div class="feed_inap_form">
-                                        <span class="number_feed_inapp"><?php echo $post["inapp"] ?> inapps</span>
-                                        <?php print '<span class="btn_feed_inapp" id="btn_inapp_' . $post["photo"] . '"> ** inapp ** </span>' ?>
+                                    <div class="feed-image">
+                                        <?php print '<img src="../assets/posts/' . $post["photo"] . '"alt="feed_pict_img" class="feed_pict_img">' ?>
                                     </div>
 
-                                    <?php print '<ul id="' . $post["id"] . '">' ?>
-                                        <li><span class="feed-comment-list-username"><?php echo $post["username"]?></span> <?php echo $post["comment"] ?></li>
+                                    <div class="feed-comment-list">
 
-                                             <?php
+                                        <div class="feed-like-form">
+                                            <span class="number_feed_like"><?php echo $post["likes"] ?> likes</span>
+                                            <?php print '<span class="btn_feed_like" id="btn_' . $post["photo"] . '"> ** like ** </span>' ?>
+                                        </div>
 
-                                                $post_id = $post["id"];
-                                                $comment = new Comment();
-                                                $comments = $comment->getComments($post_id);
+                                        <div class="feed_inap_form">
+                                            <span class="number_feed_inapp"><?php echo $post["inapp"] ?> inapps</span>
+                                            <?php print '<span class="btn_feed_inapp" id="btn_inapp_' . $post["photo"] . '"> ** inapp ** </span>' ?>
+                                        </div>
 
-                                                foreach($comments as $comment)
-                                                {
-                                                    print '<li><span class="feed-comment-list-username">' . $comment["username"] . '</span>' . $comment["comment"] . '</li>';
-                                                }
+                                        <?php print '<ul id="' . $post["id"] . '">' ?>
+                                        <li>
+                                            <span class="feed-comment-list-username"><?php echo $post["username"] ?></span> <?php echo $post["comment"] ?>
+                                        </li>
 
-                                            ?>
+                                        <?php
 
-                                    </ul>
+                                        $post_id = $post["id"];
+                                        $comment = new Comment();
+                                        $comments = $comment->getComments($post_id);
 
-                                    <form action="" method="post" class="feed_comment_form">
-                                        <?php print '<input type="input" placeholder="Add a comment..." name="input_post_comment" class="input_post_comment" id="input_'. $post["id"] . '">' ; ?>
-                                        <?php print '<input type="submit" name="btn_post_comment" class="btn_post_comment" id="btn_' . $post["id"] . '">'; ?>
-                                    </form>
+                                        foreach ($comments as $comment) {
+                                            print '<li><span class="feed-comment-list-username">' . $comment["username"] . '</span>' . $comment["comment"] . '</li>';
+                                        }
 
-                                </div>
+                                        ?>
 
-                                <div class="feed-delete">
-                                    <?php
-                                        if($post["username"] == $_SESSION["username"])
-                                        {
+                                        </ul>
+
+                                        <form action="" method="post" class="feed_comment_form">
+                                            <?php print '<input type="input" placeholder="Add a comment..." name="input_post_comment" class="input_post_comment" id="input_' . $post["id"] . '">'; ?>
+                                            <?php print '<input type="submit" name="btn_post_comment" class="btn_post_comment" id="btn_' . $post["id"] . '">'; ?>
+                                        </form>
+
+                                    </div>
+
+                                    <div class="feed-delete">
+                                        <?php
+                                        if ($post["username"] == $_SESSION["username"]) {
                                             print '<form class="feed-delete-form" action="" method="post">';
-                                                print '<input type="hidden" class="feed-delete-post" name="feed-delete-post" value="' . $post["id"] . '">';
-                                                print '<input class="feed-delete-button" name="feed-delete-button" type="submit" value="delete post">';
+                                            print '<input type="hidden" class="feed-delete-post" name="feed-delete-post" value="' . $post["id"] . '">';
+                                            print '<input class="feed-delete-button" name="feed-delete-button" type="submit" value="delete post">';
                                             print '</form>';
                                         }
-                                    ?>
+                                        ?>
+                                    </div>
+
                                 </div>
 
-                            </div>
+                                <?php
 
-                            <?php
+                                /*                      print '<div class="feed_feed"><div class="feed_username"><span>' . $post["username"] . '</span></div>';
+                                                        print '<div class="feed_date"><span>' . $post["date"] . '</span></div>';
+                                                        print '<img src="../assets/posts/' . $post["photo"] . '"alt="feed_pict_img" class="feed_pict_img">';
+                                                        print '<div class="feed_comment"><span class="comment_username">' . $post["username"] . "</span><span class='comment_text'>" . $post["comment"] . '</span></div>';
 
-    /*                      print '<div class="feed_feed"><div class="feed_username"><span>' . $post["username"] . '</span></div>';
-                            print '<div class="feed_date"><span>' . $post["date"] . '</span></div>';
-                            print '<img src="../assets/posts/' . $post["photo"] . '"alt="feed_pict_img" class="feed_pict_img">';
-                            print '<div class="feed_comment"><span class="comment_username">' . $post["username"] . "</span><span class='comment_text'>" . $post["comment"] . '</span></div>';
+                                                        print '<div class="feed_likes_form">';
+                                                            print '<span class="btn_feed_like" id="btn_' . $post["photo"] . '">like</span>';
+                                                            print '<span class="number_feed_like">' . $post["likes"] . '</span>';
+                                                        print '</div>';
 
-                            print '<div class="feed_likes_form">';
-                                print '<span class="btn_feed_like" id="btn_' . $post["photo"] . '">like</span>';
-                                print '<span class="number_feed_like">' . $post["likes"] . '</span>';
-                            print '</div>';
+                                                        print '<div class ="feed_comment_feed" id="' . $post["id"] . '">';
 
-                            print '<div class ="feed_comment_feed" id="' . $post["id"] . '">';
+                                                        print '</div>';
 
-                            print '</div>';
+                                                        print '<div class="feed_comment_form"><form method="post" autocomplete="off">';
+                                                            print '<input type="input" name="input_post_comment" class="input_post_comment" id="input_'. $post["id"] . '">';
+                                                            print '<input type="submit" name="btn_post_comment" class="btn_post_comment" id="btn_' . $post["id"] . '">';
+                                                        print '</form></div>';
 
-                            print '<div class="feed_comment_form"><form method="post" autocomplete="off">';
-                                print '<input type="input" name="input_post_comment" class="input_post_comment" id="input_'. $post["id"] . '">';
-                                print '<input type="submit" name="btn_post_comment" class="btn_post_comment" id="btn_' . $post["id"] . '">';
-                            print '</form></div>';
+                                                        print '</div>';*/
+                            }
 
-                            print '</div>';*/
+                            /*if($count <= 0)
+                            {
+                                break;
+                            }*/
                         }
-
-                        /*if($count <= 0)
-                        {
-                            break;
-                        }*/
                     }
                 }
             ?>

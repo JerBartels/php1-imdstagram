@@ -2,6 +2,8 @@
 
 require_once("../classes/Post.class.php");
 require_once("../classes/User.class.php");
+require_once("../classes/Follow.class.php");
+require_once("../pages/reglog.php");
 
 if(isset($_GET["username"]))
 {
@@ -9,13 +11,44 @@ if(isset($_GET["username"]))
     {
         $user = new User();
         $selected_user = $user->getUserByUsername($_GET["username"]);
+        $active_user = $user->getUserByUsername($_SESSION["username"]);
 
         $post = new Post();
         $results = $post->getAllPosts();
+
+        $follow = new Follow();
     }
     catch(Exception $e)
     {
         echo $e;
+    }
+}
+
+if(isset($_POST["btn_love"]))
+{
+    try
+    {
+        $follow->Fan = $active_user["username"];
+        $follow->Target = $selected_user["username"];
+        $follow->Save();
+    }
+    catch(Exception $e)
+    {
+        echo $e->getMessage();
+    }
+}
+
+if(isset($_POST["btn_hate"]))
+{
+    try
+    {
+        $follow->Fan = $active_user["username"];
+        $follow->Target = $selected_user["username"];
+        $follow->DeleteFollow($follow->Fan, $follow->Target);
+    }
+    catch(Exception $e)
+    {
+        echo $e->getMessage();
     }
 }
 
@@ -50,6 +83,24 @@ if(isset($_GET["username"]))
         <div id="summary_content">
             <h1><?php echo $selected_user["username"] ?></h1>
             <img src="../assets/<?php echo $selected_user["profilepic"] ?>" alt="profile-pic" class="profile_pict">
+        </div>
+        <div>
+            <?php
+                if($follow->AlreadyFan($active_user["username"],$selected_user["username"])){
+            ?>
+                    <form action="" method="post">
+                        <input type="submit" value="hate" name="btn_hate">
+                    </form>
+            <?php
+                }
+                else {
+            ?>
+                    <form action="" method="post">
+                        <input type="submit" value="love" name="btn_love">
+                    </form>
+            <?php
+                }
+            ?>
         </div>
     </div>
 
