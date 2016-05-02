@@ -173,7 +173,7 @@ if(isset($_POST["feed-delete-button"]))
                             <div class="feed-feed">
 
                                 <div class="feed-id">
-                                    <div class="feed-id-username"><span><?php echo $post["username"] ?></span></div>
+                                    <div class="feed-id-username"><span><a href="user.php?username=<?php echo $post["username"]?>"><?php echo $post["username"] ?></a></span></div>
                                     <div class="feed-id-date"><span><?php echo $formattedTime ?></span></div>
                                 </div>
 

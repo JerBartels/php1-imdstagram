@@ -3,7 +3,6 @@
 require_once("../classes/Post.class.php");
 
 $post = new Post();
-
 $result = $post->searchPosts($_POST["input_detail"]);
 
 $post->Photo = $result[0]["photo"];

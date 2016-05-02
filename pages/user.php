@@ -1,20 +1,24 @@
 <?php
 
 require_once("../classes/Post.class.php");
+require_once("../classes/User.class.php");
 
-if(isset($_POST["submit_search"]))
+if(isset($_GET["username"]))
 {
     try
     {
+        $user = new User();
+        $selected_user = $user->getUserByUsername($_GET["username"]);
+
         $post = new Post();
-        $results = $post->searchPosts($_POST["input_search"]);
-        $number_of_results = count($results);
+        $results = $post->getAllPosts();
     }
     catch(Exception $e)
     {
         echo $e;
     }
 }
+
 ?>
 
 <!doctype html>
@@ -40,35 +44,26 @@ if(isset($_POST["submit_search"]))
 
 <div class="clearfix"></div>
 
-<div id="search">
-    <div id="search_content">
-        <form method="post" action="search.php" class ="form_nav" autocomplete="off">
-            <input type="text" placeholder="search" name="input_search">
-            <!-- Wordt display:none in css, daar zoeken via enter zal gebeuren -->
-            <input type="submit" value="find" name="submit_search" id="submit_search">
-        </form>
-    </div>
-</div>
-
-<div class="container_search">
+<div>
 
     <div id="summary">
         <div id="summary_content">
-            <h1>#<?php echo $_POST["input_search"] ?></h1>
-            <p><?php echo  $number_of_results ?> posts</p>
+            <h1><?php echo $selected_user["username"] ?></h1>
+            <img src="../assets/<?php echo $selected_user["profilepic"] ?>" alt="profile-pic" class="profile_pict">
         </div>
     </div>
 
     <div id="results">
         <div id="results_content">
             <?php
-                foreach($results as $result)
+            foreach($results as $result)
+            {
+                if($result["username"] == $selected_user["username"])
                 {
-                    {
-                        print '<div class="results_results" style="background-image: url(../assets/posts/' . $result["photo"] . ')">';
-                        print '<form method="post" action="detail.php"><input name="input_detail" class="input_detail" type="text" value="'. $result["photo"] . '"><input type="submit" class="submit_detail" name="submit_detail" value="detail"/></form></div>';
-                    }
+                    print '<div class="results_results" style="background-image: url(../assets/posts/' . $result["photo"] . ')">';
+                    print '</div>';
                 }
+            }
             ?>
         </div>
     </div>

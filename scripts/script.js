@@ -6,7 +6,7 @@ $(document).ready(function() {
     var number_of_clicks = 0;
 
     $("#load").on("click", function () {
-        
+
         number_of_clicks = number_of_clicks + 1;
         var start = number_of_clicks * 5;
         var stop = start + 5;
@@ -90,8 +90,6 @@ $(document).ready(function() {
             dataType: "JSON",
 
             success: function(data){
-
-                console.log(data);
 
                 $("#input_" + current_post_id).val("");
 
