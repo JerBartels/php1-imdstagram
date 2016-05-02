@@ -1,5 +1,22 @@
 $(document).ready(function() {
 
+    //------------------- AJAX - LOAD MORE -------------------//
+
+    $(".feed-feed").slice(5).hide();
+    var number_of_clicks = 0;
+
+    $("#load").on("click", function () {
+        
+        number_of_clicks = number_of_clicks + 1;
+        var start = number_of_clicks * 5;
+        var stop = start + 5;
+
+        $(".feed-feed").slice(start, stop).show();
+
+        //pagina niet opnieuw laden!
+        return (false);
+    });
+
     //------------------- AJAX - INAPP POST -------------------//
 
     $(document).on("click", ".btn_feed_inapp", function(){
@@ -88,57 +105,6 @@ $(document).ready(function() {
         });
 
         return(false);
-    });
-
-
-    //------------------- AJAX - LOAD MORE -------------------//
-
-    var number_of_clicks = 0;
-
-    $("#load").on("click", function () {
-        console.log("button clicked");
-
-        number_of_clicks = number_of_clicks + 1;
-        var start = number_of_clicks * 5;
-        var stop = start + 5;
-        var number_of_posts = 5;
-
-        $.ajax({
-            type: 'POST',
-            url: "../ajax/load-more.php",
-            data: {number_of_clicks: number_of_clicks},
-            dataType: "JSON",
-
-            success: function (data) {
-
-                console.log(data);
-                console.log(data.length);
-
-                if (data.length < 5) {
-                    number_of_posts = data.length;
-                    $('#load').attr('disabled', 'disabled');
-                }
-
-                for (i = 0; i < number_of_posts; i++) {
-                    var new_post = "<div class='feed_feed'><div class='feed_username'><span>" + data[i]["username"] + "</span></div>";
-                    new_post += '<div class="feed_date"><span>' + data[i]["date"] + '</span></div>';
-                    new_post += '<img src="../assets/posts/' + data[i]["photo"] + '" alt="feed_pict_img" class="feed_pict_img">';
-                    new_post += '<div class="feed_comment"><span class="comment_username">' + data[i]["username"] + "</span><span class='comment_text'>" + data[i]["comment"] + '</span></div>';
-
-                    new_post += '<div class="feed_likes_form">';
-                    new_post += '<span class="btn_feed_like" id="btn_' + data[i]["photo"] + '">like</span>';
-                    new_post += '<span class="number_feed_like">' + data[i]["likes"] + '</span>';
-
-                    new_post += '</div>';
-                    $(".feed_feed").last().after(new_post);
-
-                    console.log(number_of_clicks);
-                }
-            }
-        });
-
-        //pagina niet opnieuw laden!
-        return (false);
     });
 
 

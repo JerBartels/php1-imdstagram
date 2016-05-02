@@ -143,7 +143,6 @@ if(isset($_POST["feed-delete-button"]))
                 //na post posten laten, zodat de nieuwe foto direct getoond wordt
                 $post = new Post();
                 $posts = $post->getAllPosts();
-                $count = 5;
                 $actualTime = new DateTime();
 
                 foreach($posts as $post)
@@ -257,12 +256,10 @@ if(isset($_POST["feed-delete-button"]))
                             print '</div>';*/
                         }
 
-                        if($count <= 0)
+                        /*if($count <= 0)
                         {
                             break;
-                        }
-
-                        $count--;
+                        }*/
                     }
                 }
             ?>
