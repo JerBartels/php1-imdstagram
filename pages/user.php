@@ -117,14 +117,36 @@ if(isset($_POST["btn_hate"]))
     <div id="results">
         <div id="results_content">
             <?php
-            foreach($results as $result)
+
+            $follow = new Follow();
+
+            if($selected_user["private"])
             {
-                if($result["username"] == $selected_user["username"])
+                if($follow->AlreadyAcceptedFan($_SESSION["username"], $selected_user["username"]))
                 {
-                    print '<div class="results_results" style="background-image: url(../assets/posts/' . $result["photo"] . ')">';
-                    print '</div>';
+                    foreach($results as $result)
+                    {
+                        if($result["username"] == $selected_user["username"])
+                        {
+                            print '<div class="results_results" style="background-image: url(../assets/posts/' . $result["photo"] . ')">';
+                            print '</div>';
+                        }
+                    }
                 }
             }
+            else
+            {
+                foreach($results as $result)
+                {
+                    if($result["username"] == $selected_user["username"])
+                    {
+                        print '<div class="results_results" style="background-image: url(../assets/posts/' . $result["photo"] . ')">';
+                        print '</div>';
+                    }
+                }
+            }
+
+
             ?>
         </div>
     </div>
