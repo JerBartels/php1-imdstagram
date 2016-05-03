@@ -198,7 +198,7 @@ if(isset($_POST["feed-delete-button"]))
 
                                         <?php print '<ul id="' . $post["id"] . '">' ?>
                                         <li>
-                                            <span class="feed-comment-list-username"><?php echo $post["username"] ?></span> <?php echo $post["comment"] ?>
+                                            <span class="feed-comment-list-username"><a href="user.php?username=<?php echo $post["username"] ?>"><?php echo $post["username"] ?></a></span><?php echo $post["comment"] ?>
                                         </li>
 
                                         <?php
@@ -207,8 +207,9 @@ if(isset($_POST["feed-delete-button"]))
                                         $comment = new Comment();
                                         $comments = $comment->getComments($post_id);
 
-                                        foreach ($comments as $comment) {
-                                            print '<li><span class="feed-comment-list-username">' . $comment["username"] . '</span>' . $comment["comment"] . '</li>';
+                                        foreach ($comments as $comment)
+                                        {
+                                            print '<li><span class="feed-comment-list-username"><a href="user.php?' . $comment["username"] . '">' . $comment["username"] .  '</a></span>' . $comment["comment"] . '</li>';
                                         }
 
                                         ?>
@@ -263,7 +264,7 @@ if(isset($_POST["feed-delete-button"]))
                             {
                                 break;
                             }*/
-                        }
+                    }
                     }
                 }
             ?>

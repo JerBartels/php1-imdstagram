@@ -87,26 +87,6 @@ class User
         }
     }
 
-    public function IsPrivate($p_sUsername)
-    {
-        $p_dDb = Db::getInstance();
-
-        $p_sStmt = $p_dDb->prepare("SELECT * FROM user WHERE username = :username");
-        $p_sStmt->bindParam(':username', $p_sUsername);
-
-        $p_sStmt->execute();
-
-
-        if($p_sStmt->rowCount() > 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
     //methode om user op te zoeken op unieke username
     public function getUserById($p_iId)
     {

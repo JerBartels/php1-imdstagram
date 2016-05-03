@@ -89,14 +89,14 @@ if(isset($_POST["btn_hate"]))
                 if($follow->AlreadyFan($active_user["username"],$selected_user["username"])){
             ?>
                     <form action="" method="post">
-                        <input type="submit" value="hate" name="btn_hate">
+                        <input type="submit" value="break my heart" name="btn_hate">
                     </form>
             <?php
                 }
                 else {
             ?>
                     <form action="" method="post">
-                        <input type="submit" value="love" name="btn_love">
+                        <input type="submit" value="love me" name="btn_love">
                     </form>
             <?php
                 }

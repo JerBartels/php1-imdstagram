@@ -2,6 +2,7 @@
 
 include_once("../classes/Db.class.php");
 include_once("../classes/User.class.php");
+include_once("../classes/Follow.class.php");
 include_once("session.php");
 include_once("reglog.php");
 
@@ -20,6 +21,8 @@ $user->Email = $db_user["email"];
 $user->Pass = $db_user["pass"];
 $user->ProfilePic = $db_user["profilepic"];
 $user->Private = $db_user["private"];
+
+$follow = new Follow();
 
 //check of button geklikt wordt
 if(isset($_POST["save"]))
@@ -106,12 +109,18 @@ if(isset($_POST["change"]))
         {
             $user->Private = True;
             $user->SetProfilePrivate($user->Username, $user->Private);
+
+            $follow->UpdateAccepted($user->Username, false);
+
             $feedback_privacy = "your profile is now private.";
         }
         else
         {
             $user->Private = False;
             $user->SetProfilePrivate($user->Username, $user->Private);
+
+            $follow->UpdateAccepted($user->Username, true);
+
             $feedback_privacy = "your profile became public.";
         }
     }

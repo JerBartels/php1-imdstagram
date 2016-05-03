@@ -27,6 +27,7 @@ if(isset($_POST["signup"]))
             $user->Lastname = $_POST["lastname"];
             $user->Email = $_POST["email"];
             $user->ProfilePic = $default_profilepic;
+            $user->Private = false;
 
             $pass = password_hash($_POST["pass"], PASSWORD_DEFAULT);
             $user->Pass = $pass;

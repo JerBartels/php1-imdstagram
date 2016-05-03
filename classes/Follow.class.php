@@ -43,12 +43,11 @@ class Follow
         }
     }
 
-    //controleer of user foto geliked heeft
     public function AlreadyFan($p_sFan, $p_sTarget)
     {
         $p_dDb = Db::getInstance();
 
-        $p_sStmt = $p_dDb->prepare("SELECT * FROM follow WHERE fan = :fan AND target = :target");
+        $p_sStmt = $p_dDb->prepare("SELECT * FROM follow WHERE fan = :fan AND target = :target AND accepted = TRUE ");
         $p_sStmt->bindParam(':fan', $p_sFan);
         $p_sStmt->bindParam(':target', $p_sTarget);
 
@@ -64,13 +63,27 @@ class Follow
         }
     }
 
-    public function UpdateAccepted($p_sFan, $p_sTarget, $p_bAccepted)
+    public function AcceptFollow($p_sFan, $p_sTarget, $p_bAccepted)
     {
         $p_dDb = Db::getInstance();
 
         $p_sStmt = $p_dDb->prepare("UPDATE follow SET accepted = :accepted WHERE fan = :fan AND target = :target");
 
         $p_sStmt->bindParam(':fan', $p_sFan);
+        $p_sStmt->bindParam(':target', $p_sTarget);
+        $p_sStmt->bindParam(':accepted', $p_bAccepted);
+
+        $p_sStmt->execute();
+
+        $p_dDb = null;
+    }
+
+    public function UpdateAccepted($p_sTarget, $p_bAccepted)
+    {
+        $p_dDb = Db::getInstance();
+
+        $p_sStmt = $p_dDb->prepare("UPDATE follow SET accepted = :accepted WHERE target = :target");
+
         $p_sStmt->bindParam(':target', $p_sTarget);
         $p_sStmt->bindParam(':accepted', $p_bAccepted);
 
