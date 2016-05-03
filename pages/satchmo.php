@@ -150,7 +150,7 @@ if(isset($_POST["feed-delete-button"]))
 
                 foreach($posts as $post)
                 {
-                    if($follow->AlreadyFan($user->Username, $post["username"]))
+                    if($follow->AlreadyAcceptedFan($user->Username, $post["username"]))
                     {
                         if ($post["inapp"] < 3) {
                             {
@@ -209,7 +209,7 @@ if(isset($_POST["feed-delete-button"]))
 
                                         foreach ($comments as $comment)
                                         {
-                                            print '<li><span class="feed-comment-list-username"><a href="user.php?' . $comment["username"] . '">' . $comment["username"] .  '</a></span>' . $comment["comment"] . '</li>';
+                                            print '<li><span class="feed-comment-list-username"><a href="user.php?username=' . $comment["username"] . '">' . $comment["username"] .  '</a></span>' . $comment["comment"] . '</li>';
                                         }
 
                                         ?>

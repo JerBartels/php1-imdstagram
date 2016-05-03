@@ -208,6 +208,37 @@ if(isset($_POST["change"]))
 
         <div class="full_hr"></div>
 
+        <div class="edit_profile_content">
+            <h2>Accept love requests</h2>
+            <p class="change_feedback" id="change_feedback"><?php echo $feedback_love_requests ?></p>
+
+            <ul>
+                <?php
+
+                    $follows = $follow->getAllFollows($user->Username);
+
+                    foreach($follows as $follow)
+                    {
+                ?>
+
+                        <li><?php echo $follow["fan"] ?></li>
+                <?php
+                    }
+                ?>
+            </ul>
+
+            <form action="" method="post" autocomplete="off">
+                <label class=label_change_profile for="input_change_privacy">Profile type</label>
+                <select name="input_change_privacy" id="input_change_privacy">
+                    <option value="private"<?=$user->Private == True ? ' selected="selected"' : '';?>>Private</option>
+                    <option value="public"<?=$user->Private == False ? ' selected="selected"' : '';?>>Public</option>
+                </select>
+                <input type="submit" name="change" id="btn_privacy" class="button input_change_profile" value="send" />
+            </form>
+        </div>
+
+        <div class="full_hr"></div>
+
     </div>
 </div>
 

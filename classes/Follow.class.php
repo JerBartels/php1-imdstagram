@@ -47,6 +47,26 @@ class Follow
     {
         $p_dDb = Db::getInstance();
 
+        $p_sStmt = $p_dDb->prepare("SELECT * FROM follow WHERE fan = :fan AND target = :target");
+        $p_sStmt->bindParam(':fan', $p_sFan);
+        $p_sStmt->bindParam(':target', $p_sTarget);
+
+        $p_sStmt->execute();
+
+        if($p_sStmt->rowCount() > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public function AlreadyAcceptedFan($p_sFan, $p_sTarget)
+    {
+        $p_dDb = Db::getInstance();
+
         $p_sStmt = $p_dDb->prepare("SELECT * FROM follow WHERE fan = :fan AND target = :target AND accepted = TRUE ");
         $p_sStmt->bindParam(':fan', $p_sFan);
         $p_sStmt->bindParam(':target', $p_sTarget);
@@ -90,6 +110,19 @@ class Follow
         $p_sStmt->execute();
 
         $p_dDb = null;
+    }
+
+    public function getAllFollows($p_sTarget)
+    {
+        $p_dDb = DB::getInstance();
+
+        $p_sStmt = $p_dDb->prepare("SELECT * FROM follow WHERE target = :target AND accepted = FALSE ORDER BY id DESC");
+        $p_sStmt->bindParam(':target', $p_sTarget);
+
+        $p_sStmt->execute();
+
+        $result = $p_sStmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
     }
 
     public function Save()

@@ -30,6 +30,16 @@ if(isset($_POST["btn_love"]))
     {
         $follow->Fan = $active_user["username"];
         $follow->Target = $selected_user["username"];
+
+        if($selected_user["private"])
+        {
+            $follow->Accepted = false;
+        }
+        else
+        {
+            $follow->Accepted = true;
+        }
+
         $follow->Save();
     }
     catch(Exception $e)
