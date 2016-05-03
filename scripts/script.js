@@ -1,5 +1,66 @@
 $(document).ready(function() {
 
+    //------------------- HTML5 GEOLOCATION -------------------//
+
+    var watchID;
+    var geoLoc;
+
+    getLocation();
+
+    // Get the latitude & longitude;
+    function showLocation(position)
+    {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        getAddress(latitude, longitude);
+    }
+
+    // Handel any errors that my come
+    function errorHandler(err)
+    {
+        if(err.code == 1)
+        {
+            alert("error: access is denied!");
+        }
+        else if( err.code == 2) {
+            alert("error: position is unavailable!");
+        }
+    }
+
+    // Get the location of the current location settings
+    function getLocation()
+    {
+        if(navigator.geolocation)
+        {
+            geoLoc = navigator.geolocation;
+            watchID = geoLoc.watchPosition(showLocation, errorHandler);
+        }
+        else
+        {
+            alert("sorry, browser does not support geolocation!");
+        }
+    }
+
+    // Get the address
+    function getAddress(latitude, longitude)
+    {
+        $.get("http://maps.google.com/maps/api/geocode/xml?latlng=" + latitude + "," + longitude + "&sensor=false", function(data)
+        {
+            $(data).find("formatted_address").each(function(){
+
+                var adress = $(this).text();
+                adress = adress.split(',');
+
+                var city = adress[1].slice(5);
+
+                $("#location_post").val(city);
+
+                return false;
+            });
+        });
+    }
+
+
     //------------------- AJAX - LOAD MORE -------------------//
 
     $(".feed-feed").slice(5).hide();

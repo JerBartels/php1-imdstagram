@@ -52,6 +52,16 @@ if(isset($_POST["btn_post"]))
                 $post->Date = $date_post;
                 $post->Inapp = 0;
 
+                if($_POST["location_post"] != "")
+                {
+                    $post->City = $_POST["location_post"];
+                }
+                else
+                {
+                    $post->City = "Undefined";
+                }
+
+
                 $post->Save();
                 $feedback_post = "You rock!";
             }
@@ -118,6 +128,10 @@ if(isset($_POST["feed-delete-button"]))
 </div>
 
 <div class="container">
+    <div>
+        <p id="geolocation"></p>
+    </div>
+
     <div id="profile">
         <div id="profile_content">
             <?php echo '<img src="../assets/' . $user->ProfilePic . '"alt="profile_pict" class="profile_pict">' ?>
@@ -131,6 +145,7 @@ if(isset($_POST["feed-delete-button"]))
                 <!--<input type="hidden" name="MAX_FILE_SIZE" value="32768"/>-->
                 <input type="file" class="post_post" name="post_post" id="post_post"><br>
                 <input type="input" class="post_post" name="input_post" id="input_post"><br>
+                <input type="hidden" class="post_post" name="location_post" id="location_post">
                 <input type="submit" value="post" name="btn_post" id="btn_post">
                 <p class="form_feedback"><?php echo $feedback_post ?></p>
             </form>
@@ -177,7 +192,7 @@ if(isset($_POST["feed-delete-button"]))
                                         <div class="feed-id-username">
                                             <span><a href="user.php?username=<?php echo $post["username"] ?>"><?php echo $post["username"] ?></a></span>
                                         </div>
-                                        <div class="feed-id-date"><span><?php echo $formattedTime ?></span></div>
+                                        <div class="feed-id-date"><span><?php echo $formattedTime ?> / <?php echo $post["city"] ?></span></div>
                                     </div>
 
                                     <div class="feed-image">
