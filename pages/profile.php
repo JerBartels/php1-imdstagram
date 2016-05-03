@@ -19,6 +19,7 @@ $user->Username = $db_user["username"];
 $user->Email = $db_user["email"];
 $user->Pass = $db_user["pass"];
 $user->ProfilePic = $db_user["profilepic"];
+$user->Private = $db_user["private"];
 
 //check of button geklikt wordt
 if(isset($_POST["save"]))
@@ -81,22 +82,42 @@ if(isset($_POST["btn_profile_pic"]))
     {
         //time zorgt ervoor dat het opladen van foto's met dezelfde naam geen overwrite met zich meebrengt
         $profile_picture = time() . $_FILES['profile_pic']['name'];
-
         if(!empty($profile_picture))
         {
             $target = GW_UPLOADPATH . $profile_picture;
-
             if(move_uploaded_file($_FILES['profile_pic']['tmp_name'], $target))
             {
                 $user->SaveProfilePicture($user->Username, $profile_picture);
                 $feedback_profile_pic = "you're still ugly!";
-
             }
         }
     }
     catch(Exception $e)
     {
         $feedback_profile_pic = $e->getMessage();
+    }
+}
+
+if(isset($_POST["change"]))
+{
+    try
+    {
+        if($_POST["input_change_privacy"] == "private")
+        {
+            $user->Private = True;
+            $user->SetProfilePrivate($user->Username, $user->Private);
+            $feedback_privacy = "your profile is now private.";
+        }
+        else
+        {
+            $user->Private = False;
+            $user->SetProfilePrivate($user->Username, $user->Private);
+            $feedback_privacy = "your profile became public.";
+        }
+    }
+    catch(Exception $e)
+    {
+        $feedback_privacy = $e->getMessage();
     }
 }
 
@@ -157,6 +178,22 @@ if(isset($_POST["btn_profile_pic"]))
                 <label class=label_change_profile for="pass">Password</label><input type="password" name="pass" id="pass" class="input_change_profile" value="<?php print $user->Pass; ?>"><br>
                 <?php if(isset($_POST['pass']) && !validatePass($_POST['pass'])){echo $err_pass;} ?>
                 <input type="submit" name="save" id="btn_save" class="button input_change_profile" value="send" />
+            </form>
+        </div>
+
+        <div class="full_hr"></div>
+
+        <div class="edit_profile_content">
+            <h2>Privacy</h2>
+            <p class="change_feedback" id="change_feedback"><?php echo $feedback_privacy ?></p>
+
+            <form action="" method="post" autocomplete="off">
+                <label class=label_change_profile for="input_change_privacy">Profile type</label>
+                <select name="input_change_privacy" id="input_change_privacy">
+                    <option value="private"<?=$user->Private == True ? ' selected="selected"' : '';?>>Private</option>
+                    <option value="public"<?=$user->Private == False ? ' selected="selected"' : '';?>>Public</option>
+                </select>
+                <input type="submit" name="change" id="btn_privacy" class="button input_change_profile" value="send" />
             </form>
         </div>
 

@@ -8,6 +8,7 @@ class Follow
 {
     private $m_sFan;
     private $m_sTarget;
+    private $m_bAccepted;
 
     //set-methode
     public function __set($p_sProperty, $p_vValue)
@@ -18,6 +19,9 @@ class Follow
                 break;
             case 'Target':
                 $this->m_sTarget = $p_vValue;
+                break;
+            case 'Accepted':
+                $this->m_bAccepted = $p_vValue;
                 break;
             default:
                 echo "Error: " . $p_sProperty . " does not exist.";
@@ -32,6 +36,8 @@ class Follow
                 return $this->m_sFan;
             case 'Target':
                 return $this->m_sTarget;
+            case 'Accepted':
+                return $this->m_bAccepted;
             default:
                 echo "Error: " . $p_sProperty . " does not exist.";
         }
@@ -58,14 +64,30 @@ class Follow
         }
     }
 
+    public function UpdateAccepted($p_sFan, $p_sTarget, $p_bAccepted)
+    {
+        $p_dDb = Db::getInstance();
+
+        $p_sStmt = $p_dDb->prepare("UPDATE follow SET accepted = :accepted WHERE fan = :fan AND target = :target");
+
+        $p_sStmt->bindParam(':fan', $p_sFan);
+        $p_sStmt->bindParam(':target', $p_sTarget);
+        $p_sStmt->bindParam(':accepted', $p_bAccepted);
+
+        $p_sStmt->execute();
+
+        $p_dDb = null;
+    }
+
     public function Save()
     {
         $p_dDb = Db::getInstance();
 
-        $p_sStmt = $p_dDb->prepare("INSERT INTO follow (fan, target) VALUES (:fan, :target)");
+        $p_sStmt = $p_dDb->prepare("INSERT INTO follow (fan, target, accepted) VALUES (:fan, :target, :accepted)");
 
         $p_sStmt->bindParam(':fan', $this->m_sFan);
         $p_sStmt->bindParam(':target', $this->m_sTarget);
+        $p_sStmt->bindParam(':accepted', $this->m_bAccepted);
 
         $p_sStmt->execute();
 

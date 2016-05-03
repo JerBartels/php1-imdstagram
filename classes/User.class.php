@@ -12,6 +12,7 @@ class User
     private $m_sEmail;
     private $m_sPass;
     private $m_sProfilePic;
+    private $m_bPrivate;
 
     //set-methode
     public function __set($p_sProperty, $p_vValue)
@@ -35,6 +36,9 @@ class User
             case 'ProfilePic':
                 $this->m_sProfilePic = $p_vValue;
                 break;
+            case 'Private':
+                $this->m_bPrivate = $p_vValue;
+                break;
             default:
                 echo "Error: " . $p_sProperty . " does not exist.";
         }
@@ -56,6 +60,8 @@ class User
                 return $this->m_sPass;
             case 'ProfilePic':
                 return $this->m_sProfilePic;
+            case 'Private':
+                return $this->m_bPrivate;
             default:
                 echo "Error: " . $p_sProperty . " does not exist.";
         }
@@ -70,6 +76,26 @@ class User
         $p_sStmt->bindParam(':val', $p_sProperty);
 
         $p_sStmt->execute();
+
+        if($p_sStmt->rowCount() > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public function IsPrivate($p_sUsername)
+    {
+        $p_dDb = Db::getInstance();
+
+        $p_sStmt = $p_dDb->prepare("SELECT * FROM user WHERE username = :username");
+        $p_sStmt->bindParam(':username', $p_sUsername);
+
+        $p_sStmt->execute();
+
 
         if($p_sStmt->rowCount() > 0)
         {
@@ -128,7 +154,7 @@ class User
         //nieuw object van klasse DB aanmaken
         $p_dDb = Db::getInstance();
 
-        $p_sStmt = $p_dDb->prepare("INSERT INTO user (username, firstname, lastname, email, pass, profilepic) VALUES (:username, :firstname, :lastname, :email, :pass, :profilepic)");
+        $p_sStmt = $p_dDb->prepare("INSERT INTO user (username, firstname, lastname, email, pass, profilepic, private) VALUES (:username, :firstname, :lastname, :email, :pass, :profilepic, :private)");
 
         $p_sStmt->bindParam(':username', $this->m_sUsername);
         $p_sStmt->bindParam(':firstname', $this->m_sFirstname);
@@ -136,6 +162,7 @@ class User
         $p_sStmt->bindParam(':email', $this->m_sEmail);
         $p_sStmt->bindParam(':pass', $this->m_sPass);
         $p_sStmt->bindParam(':profilepic', $this->m_sProfilePic);
+        $p_sStmt->bindParam(':private', $this->m_bPrivate);
 
         $p_sStmt->execute();
 
@@ -171,6 +198,20 @@ class User
 
         $p_sStmt->bindParam(':user_name', $p_sUsername);
         $p_sStmt->bindParam(':profilepic', $p_sProfilePic);
+
+        $p_sStmt->execute();
+
+        $p_dDb = null;
+    }
+
+    public function SetProfilePrivate($p_sUsername, $p_bPrivate)
+    {
+        $p_dDb = Db::getInstance();
+
+        $p_sStmt = $p_dDb->prepare("UPDATE user SET private = :private WHERE username = :user_name");
+
+        $p_sStmt->bindParam(':user_name', $p_sUsername);
+        $p_sStmt->bindParam(':private', $p_bPrivate);
 
         $p_sStmt->execute();
 
