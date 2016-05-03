@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34bb4e86-3ca2-4480-945a-371423a43fd6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Follow.class.php" afterPath="$PROJECT_DIR$/classes/Follow.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/profile.php" afterPath="$PROJECT_DIR$/pages/profile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/satchmo.php" afterPath="$PROJECT_DIR$/pages/satchmo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/user.php" afterPath="$PROJECT_DIR$/pages/user.php" />
     </list>
     <ignored path="php1-satchmo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,14 +37,14 @@
     <favorites_list name="php1-satchmo" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.53413653">
+    <splitter split-orientation="vertical" split-proportion="0.5670683">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="Post.class.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/classes/Post.class.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-11.25">
-                  <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="128" selection-end-column="23" />
+                <state vertical-scroll-proportion="-28.125">
+                  <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
                   <folding>
                     <marker date="1462195431000" expanded="true" signature="1765:1802" placeholder="SELECT * FRO... post" />
                     <marker date="1462195431000" expanded="true" signature="2089:2123" placeholder="SELECT * FRO... post" />
@@ -86,28 +84,9 @@
           <file leaf-file-name="profile.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pages/profile.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5392157">
-                  <caret line="82" column="1" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
+                <state vertical-scroll-proportion="0.74732006">
+                  <caret line="133" column="1" selection-start-line="133" selection-start-column="1" selection-end-line="133" selection-end-column="1" />
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Follow.class.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/classes/Follow.class.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-19.25">
-                  <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-                  <folding>
-                    <marker date="1462280007000" expanded="true" signature="1174:1232" placeholder="SELECT * FRO... follow" />
-                    <marker date="1462280007000" expanded="true" signature="1652:1730" placeholder="SELECT * FRO... follow" />
-                    <marker date="1462280007000" expanded="true" signature="2159:2235" placeholder="UPDATE follo... " />
-                    <marker date="1462280007000" expanded="true" signature="2595:2656" placeholder="UPDATE follo... " />
-                    <marker date="1462280007000" expanded="true" signature="2955:3036" placeholder="SELECT * FRO... follow" />
-                    <marker date="1462280007000" expanded="true" signature="3316:3392" placeholder="INSERT INTO follow... " />
-                    <marker date="1462280007000" expanded="true" signature="3791:3841" placeholder="DELETE FROM " />
-                    <marker date="1462280007000" expanded="true" signature="3791:3847" placeholder="DELETE FROM " />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -184,11 +163,40 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="satchmo.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/styles/style.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="26.583334">
+                  <caret line="535" column="47" selection-start-line="535" selection-start-column="47" selection-end-line="535" selection-end-column="47" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Follow.class.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/classes/Follow.class.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.4661191">
+                  <caret line="93" column="55" selection-start-line="93" selection-start-column="55" selection-end-line="93" selection-end-column="55" />
+                  <folding>
+                    <marker date="1462283159000" expanded="true" signature="1174:1232" placeholder="SELECT * FRO... follow" />
+                    <marker date="1462283159000" expanded="true" signature="1652:1730" placeholder="SELECT * FRO... follow" />
+                    <marker date="1462283159000" expanded="true" signature="2159:2235" placeholder="UPDATE follo... " />
+                    <marker date="1462283159000" expanded="true" signature="2595:2656" placeholder="UPDATE follo... " />
+                    <marker date="1462283159000" expanded="true" signature="2955:3036" placeholder="SELECT * FRO... follow" />
+                    <marker date="1462283159000" expanded="true" signature="3316:3392" placeholder="INSERT INTO follow... " />
+                    <marker date="1462283159000" expanded="true" signature="3791:3841" placeholder="DELETE FROM " />
+                    <marker date="1462283159000" expanded="true" signature="3791:3847" placeholder="DELETE FROM " />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="satchmo.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pages/satchmo.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-1.9829545">
-                  <caret line="148" column="39" selection-start-line="148" selection-start-column="39" selection-end-line="148" selection-end-column="39" />
+                <state vertical-scroll-proportion="23.458334">
+                  <caret line="179" column="56" selection-start-line="179" selection-start-column="56" selection-end-line="179" selection-end-column="56" />
                   <folding />
                 </state>
               </provider>
@@ -233,7 +241,6 @@
         <option value="$PROJECT_DIR$/ajax/post-comment.php" />
         <option value="$PROJECT_DIR$/classes/Inapp.class.php" />
         <option value="$PROJECT_DIR$/ajax/inapp-post.php" />
-        <option value="$PROJECT_DIR$/styles/style.css" />
         <option value="$PROJECT_DIR$/ajax/load-more.php" />
         <option value="$PROJECT_DIR$/scripts/script.js" />
         <option value="$PROJECT_DIR$/pages/search.php" />
@@ -243,6 +250,7 @@
         <option value="$PROJECT_DIR$/classes/User.class.php" />
         <option value="$PROJECT_DIR$/pages/user.php" />
         <option value="$PROJECT_DIR$/pages/satchmo.php" />
+        <option value="$PROJECT_DIR$/styles/style.css" />
         <option value="$PROJECT_DIR$/classes/Follow.class.php" />
         <option value="$PROJECT_DIR$/pages/profile.php" />
       </list>
@@ -333,6 +341,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="php1-satchmo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php1-satchmo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php1-satchmo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="styles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -815,14 +837,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.80331755">
-          <caret line="292" column="29" selection-start-line="292" selection-start-column="29" selection-end-line="292" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/detail.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.5">
@@ -847,26 +861,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/reglog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="21.25">
-          <caret line="75" column="13" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/user.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="8.25">
           <caret line="55" column="53" selection-start-line="55" selection-start-column="53" selection-end-line="55" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/satchmo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9829545">
-          <caret line="148" column="39" selection-start-line="148" selection-start-column="39" selection-end-line="148" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -876,25 +874,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Post.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25">
-          <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="128" selection-end-column="23" />
-          <folding>
-            <marker date="1462195431000" expanded="true" signature="1765:1802" placeholder="SELECT * FRO... post" />
-            <marker date="1462195431000" expanded="true" signature="2089:2123" placeholder="SELECT * FRO... post" />
-            <marker date="1462195431000" expanded="true" signature="2449:2489" placeholder="SELECT * FRO... post" />
-            <marker date="1462195431000" expanded="true" signature="2792:2845" placeholder="SELECT * FRO... post" />
-            <marker date="1462195431000" expanded="true" signature="3089:3124" placeholder="SELECT * FRO... post" />
-            <marker date="1462195431000" expanded="true" signature="3366:3507" placeholder="SELECT * FRO... post" />
-            <marker date="1462195431000" expanded="true" signature="3828:3879" placeholder="UPDATE post " />
-            <marker date="1462195431000" expanded="true" signature="4246:4297" placeholder="UPDATE post " />
-            <marker date="1462195431000" expanded="true" signature="4598:4720" placeholder="INSERT INTO post... " />
-            <marker date="1462195431000" expanded="true" signature="5254:5285" placeholder="DELETE FROM " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -911,6 +890,49 @@
             <marker date="1462277578000" expanded="true" signature="5212:5280" placeholder="UPDATE user " />
             <marker date="1462277578000" expanded="true" signature="5607:5669" placeholder="UPDATE user " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/satchmo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="23.458334">
+          <caret line="179" column="56" selection-start-line="179" selection-start-column="56" selection-end-line="179" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Post.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-28.125">
+          <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+          <folding>
+            <marker date="1462195431000" expanded="true" signature="1765:1802" placeholder="SELECT * FRO... post" />
+            <marker date="1462195431000" expanded="true" signature="2089:2123" placeholder="SELECT * FRO... post" />
+            <marker date="1462195431000" expanded="true" signature="2449:2489" placeholder="SELECT * FRO... post" />
+            <marker date="1462195431000" expanded="true" signature="2792:2845" placeholder="SELECT * FRO... post" />
+            <marker date="1462195431000" expanded="true" signature="3089:3124" placeholder="SELECT * FRO... post" />
+            <marker date="1462195431000" expanded="true" signature="3366:3507" placeholder="SELECT * FRO... post" />
+            <marker date="1462195431000" expanded="true" signature="3828:3879" placeholder="UPDATE post " />
+            <marker date="1462195431000" expanded="true" signature="4246:4297" placeholder="UPDATE post " />
+            <marker date="1462195431000" expanded="true" signature="4598:4720" placeholder="INSERT INTO post... " />
+            <marker date="1462195431000" expanded="true" signature="5254:5285" placeholder="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="26.583334">
+          <caret line="535" column="47" selection-start-line="535" selection-start-column="47" selection-end-line="535" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/reglog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="21.25">
+          <caret line="75" column="13" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -934,25 +956,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/Follow.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.25">
-          <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.4661191">
+          <caret line="93" column="55" selection-start-line="93" selection-start-column="55" selection-end-line="93" selection-end-column="55" />
           <folding>
-            <marker date="1462280007000" expanded="true" signature="1174:1232" placeholder="SELECT * FRO... follow" />
-            <marker date="1462280007000" expanded="true" signature="1652:1730" placeholder="SELECT * FRO... follow" />
-            <marker date="1462280007000" expanded="true" signature="2159:2235" placeholder="UPDATE follo... " />
-            <marker date="1462280007000" expanded="true" signature="2595:2656" placeholder="UPDATE follo... " />
-            <marker date="1462280007000" expanded="true" signature="2955:3036" placeholder="SELECT * FRO... follow" />
-            <marker date="1462280007000" expanded="true" signature="3316:3392" placeholder="INSERT INTO follow... " />
-            <marker date="1462280007000" expanded="true" signature="3791:3841" placeholder="DELETE FROM " />
-            <marker date="1462280007000" expanded="true" signature="3791:3847" placeholder="DELETE FROM " />
+            <marker date="1462283159000" expanded="true" signature="1174:1232" placeholder="SELECT * FRO... follow" />
+            <marker date="1462283159000" expanded="true" signature="1652:1730" placeholder="SELECT * FRO... follow" />
+            <marker date="1462283159000" expanded="true" signature="2159:2235" placeholder="UPDATE follo... " />
+            <marker date="1462283159000" expanded="true" signature="2595:2656" placeholder="UPDATE follo... " />
+            <marker date="1462283159000" expanded="true" signature="2955:3036" placeholder="SELECT * FRO... follow" />
+            <marker date="1462283159000" expanded="true" signature="3316:3392" placeholder="INSERT INTO follow... " />
+            <marker date="1462283159000" expanded="true" signature="3791:3841" placeholder="DELETE FROM " />
+            <marker date="1462283159000" expanded="true" signature="3791:3847" placeholder="DELETE FROM " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/profile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5392157">
-          <caret line="82" column="1" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.74732006">
+          <caret line="133" column="1" selection-start-line="133" selection-start-column="1" selection-end-line="133" selection-end-column="1" />
           <folding />
         </state>
       </provider>

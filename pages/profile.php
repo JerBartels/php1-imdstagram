@@ -130,6 +130,20 @@ if(isset($_POST["change"]))
     }
 }
 
+if(isset($_POST["btn_accept_love"]))
+{
+    try
+    {
+        $accepted = true;
+        $follow->AcceptFollow($_POST["input_accept_love"], $user->Username, $accepted);
+        $feedback_love_requests = "you've accepted the love of " . $_POST["input_accept_love"] . " :)";
+    }
+    catch(Exception $e)
+    {
+        $feedback_love_requests = $e->getMessage();
+    }
+}
+
 ?>
 
 <!doctype html>
@@ -220,21 +234,16 @@ if(isset($_POST["change"]))
                     foreach($follows as $follow)
                     {
                 ?>
-
-                        <li><?php echo $follow["fan"] ?></li>
+                        <form action="" method="POST">
+                            <label for=""><a href="user.php?username=<?php echo $follow["fan"] ?>"><?php echo $follow["fan"] ?></a></label>
+                            <input type="hidden" value="<?php echo $follow["fan"] ?>" name="input_accept_love">
+                            <input type="submit" value="accept" name="btn_accept_love">
+                        </form>
                 <?php
                     }
                 ?>
             </ul>
 
-            <form action="" method="post" autocomplete="off">
-                <label class=label_change_profile for="input_change_privacy">Profile type</label>
-                <select name="input_change_privacy" id="input_change_privacy">
-                    <option value="private"<?=$user->Private == True ? ' selected="selected"' : '';?>>Private</option>
-                    <option value="public"<?=$user->Private == False ? ' selected="selected"' : '';?>>Public</option>
-                </select>
-                <input type="submit" name="change" id="btn_privacy" class="button input_change_profile" value="send" />
-            </form>
         </div>
 
         <div class="full_hr"></div>
