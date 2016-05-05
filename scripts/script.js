@@ -20,6 +20,12 @@ $(document).ready(function() {
         }
     });
 
+    $("#post_filter").on("change", function()
+    {
+        var myFilter = $(this).val();
+        $("#figure_preview").removeClass().addClass(myFilter);
+    });
+
 
     //------------------- HTML5 GEOLOCATION -------------------//
 

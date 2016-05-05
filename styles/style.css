@@ -196,6 +196,12 @@ p
         margin-right: auto;
     }
 
+    #figure_preview
+    {
+        max-width: 600px;
+        margin-top: 25px;
+    }
+
 #feed
 {
     border-top: 1px solid #F0F0F0;

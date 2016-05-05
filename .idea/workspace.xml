@@ -5,6 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/satchmo.php" afterPath="$PROJECT_DIR$/pages/satchmo.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/script.js" afterPath="$PROJECT_DIR$/scripts/script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/style.css" afterPath="$PROJECT_DIR$/styles/style.css" />
     </list>
     <ignored path="php1-satchmo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,13 +39,13 @@
     <favorites_list name="php1-satchmo" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.5935743">
+    <splitter split-orientation="vertical" split-proportion="0.3325301">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="search.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pages/search.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-34.375">
+                <state vertical-scroll-proportion="-29.375">
                   <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
                   <folding />
                 </state>
@@ -94,13 +95,14 @@
           <file leaf-file-name="satchmo.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pages/satchmo.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.65597665">
-                  <caret line="263" column="42" selection-start-line="263" selection-start-column="42" selection-end-line="263" selection-end-column="42" />
+                <state vertical-scroll-proportion="0.4570637">
+                  <caret line="147" column="86" selection-start-line="147" selection-start-column="86" selection-end-line="147" selection-end-column="86" />
                   <folding>
-                    <marker date="1462455129000" expanded="true" signature="2600:2619" placeholder="..." />
-                    <marker date="1462455129000" expanded="true" signature="3027:3037" placeholder="..." />
-                    <marker date="1462455129000" expanded="true" signature="3682:3697" placeholder="..." />
-                    <marker date="1462455129000" expanded="true" signature="9390:9447" placeholder="..." />
+                    <element signature="n#style#0;n#img#0;n#figure#0;n#form#0;n#div#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <marker date="1462455983000" expanded="true" signature="2600:2619" placeholder="..." />
+                    <marker date="1462455983000" expanded="true" signature="3027:3037" placeholder="..." />
+                    <marker date="1462455983000" expanded="true" signature="3682:3697" placeholder="..." />
+                    <marker date="1462455983000" expanded="true" signature="9475:9532" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -180,11 +182,21 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/styles/style.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-15.583333">
+                  <caret line="201" column="25" selection-start-line="201" selection-start-column="25" selection-end-line="201" selection-end-column="25" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/scripts/script.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.37656903">
-                  <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+                <state vertical-scroll-proportion="0.2615193">
+                  <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
                   <folding />
                 </state>
               </provider>
@@ -229,7 +241,6 @@
         <option value="$PROJECT_DIR$/classes/Inapp.class.php" />
         <option value="$PROJECT_DIR$/ajax/inapp-post.php" />
         <option value="$PROJECT_DIR$/ajax/load-more.php" />
-        <option value="$PROJECT_DIR$/styles/style.css" />
         <option value="$PROJECT_DIR$/classes/Follow.class.php" />
         <option value="$PROJECT_DIR$/pages/profile.php" />
         <option value="$PROJECT_DIR$/pages/user.php" />
@@ -247,6 +258,7 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/pages/fb-callback.php" />
         <option value="$PROJECT_DIR$/scripts/fileupload.js" />
+        <option value="$PROJECT_DIR$/styles/style.css" />
         <option value="$PROJECT_DIR$/pages/satchmo.php" />
         <option value="$PROJECT_DIR$/scripts/script.js" />
       </list>
@@ -560,10 +572,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
           <folding>
-            <marker date="1462455129000" expanded="true" signature="2600:2619" placeholder="..." />
-            <marker date="1462455129000" expanded="true" signature="3027:3037" placeholder="..." />
-            <marker date="1462455129000" expanded="true" signature="3682:3697" placeholder="..." />
-            <marker date="1462455129000" expanded="true" signature="9390:9447" placeholder="..." />
+            <element signature="n#style#0;n#img#0;n#figure#0;n#form#0;n#div#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1462455983000" expanded="true" signature="2600:2619" placeholder="..." />
+            <marker date="1462455983000" expanded="true" signature="3027:3037" placeholder="..." />
+            <marker date="1462455983000" expanded="true" signature="3682:3697" placeholder="..." />
+            <marker date="1462455983000" expanded="true" signature="9475:9532" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -815,14 +828,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="535" column="47" selection-start-line="535" selection-start-column="47" selection-end-line="535" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/Likes.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-32.375">
@@ -915,22 +920,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-34.375">
-          <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.625">
-          <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/fb-login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.5">
@@ -979,24 +968,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/script.js">
+    <entry file="file://$PROJECT_DIR$/pages/detail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37656903">
-          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+        <state vertical-scroll-proportion="-20.625">
+          <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-29.375">
+          <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.583333">
+          <caret line="201" column="25" selection-start-line="201" selection-start-column="25" selection-end-line="201" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/satchmo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65597665">
-          <caret line="263" column="42" selection-start-line="263" selection-start-column="42" selection-end-line="263" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.4570637">
+          <caret line="147" column="86" selection-start-line="147" selection-start-column="86" selection-end-line="147" selection-end-column="86" />
           <folding>
-            <marker date="1462455129000" expanded="true" signature="2600:2619" placeholder="..." />
-            <marker date="1462455129000" expanded="true" signature="3027:3037" placeholder="..." />
-            <marker date="1462455129000" expanded="true" signature="3682:3697" placeholder="..." />
-            <marker date="1462455129000" expanded="true" signature="9390:9447" placeholder="..." />
+            <element signature="n#style#0;n#img#0;n#figure#0;n#form#0;n#div#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1462455983000" expanded="true" signature="2600:2619" placeholder="..." />
+            <marker date="1462455983000" expanded="true" signature="3027:3037" placeholder="..." />
+            <marker date="1462455983000" expanded="true" signature="3682:3697" placeholder="..." />
+            <marker date="1462455983000" expanded="true" signature="9475:9532" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2615193">
+          <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
