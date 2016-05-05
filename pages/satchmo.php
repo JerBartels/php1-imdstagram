@@ -187,7 +187,7 @@ if(isset($_POST["feed-delete-button"]))
 
                 foreach($posts as $post)
                 {
-                    if($follow->AlreadyAcceptedFan($user->Username, $post["username"]))
+                    if($follow->AlreadyAcceptedFan($user->Username, $post["username"]) || $post["username"] == $user->Username)
                     {
                         if ($post["inapp"] < 3) {
                             {

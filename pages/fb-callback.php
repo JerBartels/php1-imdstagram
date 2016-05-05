@@ -93,7 +93,6 @@
 
             if($db_email == $email && $db_username == $username)
             {
-
                 //gebruiker bestaat in DB en combi username/email is juist dus we mogen alvast de username koppelen aan de gebruiker
                 $user->Username = $username;
 
