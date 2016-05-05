@@ -74,6 +74,7 @@ alreadyLoggedIn();
 
                     <div id="login_fb">
                         <a href="pages/fb-login.php">Login with Facebook</a>
+                        <p><?php echo $fb_feedback?></p>
                     </div>
                 </div>
             </div>
