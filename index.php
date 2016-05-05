@@ -5,6 +5,8 @@ include_once("classes/User.class.php");
 include_once("pages/session.php");
 include_once("pages/reglog.php");
 
+require_once __DIR__ . '/Facebook/autoload.php';
+
 //kijken of user al ingelogd is
 alreadyLoggedIn();
 
@@ -71,8 +73,7 @@ alreadyLoggedIn();
                     </div>
 
                     <div id="login_fb">
-                        <a href="">Log in with facebook</a>
-                        <div id="status"></div>
+                        <a href="../pages/fb-login.php">Login with FaceBook</a>
                     </div>
                 </div>
             </div>
