@@ -146,6 +146,7 @@ if(isset($_POST["feed-delete-button"]))
                 <!--<input type="hidden" name="MAX_FILE_SIZE" value="32768"/>-->
                 <input type="file" class="post_post" name="post_post" id="post_post"><br>
                 <select name="post_filter" id="post_filter">
+                    <option value="">No filter</option>
                     <option value="aden">Aden</option>
                     <option value="reyes">Reyes</option>
                     <option value="perpetua">Perpetua</option>
