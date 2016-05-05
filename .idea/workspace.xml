@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34bb4e86-3ca2-4480-945a-371423a43fd6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/fb-callback.php" afterPath="$PROJECT_DIR$/pages/fb-callback.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/satchmo.php" afterPath="$PROJECT_DIR$/pages/satchmo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/script.js" afterPath="$PROJECT_DIR$/scripts/script.js" />
     </list>
     <ignored path="php1-satchmo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,7 +38,7 @@
     <favorites_list name="php1-satchmo" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.5429719">
+    <splitter split-orientation="vertical" split-proportion="0.5935743">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="search.php" pinned="false" current-in-tab="false">
@@ -93,24 +94,14 @@
           <file leaf-file-name="satchmo.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pages/satchmo.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5778491">
-                  <caret line="189" column="127" selection-start-line="189" selection-start-column="127" selection-end-line="189" selection-end-column="127" />
+                <state vertical-scroll-proportion="0.65597665">
+                  <caret line="263" column="42" selection-start-line="263" selection-start-column="42" selection-end-line="263" selection-end-column="42" />
                   <folding>
-                    <marker date="1462451919000" expanded="true" signature="2600:2619" placeholder="..." />
-                    <marker date="1462451919000" expanded="true" signature="3027:3037" placeholder="..." />
-                    <marker date="1462451919000" expanded="true" signature="3682:3697" placeholder="..." />
-                    <marker date="1462451919000" expanded="true" signature="9315:9372" placeholder="..." />
+                    <marker date="1462455129000" expanded="true" signature="2600:2619" placeholder="..." />
+                    <marker date="1462455129000" expanded="true" signature="3027:3037" placeholder="..." />
+                    <marker date="1462455129000" expanded="true" signature="3682:3697" placeholder="..." />
+                    <marker date="1462455129000" expanded="true" signature="9390:9447" placeholder="..." />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="cssgram.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/styles/cssgram.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.0">
-                  <caret line="0" column="5070" selection-start-line="0" selection-start-column="5070" selection-end-line="0" selection-end-column="5070" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -161,10 +152,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="reglog.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="reglog.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pages/reglog.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-2.5686653">
+                <state vertical-scroll-proportion="55.333332">
                   <caret line="87" column="32" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
                   <folding />
                 </state>
@@ -189,11 +180,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/scripts/script.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.37656903">
+                  <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
                   <folding />
                 </state>
               </provider>
@@ -247,7 +238,6 @@
         <option value="$PROJECT_DIR$/styles/cssgram.css" />
         <option value="$PROJECT_DIR$/pages/search.php" />
         <option value="$PROJECT_DIR$/pages/detail.php" />
-        <option value="$PROJECT_DIR$/scripts/script.js" />
         <option value="$PROJECT_DIR$/pages/reglog.php" />
         <option value="$PROJECT_DIR$/pages/fb-login-callback.php" />
         <option value="$PROJECT_DIR$/pages/fb-config" />
@@ -256,7 +246,9 @@
         <option value="$PROJECT_DIR$/classes/User.class.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/pages/fb-callback.php" />
+        <option value="$PROJECT_DIR$/scripts/fileupload.js" />
         <option value="$PROJECT_DIR$/pages/satchmo.php" />
+        <option value="$PROJECT_DIR$/scripts/script.js" />
       </list>
     </option>
   </component>
@@ -555,23 +547,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/classes/Follow.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
-          <folding>
-            <marker date="1462284746000" expanded="true" signature="1174:1232" placeholder="SELECT * FRO... follow" />
-            <marker date="1462284746000" expanded="true" signature="1652:1730" placeholder="SELECT * FRO... follow" />
-            <marker date="1462284746000" expanded="true" signature="2159:2235" placeholder="UPDATE follo... " />
-            <marker date="1462284746000" expanded="true" signature="2595:2656" placeholder="UPDATE follo... " />
-            <marker date="1462284746000" expanded="true" signature="2955:3036" placeholder="SELECT * FRO... follow" />
-            <marker date="1462284746000" expanded="true" signature="3316:3392" placeholder="INSERT INTO follow... " />
-            <marker date="1462284746000" expanded="true" signature="3791:3841" placeholder="DELETE FROM " />
-            <marker date="1462284746000" expanded="true" signature="3791:3847" placeholder="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -585,10 +560,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
           <folding>
-            <marker date="1462451919000" expanded="true" signature="2600:2619" placeholder="..." />
-            <marker date="1462451919000" expanded="true" signature="3027:3037" placeholder="..." />
-            <marker date="1462451919000" expanded="true" signature="3682:3697" placeholder="..." />
-            <marker date="1462451919000" expanded="true" signature="9315:9372" placeholder="..." />
+            <marker date="1462455129000" expanded="true" signature="2600:2619" placeholder="..." />
+            <marker date="1462455129000" expanded="true" signature="3027:3037" placeholder="..." />
+            <marker date="1462455129000" expanded="true" signature="3682:3697" placeholder="..." />
+            <marker date="1462455129000" expanded="true" signature="9390:9447" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -924,14 +899,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Facebook/FacebookResponse.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="91.541664">
@@ -980,6 +947,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages/reglog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="55.333332">
+          <caret line="87" column="32" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/fb-callback.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.75">
+          <caret line="94" column="13" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/classes/User.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-32.5">
@@ -996,31 +979,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/reglog.php">
+    <entry file="file://$PROJECT_DIR$/scripts/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5686653">
-          <caret line="87" column="32" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/fb-callback.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.75">
-          <caret line="94" column="13" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.37656903">
+          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/satchmo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5778491">
-          <caret line="189" column="127" selection-start-line="189" selection-start-column="127" selection-end-line="189" selection-end-column="127" />
+        <state vertical-scroll-proportion="0.65597665">
+          <caret line="263" column="42" selection-start-line="263" selection-start-column="42" selection-end-line="263" selection-end-column="42" />
           <folding>
-            <marker date="1462451919000" expanded="true" signature="2600:2619" placeholder="..." />
-            <marker date="1462451919000" expanded="true" signature="3027:3037" placeholder="..." />
-            <marker date="1462451919000" expanded="true" signature="3682:3697" placeholder="..." />
-            <marker date="1462451919000" expanded="true" signature="9315:9372" placeholder="..." />
+            <marker date="1462455129000" expanded="true" signature="2600:2619" placeholder="..." />
+            <marker date="1462455129000" expanded="true" signature="3027:3037" placeholder="..." />
+            <marker date="1462455129000" expanded="true" signature="3682:3697" placeholder="..." />
+            <marker date="1462455129000" expanded="true" signature="9390:9447" placeholder="..." />
           </folding>
         </state>
       </provider>

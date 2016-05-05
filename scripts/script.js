@@ -1,5 +1,26 @@
 $(document).ready(function() {
 
+    $("#preview").css("display", "none");
+
+    //------------------- JQUERY PHOTO PREVIEW -------------------//
+
+    $("#post_post").on("change", function()
+    {
+        if (this.files && this.files[0])
+        {
+            var reader = new FileReader();
+
+            reader.onload = function (e)
+            {
+                $("#preview").show();
+                $('#preview').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+
+
     //------------------- HTML5 GEOLOCATION -------------------//
 
     var watchID;

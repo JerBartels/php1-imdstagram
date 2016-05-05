@@ -142,8 +142,9 @@ if(isset($_POST["feed-delete-button"]))
     </div>
     <div id="post_zone">
         <div id="post_zone_content">
-            <form enctype="multipart/form-data" method="post" action="" autocomplete="off">
+            <form enctype="multipart/form-data" method="post" action="" autocomplete="off" runat="server">
                 <!--<input type="hidden" name="MAX_FILE_SIZE" value="32768"/>-->
+                <img id="preview" src="#" alt="your image">
                 <input type="file" class="post_post" name="post_post" id="post_post"><br>
                 <select name="post_filter" id="post_filter">
                     <option value="">No filter</option>
