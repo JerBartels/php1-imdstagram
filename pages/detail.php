@@ -9,6 +9,7 @@ $post->Photo = $result[0]["photo"];
 $post->Username = $result[0]["username"];
 $post->Date = $result[0]["date"];
 $post->Comment = $result[0]["comment"];
+$post->Filter = $result[0]["filter"];
 
 ?>
 
@@ -22,6 +23,7 @@ $post->Comment = $result[0]["comment"];
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700italic,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/cssgram.css">
 </head>
 
 <body>
@@ -40,10 +42,10 @@ $post->Comment = $result[0]["comment"];
     <div id="detail_comment">
         <div id="detail_comment_content">
             <div id="detail_photo">
-                <?php print '<img src="../assets/posts/' . $post->Photo . '"alt="feed_pict_img" class="feed_pict_img">'; ?>
+                <?php print '<figure class="' . $post->Filter . '"><img src="../assets/posts/' . $post->Photo . '"alt="feed_pict_img" class="feed_pict_img"></figure>'; ?>
             </div>
             <div id="detail_user">
-                <?php print '<h1 class="detail_username_h1">' . $post->Username . '</h1>' ?>
+                <?php print '<h1 class="detail_username_h1"><a href="user.php?username=' . $post->Username . '">' . $post->Username . '</a></h1>' ?>
                 <?php print '<p class="detail_comment_p">' .$post->Comment . '</p>' ?>
             </div>
         </div>

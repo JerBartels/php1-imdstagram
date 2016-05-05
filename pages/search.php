@@ -27,6 +27,7 @@ if(isset($_POST["submit_search"]))
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700italic,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/cssgram.css">
 </head>
 
 <body>

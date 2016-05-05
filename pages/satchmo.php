@@ -51,6 +51,7 @@ if(isset($_POST["btn_post"]))
                 $post->Likes = 0;
                 $post->Date = $date_post;
                 $post->Inapp = 0;
+                $post->Filter = $_POST["post_filter"];
 
                 if($_POST["location_post"] != "")
                 {
@@ -60,7 +61,6 @@ if(isset($_POST["btn_post"]))
                 {
                     $post->City = "Undefined";
                 }
-
 
                 $post->Save();
                 $feedback_post = "You rock!";
@@ -103,6 +103,7 @@ if(isset($_POST["feed-delete-button"]))
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700italic,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/cssgram.css">
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 
@@ -144,6 +145,26 @@ if(isset($_POST["feed-delete-button"]))
             <form enctype="multipart/form-data" method="post" action="" autocomplete="off">
                 <!--<input type="hidden" name="MAX_FILE_SIZE" value="32768"/>-->
                 <input type="file" class="post_post" name="post_post" id="post_post"><br>
+                <select name="post_filter" id="post_filter">
+                    <option value="aden">Aden</option>
+                    <option value="reyes">Reyes</option>
+                    <option value="perpetua">Perpetua</option>
+                    <option value="inkwell">Inkwell</option>
+                    <option value="toaster">Toaster</option>
+                    <option value="walden">Walden</option>
+                    <option value="hudson">Hudson</option>
+                    <option value="gingham">Gingham</option>
+                    <option value="mayfair">Mayfair</option>
+                    <option value="lofi">Lo-Fi</option>
+                    <option value="xpro2">X Pro II</option>
+                    <option value="_1977">1977</option>
+                    <option value="brooklyn">Brooklyn</option>
+                    <option value="nashville">Nashville</option>
+                    <option value="lark">Lark</option>
+                    <option value="moon">Moon</option>
+                    <option value="clarendon">Clarendon</option>
+                    <option value="willow">Willow</option>
+                </select>
                 <input type="input" class="post_post" name="input_post" id="input_post"><br>
                 <input type="hidden" class="post_post" name="location_post" id="location_post">
                 <input type="submit" value="post" name="btn_post" id="btn_post">
@@ -196,7 +217,9 @@ if(isset($_POST["feed-delete-button"]))
                                     </div>
 
                                     <div class="feed-image">
-                                        <?php print '<img src="../assets/posts/' . $post["photo"] . '"alt="feed_pict_img" class="feed_pict_img">' ?>
+                                        <figure class="<?php echo $post["filter"] ?>">
+                                            <?php print '<img src="../assets/posts/' . $post["photo"] . '"alt="feed_pict_img" class="feed_pict_img">' ?>
+                                        </figure>
                                     </div>
 
                                     <div class="feed-comment-list">

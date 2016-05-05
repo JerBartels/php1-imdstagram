@@ -51,7 +51,7 @@ $(document).ready(function() {
                 var adress = $(this).text();
                 adress = adress.split(',');
 
-                var city = adress[1].slice(5);
+                var city = adress[1].slice(6);
 
                 $("#location_post").val(city);
 
