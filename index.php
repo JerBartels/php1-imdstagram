@@ -73,7 +73,7 @@ alreadyLoggedIn();
                     </div>
 
                     <div id="login_fb">
-                        <a href="../pages/fb-login.php">Login with FaceBook</a>
+                        <a href="pages/fb-login.php">Login with Facebook</a>
                     </div>
                 </div>
             </div>

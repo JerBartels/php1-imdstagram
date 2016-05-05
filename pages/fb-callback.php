@@ -1,0 +1,88 @@
+<?php
+
+    session_start();
+
+    require_once('../Facebook/autoload.php');
+    require_once('../classes/Db.class.php');
+    require_once('../classes/User.class.php');
+
+    $fb = new Facebook\Facebook
+    ([
+        'app_id' => '466986893500706',
+        'app_secret' => '44783cc0ee1fddb7f3808aa86519fd6b',
+        'default_graph_version' => 'v2.5',
+    ]);
+
+    $helper = $fb->getRedirectLoginHelper();
+
+    try
+    {
+        $accessToken = $helper->getAccessToken();
+    }
+    catch(Facebook\Exceptions\FacebookResponseException $e)
+    {
+        // When Graph returns an error
+        echo 'Graph returned an error: ' . $e->getMessage();
+        exit;
+    }
+    catch(Facebook\Exceptions\FacebookSDKException $e)
+    {
+        // When validation fails or other local issues
+        echo 'Facebook SDK returned an error: ' . $e->getMessage();
+        exit;
+    }
+
+    try
+    {
+        // Get the Facebook\GraphNodes\GraphUser object for the current user.
+        // If you provided a 'default_access_token', the '{access-token}' is optional.
+        $response = $fb->get('/me?fields=id,name,email,first_name,last_name', $accessToken->getValue());
+    }
+    catch(Facebook\Exceptions\FacebookResponseException $e)
+    {
+        // When Graph returns an error
+        echo 'ERROR: Graph ' . $e->getMessage();
+        exit;
+    }
+    catch(Facebook\Exceptions\FacebookSDKException $e)
+    {
+        // When validation fails or other local issues
+        echo 'ERROR: validation fails ' . $e->getMessage();
+        exit;
+    }
+
+    $me = $response->getGraphUser();
+
+    $email = $me->getProperty("email");
+    $username = $me->getProperty("first_name") . "_" . $me->getProperty("last_name");
+
+    $user = new User();
+
+    if(!$user->Exists($username, "username") && !$user->Exists($email, "email"))
+    {
+        try {
+            $user->Username = $me->getProperty("first_name") . "_" . $me->getProperty("last_name");
+            $user->Firstname = $me->getProperty('first_name');
+            $user->Lastname = $me->getProperty('last_name');
+            $user->Email = $me->getProperty("email");
+            $user->ProfilePic = "noprofilepict.jpg";
+            $user->Private = false;
+
+            //user bewaren in DB
+            $user->Save();
+
+            //sessie aanmaken zodat tijdens zelfde sessie niet opnieuw ingelogd moet worden
+            $_SESSION["username"] = $user->Username;
+
+            //redirect naar applicatie
+            header("location: satchmo.php");
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+    else
+    {
+        
+    }
+
+?>
