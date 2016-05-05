@@ -71,7 +71,8 @@ alreadyLoggedIn();
                     </div>
 
                     <div id="login_fb">
-                        <a href="' . $loginUrl . '">Log in with Facebook!</a>
+                        <a href="">Log in with facebook</a>
+                        <div id="status"></div>
                     </div>
                 </div>
             </div>
