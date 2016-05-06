@@ -1,6 +1,9 @@
 <?php
 
 require_once("../classes/Post.class.php");
+include_once("../classes/User.class.php");
+include_once("../classes/Likes.class.php");
+include_once("../classes/Comment.class.php");
 
 $post = new Post();
 $result = $post->getPostById($_GET["post"]);
@@ -10,6 +13,8 @@ $post->Username = $result["username"];
 $post->Date = $result["date"];
 $post->Comment = $result["comment"];
 $post->Filter = $result["filter"];
+$post->Likes = $result["likes"];
+$post->Inapp = $result["inapp"];
 
 ?>
 
@@ -44,9 +49,45 @@ $post->Filter = $result["filter"];
             <div id="detail_photo">
                 <?php print '<figure class="' . $post->Filter . '"><img src="../assets/posts/' . $post->Photo . '"alt="feed_pict_img" class="feed_pict_img"></figure>'; ?>
             </div>
-            <div id="detail_user">
-                <?php print '<h1 class="detail_username_h1"><a href="user.php?username=' . $post->Username . '">' . $post->Username . '</a></h1>' ?>
-                <?php print '<p class="detail_comment_p">' .$post->Comment . '</p>' ?>
+
+            <div class="feed-comment-list">
+
+                <div class="feed-like-form">
+                    <span class="number_feed_like"><?php echo $post->Likes ?> likes</span>
+                    <?php print '<span class="btn_feed_like" id="btn_' . $post->Photo . '"> ** like ** </span>' ?>
+                </div>
+
+                <div class="feed_inap_form">
+                    <span class="number_feed_inapp"><?php echo $post->Inapp ?> inapps</span>
+                    <?php print '<span class="btn_feed_inapp" id="btn_inapp_' . $post->Photo . '"> ** inapp ** </span>' ?>
+                </div>
+
+                <?php print '<ul id="' . $result["id"] . '">' ?>
+
+                <li>
+                    <span class="feed-comment-list-username"><a href="user.php?username=<?php echo $post->Username ?>"><?php echo $post->Username ?></a></span><?php echo $post->Comment ?>
+                </li>
+
+                <?php
+
+                $post_id = $result["id"];
+                $comment = new Comment();
+                $comments = $comment->getComments($post_id);
+
+                foreach ($comments as $comment)
+                {
+                    print '<li><span class="feed-comment-list-username"><a href="user.php?username=' . $comment["username"] . '">' . $comment["username"] .  '</a></span>' . $comment["comment"] . '</li>';
+                }
+
+                ?>
+
+                </ul>
+
+                <form action="" method="post" class="feed_comment_form">
+                    <?php print '<input type="input" placeholder="Add a comment..." name="input_post_comment" class="input_post_comment" id="input_' . $result["id"] . '">'; ?>
+                    <?php print '<input type="submit" name="btn_post_comment" class="btn_post_comment" id="btn_' . $result["id"] . '">'; ?>
+                </form>
+
             </div>
         </div>
     </div>
