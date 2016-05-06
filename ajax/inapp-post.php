@@ -1,9 +1,6 @@
 <?php
 
-include_once("../classes/Post.class.php");
-include_once("../classes/Inapp.class.php");
-include_once("../classes/User.class.php");
-include_once ("../pages/reglog.php");
+include_once("../pages/init.php");
 
 
 $post = new Post();
@@ -15,8 +12,8 @@ $selected_post = $post->getPostByPhoto($_POST["current_id"]);
 $selected_user = $user->getUserByUsername($_SESSION["username"]);
 
 
-$inapp->Username = $selected_user["username"];
-$inapp->Picture = $selected_post["photo"];
+$inapp->Username = $selected_user["id"];
+$inapp->Picture = $selected_post["id"];
 
 
 $inapps = $selected_post["inapp"];
@@ -24,7 +21,6 @@ $inapps = $selected_post["inapp"];
 
 if(!$inapp->AlreadyInapped($inapp->Username, $inapp->Picture))
 {
-
     $inapp->Save();
 
     $upd_inapps = intval($inapps) + 1;
@@ -36,7 +32,6 @@ if(!$inapp->AlreadyInapped($inapp->Username, $inapp->Picture))
 
 else
 {
-
     $inapp->DeleteInapp($inapp->Username, $inapp->Picture);
 
     $upd_inapps = intval($inapps) - 1;

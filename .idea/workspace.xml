@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34bb4e86-3ca2-4480-945a-371423a43fd6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/inapp-post.php" afterPath="$PROJECT_DIR$/ajax/inapp-post.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/post-comment.php" afterPath="$PROJECT_DIR$/ajax/post-comment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/satchmo.php" afterPath="$PROJECT_DIR$/pages/satchmo.php" />
     </list>
     <ignored path="php1-satchmo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Inapp.class.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Inapp.class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/classes/Inapp.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.125">
-              <caret line="71" column="28" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.2263202">
+              <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
               <folding>
                 <marker date="1462093449000" expanded="true" signature="1053:1118" placeholder="SELECT * FRO... inapp" />
                 <marker date="1462093449000" expanded="true" signature="1594:1656" placeholder="INSERT INTO inapp... " />
@@ -80,8 +77,8 @@
       <file leaf-file-name="inapp-post.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ajax/inapp-post.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.125">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state vertical-scroll-proportion="-12.5">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -107,16 +104,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-15.0">
               <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="like-post.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ajax/like-post.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2263202">
-              <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -189,7 +176,6 @@
         <option value="$PROJECT_DIR$/ajax/dislike-post.php" />
         <option value="$PROJECT_DIR$/classes/Likes.class.php" />
         <option value="$PROJECT_DIR$/classes/Comment.class.php" />
-        <option value="$PROJECT_DIR$/classes/Inapp.class.php" />
         <option value="$PROJECT_DIR$/ajax/load-more.php" />
         <option value="$PROJECT_DIR$/classes/Follow.class.php" />
         <option value="$PROJECT_DIR$/facebook-php-sdk-v4/src/Facebook/Facebook.php" />
@@ -217,6 +203,7 @@
         <option value="$PROJECT_DIR$/ajax/post-comment.php" />
         <option value="$PROJECT_DIR$/ajax/like-post.php" />
         <option value="$PROJECT_DIR$/ajax/inapp-post.php" />
+        <option value="$PROJECT_DIR$/classes/Inapp.class.php" />
       </list>
     </option>
   </component>
@@ -952,24 +939,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ajax/inapp-post.php">
+    <entry file="file://$PROJECT_DIR$/ajax/like-post.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.125">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.21374686">
+          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Inapp.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.125">
-          <caret line="71" column="28" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
-          <folding>
-            <marker date="1462093449000" expanded="true" signature="1053:1118" placeholder="SELECT * FRO... inapp" />
-            <marker date="1462093449000" expanded="true" signature="1594:1656" placeholder="INSERT INTO inapp... " />
-            <marker date="1462093449000" expanded="true" signature="1999:2041" placeholder="SELECT * FRO... inapp" />
-            <marker date="1462093449000" expanded="true" signature="2442:2505" placeholder="DELETE FROM " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -981,11 +955,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ajax/like-post.php">
+    <entry file="file://$PROJECT_DIR$/ajax/inapp-post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.5">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Inapp.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2263202">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding />
+          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+          <folding>
+            <marker date="1462093449000" expanded="true" signature="1053:1118" placeholder="SELECT * FRO... inapp" />
+            <marker date="1462093449000" expanded="true" signature="1594:1656" placeholder="INSERT INTO inapp... " />
+            <marker date="1462093449000" expanded="true" signature="1999:2041" placeholder="SELECT * FRO... inapp" />
+            <marker date="1462093449000" expanded="true" signature="2442:2505" placeholder="DELETE FROM " />
+          </folding>
         </state>
       </provider>
     </entry>
