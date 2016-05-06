@@ -120,32 +120,49 @@ if(isset($_POST["btn_hate"]))
 
             $follow = new Follow();
 
-            if($selected_user["private"])
+            //als user public is mogen de posts altijd getoond worden
+            if(!$selected_user["private"])
             {
-                if($follow->AlreadyAcceptedFan($_SESSION["username"], $selected_user["username"]))
+                foreach ($results as $result)
+                {
+                    if ($result["username"] == $selected_user["username"])
+                    {
+                        ?>
+
+                        <figure class="<?php echo $result["filter"] ?>">
+                            <a href="detail.php?post=<?php echo $result["id"] ?>">
+                                <img class=results_results src="../assets/posts/<?php echo $result["photo"] ?>"
+                                     alt="<?php echo $_POST["input_search"] ?>">
+                            </a>
+                        </figure>
+
+                        <?php
+                    }
+                }
+            }
+
+            //als user private is mogen de posts enkel getoond worden als de follow geaccepteerd werd
+            else
+            {
+                if($follow->AlreadyAcceptedFan($_SESSION["username"], $selected_user["username"]) || $result["username"] == $selected_user["username"])
                 {
                     foreach($results as $result)
                     {
                         if($result["username"] == $selected_user["username"])
                         {
-                            print '<div class="results_results" style="background-image: url(../assets/posts/' . $result["photo"] . ')">';
-                            print '</div>';
+                            ?>
+
+                            <figure class="<?php echo $result["filter"] ?>">
+                                <a href="detail.php?post=<?php echo $result["id"]?>">
+                                    <img class=results_results src="../assets/posts/<?php echo $result["photo"] ?>" alt="<?php echo $_POST["input_search"] ?>">
+                                </a>
+                            </figure>
+
+            <?php
                         }
                     }
                 }
             }
-            else
-            {
-                foreach($results as $result)
-                {
-                    if($result["username"] == $selected_user["username"])
-                    {
-                        print '<div class="results_results" style="background-image: url(../assets/posts/' . $result["photo"] . ')">';
-                        print '</div>';
-                    }
-                }
-            }
-
 
             ?>
         </div>
