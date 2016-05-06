@@ -212,11 +212,7 @@ if(isset($_POST["feed-delete-button"]))
 
                 foreach($posts as $post)
                 {
-                    //liefst nog weglaten => nu omdat post enkel de username bevat
-                    $user2 = new User();
-                    $post_user = $user2->getUserByUsername($post["username"]);
-
-                    if($follow->AlreadyAcceptedFan($db_user["id"], $post_user["id"]) || $post["username"] == $user->Username)
+                    if($follow->AlreadyAcceptedFan($user->Username, $post["username"]) || $post["username"] == $user->Username)
                     {
                         if ($post["inapp"] < 3) {
                             {

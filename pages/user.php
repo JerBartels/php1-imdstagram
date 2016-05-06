@@ -31,8 +31,8 @@ if(isset($_POST["btn_love"]))
 {
     try
     {
-        $follow->Fan = $active_user["id"];
-        $follow->Target = $selected_user["id"];
+        $follow->Fan = $active_user["username"];
+        $follow->Target = $selected_user["username"];
 
         if($selected_user["private"])
         {
@@ -55,8 +55,8 @@ if(isset($_POST["btn_hate"]))
 {
     try
     {
-        $follow->Fan = $active_user["id"];
-        $follow->Target = $selected_user["id"];
+        $follow->Fan = $active_user["username"];
+        $follow->Target = $selected_user["username"];
         $follow->DeleteFollow($follow->Fan, $follow->Target);
     }
     catch(Exception $e)
@@ -99,7 +99,7 @@ if(isset($_POST["btn_hate"]))
         </div>
         <div>
             <?php
-                if($follow->AlreadyFan($active_user["id"],$selected_user["id"])){
+                if($follow->AlreadyFan($active_user["username"],$selected_user["username"])){
             ?>
                     <form action="" method="post">
                         <input type="submit" value="break my heart" name="btn_hate">
@@ -147,7 +147,7 @@ if(isset($_POST["btn_hate"]))
             //als user private is mogen de posts enkel getoond worden als de follow geaccepteerd werd
             else
             {
-                if($follow->AlreadyAcceptedFan($active_user["id"], $selected_user["id"]) || $result["username"] == $selected_user["username"])
+                if($follow->AlreadyAcceptedFan($active_user["username"],$selected_user["username"]) || $result["username"] == $selected_user["username"])
                 {
                     foreach($results as $result)
                     {
