@@ -1,7 +1,12 @@
 <?php
 
 require_once("init.php");
-//include_once("reglog.php");
+
+//kijken of user al ingelogd is
+if(!isset($_SESSION["username"]))
+{
+    header("location: ../index.php");
+}
 
 //upload path
 define('GW_UPLOADPATH', '../assets/posts/');

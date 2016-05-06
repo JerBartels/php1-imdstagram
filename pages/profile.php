@@ -2,12 +2,6 @@
 
 require_once("init.php");
 
-/*include_once("../classes/Db.class.php");
-include_once("../classes/User.class.php");
-include_once("../classes/Follow.class.php");
-include_once("session.php");
-include_once("reglog.php");*/
-
 //kijken of user al ingelogd is
 if(!isset($_SESSION["username"]))
 {

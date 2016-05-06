@@ -1,9 +1,12 @@
 <?php
 
-require_once("../classes/Post.class.php");
-require_once("../classes/User.class.php");
-require_once("../classes/Follow.class.php");
-require_once("../pages/reglog.php");
+require_once("init.php");
+
+//kijken of user al ingelogd is
+if(!isset($_SESSION["username"]))
+{
+    header("location: ../index.php");
+}
 
 if(isset($_GET["username"]))
 {

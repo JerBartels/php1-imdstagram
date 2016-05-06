@@ -1,6 +1,13 @@
 <?php
 
-require_once("../classes/Post.class.php");
+require_once("init.php");
+
+//kijken of user al ingelogd is
+if(!isset($_SESSION["username"]))
+{
+    header("location: ../index.php");
+}
+
 
 if(isset($_POST["submit_search"]))
 {
