@@ -68,7 +68,7 @@ if(isset($_POST["submit_search"]))
                     {
                         ?>
 
-                        <figure>
+                        <figure class="<?php echo $result["filter"] ?>">
                             <a href="detail.php?post=<?php echo $result["id"]?>">
                                 <img class=results_results src="../assets/posts/<?php echo $result["photo"] ?>" alt="<?php echo $_POST["input_search"] ?>">
                             </a>

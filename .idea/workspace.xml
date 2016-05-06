@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34bb4e86-3ca2-4480-945a-371423a43fd6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/satchmo.php" afterPath="$PROJECT_DIR$/pages/satchmo.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/search.php" afterPath="$PROJECT_DIR$/pages/search.php" />
     </list>
     <ignored path="php1-satchmo.iws" />
@@ -44,10 +42,10 @@
           <file leaf-file-name="search.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pages/search.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.56712675">
-                  <caret line="66" column="17" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
+                <state vertical-scroll-proportion="0.621079">
+                  <caret line="76" column="29" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="29" />
                   <folding>
-                    <marker date="1462518374000" expanded="true" signature="2323:2335" placeholder="..." />
+                    <marker date="1462518567000" expanded="true" signature="2363:2375" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -66,8 +64,8 @@
           <file leaf-file-name="satchmo.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pages/satchmo.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-11.958333">
-                  <caret line="283" column="29" selection-start-line="283" selection-start-column="29" selection-end-line="283" selection-end-column="29" />
+                <state vertical-scroll-proportion="-10.083333">
+                  <caret line="223" column="85" selection-start-line="223" selection-start-column="54" selection-end-line="223" selection-end-column="85" />
                   <folding>
                     <marker date="1462517760000" expanded="true" signature="2600:2619" placeholder="..." />
                     <marker date="1462517760000" expanded="true" signature="3027:3037" placeholder="..." />
@@ -879,19 +877,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-34.375">
-          <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5831063">
           <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/satchmo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.083333">
+          <caret line="223" column="85" selection-start-line="223" selection-start-column="54" selection-end-line="223" selection-end-column="85" />
+          <folding>
+            <marker date="1462517760000" expanded="true" signature="2600:2619" placeholder="..." />
+            <marker date="1462517760000" expanded="true" signature="3027:3037" placeholder="..." />
+            <marker date="1462517760000" expanded="true" signature="3682:3697" placeholder="..." />
+            <marker date="1462517760000" expanded="true" signature="9475:9532" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -903,25 +906,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/satchmo.php">
+    <entry file="file://$PROJECT_DIR$/pages/detail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.958333">
-          <caret line="283" column="29" selection-start-line="283" selection-start-column="29" selection-end-line="283" selection-end-column="29" />
-          <folding>
-            <marker date="1462517760000" expanded="true" signature="2600:2619" placeholder="..." />
-            <marker date="1462517760000" expanded="true" signature="3027:3037" placeholder="..." />
-            <marker date="1462517760000" expanded="true" signature="3682:3697" placeholder="..." />
-            <marker date="1462517760000" expanded="true" signature="9475:9532" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="-34.375">
+          <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/search.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56712675">
-          <caret line="66" column="17" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.621079">
+          <caret line="76" column="29" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="29" />
           <folding>
-            <marker date="1462518374000" expanded="true" signature="2323:2335" placeholder="..." />
+            <marker date="1462518567000" expanded="true" signature="2363:2375" placeholder="..." />
           </folding>
         </state>
       </provider>
