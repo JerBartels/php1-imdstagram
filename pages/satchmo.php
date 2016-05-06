@@ -141,9 +141,11 @@ if(isset($_POST["feed-delete-button"]))
         <div id="post_zone_content">
             <form enctype="multipart/form-data" method="post" action="" autocomplete="off">
                 <!--<input type="hidden" name="MAX_FILE_SIZE" value="32768"/>-->
-                <figure id="figure_preview">
-                    <img id="preview" src="#" alt="your image" style="max-width: 600px">
-                </figure>
+                <div id="image_preview">
+                    <figure id="figure_preview">
+                        <img id="preview" src="#" alt="your image" style="max-width: 600px">
+                    </figure>
+                </div>
                 <input type="file" class="post_post" name="post_post" id="post_post"><br>
                 <select name="post_filter" id="post_filter">
                     <option value="">No filter</option>
@@ -165,6 +167,12 @@ if(isset($_POST["feed-delete-button"]))
                     <option value="moon">Moon</option>
                     <option value="clarendon">Clarendon</option>
                     <option value="willow">Willow</option>
+                </select>
+                <select name="post_rotation" id="post_rotation">
+                    <option value="">No rotation</option>
+                    <option value="90">90 degrees</option>
+                    <option value="180">180 degrees</option>
+                    <option value="270">270 degrees</option>
                 </select>
                 <input type="input" class="post_post" name="input_post" id="input_post"><br>
                 <input type="hidden" class="post_post" name="location_post" id="location_post">

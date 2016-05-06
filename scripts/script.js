@@ -26,6 +26,27 @@ $(document).ready(function() {
         $("#figure_preview").removeClass().addClass(myFilter);
     });
 
+    $("#post_rotation").on("change", function(){
+        var rotation = $(this).val();
+
+        switch(rotation){
+            case '90':
+                $("#image_preview").removeClass().addClass("ninety_degrees");
+                break;
+            case '180':
+                $("#image_preview").removeClass().addClass("oneeighty_degrees");
+                break;
+            case '270':
+                $("#image_preview").removeClass().addClass("twoseventy_degrees");
+                break;
+            default:
+                $("#image_preview").removeClass();
+                break;
+        }
+
+
+    })
+
 
     //------------------- HTML5 GEOLOCATION -------------------//
 
