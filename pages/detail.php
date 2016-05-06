@@ -1,9 +1,17 @@
 <?php
 
-require_once("../classes/Post.class.php");
+require_once("init.php");
+
+/*require_once("../classes/Post.class.php");
 include_once("../classes/User.class.php");
 include_once("../classes/Likes.class.php");
-include_once("../classes/Comment.class.php");
+include_once("../classes/Comment.class.php");*/
+
+//kijken of user al ingelogd is
+if(!isset($_SESSION["username"]))
+{
+    header("location: ../index.php");
+}
 
 $post = new Post();
 $result = $post->getPostById($_GET["post"]);

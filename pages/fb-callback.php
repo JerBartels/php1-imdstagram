@@ -3,8 +3,13 @@
     session_start();
 
     require_once('../Facebook/autoload.php');
-    require_once('../classes/Db.class.php');
-    require_once('../classes/User.class.php');
+    require_once('init.php');
+
+    //kijken of user al ingelogd is
+    if(!isset($_SESSION["username"]))
+    {
+        header("location: ../index.php");
+    }
 
     $fb = new Facebook\Facebook
     ([
