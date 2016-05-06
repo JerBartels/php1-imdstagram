@@ -5,12 +5,6 @@
     require_once('../Facebook/autoload.php');
     require_once('init.php');
 
-    //kijken of user al ingelogd is
-    if(!isset($_SESSION["username"]))
-    {
-        header("location: ../index.php");
-    }
-
     $fb = new Facebook\Facebook
     ([
         'app_id' => '466986893500706',
@@ -84,7 +78,7 @@
         }
         catch (Exception $e)
         {
-            header("location: ../index.php");
+            //header("location: ../index.php");
             echo $e->getMessage();
         }
     }
@@ -109,7 +103,7 @@
             }
             else
             {
-                echo "something went wrong, please contact us";
+                echo "facebook login not working for you, try the regular registration form.";
             }
         }
         catch(Exception $e)
