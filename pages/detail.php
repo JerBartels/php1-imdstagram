@@ -3,13 +3,13 @@
 require_once("../classes/Post.class.php");
 
 $post = new Post();
-$result = $post->searchPosts($_POST["input_detail"]);
+$result = $post->getPostById($_GET["post"]);
 
-$post->Photo = $result[0]["photo"];
-$post->Username = $result[0]["username"];
-$post->Date = $result[0]["date"];
-$post->Comment = $result[0]["comment"];
-$post->Filter = $result[0]["filter"];
+$post->Photo = $result["photo"];
+$post->Username = $result["username"];
+$post->Date = $result["date"];
+$post->Comment = $result["comment"];
+$post->Filter = $result["filter"];
 
 ?>
 
