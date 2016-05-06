@@ -50,6 +50,23 @@ if(isset($_POST["btn_post"]))
                 $post->Inapp = 0;
                 $post->Filter = $_POST["post_filter"];
 
+                switch($_POST["post_rotation"])
+                {
+                    case '90':
+                        $post->Rotation = "ninety_degrees";
+                        break;
+                    case '180':
+                        $post->Rotation = "oneeighty_degrees";
+                        break;
+                    case '270':
+                        $post->Rotation = "twoseventy_degrees";
+                        break;
+                    default:
+                        $post->Rotation = "";
+                        break;
+                }
+
+
                 if($_POST["location_post"] != "")
                 {
                     $post->City = $_POST["location_post"];
@@ -225,7 +242,7 @@ if(isset($_POST["feed-delete-button"]))
                                         <div class="feed-id-date"><span><?php echo $formattedTime ?> / <?php echo $post["city"] ?></span></div>
                                     </div>
 
-                                    <div class="feed-image">
+                                    <div class="feed-image <?php echo $post["rotation"] ?>">
                                         <figure class="<?php echo $post["filter"] ?>">
                                             <?php print '<img src="../assets/posts/' . $post["photo"] . '"alt="feed_pict_img" class="feed_pict_img">' ?>
                                         </figure>
