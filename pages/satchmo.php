@@ -280,33 +280,9 @@ if(isset($_POST["feed-delete-button"]))
 
                                 <?php
 
-                                /*                      print '<div class="feed_feed"><div class="feed_username"><span>' . $post["username"] . '</span></div>';
-                                                        print '<div class="feed_date"><span>' . $post["date"] . '</span></div>';
-                                                        print '<img src="../assets/posts/' . $post["photo"] . '"alt="feed_pict_img" class="feed_pict_img">';
-                                                        print '<div class="feed_comment"><span class="comment_username">' . $post["username"] . "</span><span class='comment_text'>" . $post["comment"] . '</span></div>';
 
-                                                        print '<div class="feed_likes_form">';
-                                                            print '<span class="btn_feed_like" id="btn_' . $post["photo"] . '">like</span>';
-                                                            print '<span class="number_feed_like">' . $post["likes"] . '</span>';
-                                                        print '</div>';
-
-                                                        print '<div class ="feed_comment_feed" id="' . $post["id"] . '">';
-
-                                                        print '</div>';
-
-                                                        print '<div class="feed_comment_form"><form method="post" autocomplete="off">';
-                                                            print '<input type="input" name="input_post_comment" class="input_post_comment" id="input_'. $post["id"] . '">';
-                                                            print '<input type="submit" name="btn_post_comment" class="btn_post_comment" id="btn_' . $post["id"] . '">';
-                                                        print '</form></div>';
-
-                                                        print '</div>';*/
                             }
-
-                            /*if($count <= 0)
-                            {
-                                break;
-                            }*/
-                    }
+                        }
                     }
                 }
             ?>

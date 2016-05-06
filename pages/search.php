@@ -66,8 +66,16 @@ if(isset($_POST["submit_search"]))
                 foreach($results as $result)
                 {
                     {
-                        print '<div class="results_results" style="background-image: url(../assets/posts/' . $result["photo"] . ')">';
-                        print '<form method="post" action="detail.php"><input name="input_detail" class="input_detail" type="text" value="'. $result["photo"] . '"><input type="submit" class="submit_detail" name="submit_detail" value="detail"/></form></div>';
+                        ?>
+
+                        <figure>
+                            <a href="detail.php?post=<?php echo $result["id"]?>">
+                                <img class=results_results src="../assets/posts/<?php echo $result["photo"] ?>" alt="<?php echo $_POST["input_search"] ?>">
+                            </a>
+                        </figure>
+
+                        <?php
+
                     }
                 }
             ?>
