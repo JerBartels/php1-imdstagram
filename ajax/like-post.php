@@ -1,9 +1,6 @@
 <?php
 
-include_once("../classes/Post.class.php");
-include_once("../classes/Likes.class.php");
-include_once("../classes/User.class.php");
-include_once ("../pages/reglog.php");
+include_once("../pages/init.php");
 
 
 $post = new Post();
@@ -15,15 +12,15 @@ $selected_post = $post->getPostByPhoto($_POST["current_id"]);
 $selected_user = $user->getUserByUsername($_SESSION["username"]);
 
 
-$like->Username = $selected_user["username"];
-$like->Picture = $selected_post["photo"];
+$like->Username = $selected_user["id"];
+$like->Picture = $selected_post["id"];
 
 
 $likes = $selected_post["likes"];
 
 
-if(!$like->AlreadyLiked($like->Username, $like->Picture)){
-
+if(!$like->AlreadyLiked($like->Username, $like->Picture))
+{
     $like->Save();
 
     $upd_likes = intval($likes) + 1;
@@ -33,8 +30,8 @@ if(!$like->AlreadyLiked($like->Username, $like->Picture)){
     echo json_encode($selected_post);
 }
 
-else{
-
+else
+{
     $like->DeleteLike($like->Username, $like->Picture);
 
     $upd_likes = intval($likes) - 1;
