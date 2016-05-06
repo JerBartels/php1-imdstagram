@@ -15,6 +15,7 @@ $post->Comment = $result["comment"];
 $post->Filter = $result["filter"];
 $post->Likes = $result["likes"];
 $post->Inapp = $result["inapp"];
+$post->City = $result["city"];
 
 ?>
 
@@ -44,9 +45,16 @@ $post->Inapp = $result["inapp"];
 
 <div class="container">
 
-    <div id="detail_comment">
-        <div id="detail_comment_content">
-            <div id="detail_photo">
+    <div class="feed-feed">
+
+        <div class="feed-id">
+            <div class="feed-id-username">
+                <span><a href="user.php?username=<?php echo $post->Username ?>"><?php echo $post->Username ?></a></span>
+            </div>
+            <div class="feed-id-date"><span><?php echo $post->City ?></span></div>
+        </div>
+
+            <div class="feed-image">
                 <?php print '<figure class="' . $post->Filter . '"><img src="../assets/posts/' . $post->Photo . '"alt="feed_pict_img" class="feed_pict_img"></figure>'; ?>
             </div>
 
@@ -88,7 +96,6 @@ $post->Inapp = $result["inapp"];
                     <?php print '<input type="submit" name="btn_post_comment" class="btn_post_comment" id="btn_' . $result["id"] . '">'; ?>
                 </form>
 
-            </div>
         </div>
     </div>
 
