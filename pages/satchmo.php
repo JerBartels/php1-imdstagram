@@ -242,8 +242,8 @@ if(isset($_POST["feed-delete-button"]))
                                         <div class="feed-id-date"><span><?php echo $formattedTime ?> / <?php echo $post["city"] ?></span></div>
                                     </div>
 
-                                    <div class="feed-image <?php echo $post["rotation"] ?>">
-                                        <figure class="<?php echo $post["filter"] ?>">
+                                    <div class="feed-image">
+                                        <figure class="<?php echo $post["filter"] . " " . $post["rotation"]?>">
                                             <?php print '<img src="../assets/posts/' . $post["photo"] . '"alt="feed_pict_img" class="feed_pict_img">' ?>
                                         </figure>
                                     </div>

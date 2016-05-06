@@ -22,7 +22,8 @@ $inapp->Picture = $selected_post["photo"];
 $inapps = $selected_post["inapp"];
 
 
-if(!$inapp->AlreadyInapped($inapp->Username, $inapp->Picture)){
+if(!$inapp->AlreadyInapped($inapp->Username, $inapp->Picture))
+{
 
     $inapp->Save();
 
@@ -33,7 +34,8 @@ if(!$inapp->AlreadyInapped($inapp->Username, $inapp->Picture)){
     echo json_encode($selected_post);
 }
 
-else{
+else
+{
 
     $inapp->DeleteInapp($inapp->Username, $inapp->Picture);
 

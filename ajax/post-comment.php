@@ -13,9 +13,9 @@ $selected_post = $post->getPostById($_POST["current_post_id"]);
 $selected_user = $user->getUserByUsername($_SESSION["username"]);
 $actual_time = date('Y-m-d H:i:s', time());
 
-$comment->Username = $selected_user["username"];
-$comment->Post = $selected_post["id"];
-$comment->Comment = $_POST["comment"];
+$comment->Username = $selected_user["id"];
+$comment->Post = $selected_post["username"];
+$comment->Comment = strip_tags($_POST["comment"]);
 $comment->Date = $actual_time;
 $comment->Save();
 
