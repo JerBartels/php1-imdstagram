@@ -257,7 +257,7 @@ if(isset($_POST["feed-delete-button"]))
 
                                         <form action="" method="post" class="feed_comment_form">
                                             <?php print '<input type="input" placeholder="Add a comment..." name="input_post_comment" class="input_post_comment" id="input_' . $post["id"] . '">'; ?>
-                                            <?php print '<input type="submit" name="btn_post_comment" class="btn_post_comment" id="btn_' . $post["id"] . '">'; ?>
+                                            <?php print '<button type="submit" value="submit" name="btn_post_comment" class="btn_post_comment" id="btn_' . $post["id"] . '">'; ?>
                                         </form>
 
                                     </div>

@@ -286,7 +286,11 @@ p
 
             .btn_post_comment
             {
-                display: none;
+                /*display: none;*/
+                display: block;
+                width: 1px;
+                height: 1px;
+                text-indent: -999px;
             }
 
 

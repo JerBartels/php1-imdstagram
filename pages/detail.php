@@ -2,11 +2,6 @@
 
 require_once("init.php");
 
-/*require_once("../classes/Post.class.php");
-include_once("../classes/User.class.php");
-include_once("../classes/Likes.class.php");
-include_once("../classes/Comment.class.php");*/
-
 //kijken of user al ingelogd is
 if(!isset($_SESSION["username"]))
 {

@@ -165,7 +165,9 @@ $(document).ready(function() {
 
     //------------------- AJAX - COMMENT -------------------//
 
-    $(document).on("click", ".btn_post_comment", function(){
+    $(document).on("click", ".btn_post_comment", function(e)
+    {
+        e.preventDefault();
 
         var $current_comment = $(this);
         var current_post_id = $current_comment.attr("id").slice(4);

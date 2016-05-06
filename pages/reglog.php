@@ -1,13 +1,9 @@
 <?php
 
-//reglog staat voor registratie en login
 //deze pagina dekt zowel het inloggen als het registreren van een nieuw profiel
 //om geen gigantische index.php te krijgen deze functies in afzonderlijke file gezet
 
 include_once("init.php");
-/*include_once("../classes/Db.class.php");
-include_once("../classes/User.class.php");
-include_once("session.php");*/
 
 // --------- ** SIGN UP ** --------- //
 
