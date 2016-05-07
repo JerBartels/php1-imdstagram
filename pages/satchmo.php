@@ -139,31 +139,25 @@ if(isset($_POST["feed-delete-button"]))
                 <input type="submit" value="find" name="submit_search" class="submit_search" id="submit_search">
             </form>
         </div>
+
+        <div class="clearfix"></div>
+
     </div>
 </nav>
-
-<!--<div id="search">
-    <div id="search_content">
-        <form method="post" action="search.php" class ="form_nav" autocomplete="off">
-            <input type="text" placeholder="search" name="input_search">
-            Wordt display:none in css, daar zoeken via enter zal gebeuren
-            <input type="submit" value="find" name="submit_search" id="submit_search">
-        </form>
-    </div>
-</div>-->
 
 <div class="container">
     <div>
         <p id="geolocation"></p>
     </div>
 
-    <div id="profile">
+<!--    <div id="profile">
         <div id="profile_content">
-            <?php echo '<img src="../assets/' . $user->ProfilePic . '"alt="profile_pict" class="profile_pict">' ?>
-            <h1><?php print $user->Firstname . " " . $user->Lastname?></h1>
+            <?php /*echo '<img src="../assets/' . $user->ProfilePic . '"alt="profile_pict" class="profile_pict">' */?>
+            <h1><?php /*print $user->Firstname . " " . $user->Lastname*/?></h1>
             <a class="btn_a" href="profile.php">change profile</a>
         </div>
-    </div>
+    </div>-->
+
     <div id="post_zone">
         <div id="post_zone_content">
             <form enctype="multipart/form-data" method="post" action="" autocomplete="off">
@@ -173,7 +167,8 @@ if(isset($_POST["feed-delete-button"]))
                         <img id="preview" src="#" alt="your image" style="max-width: 600px">
                     </figure>
                 </div>
-                <input type="file" class="post_post" name="post_post" id="post_post"><br>
+                <button class="post_img">+</button>
+                <input type="file" class="post_post" name="post_post" id="post_post">
                 <select name="post_filter" id="post_filter">
                     <option value="">No filter</option>
                     <option value="aden">Aden</option>
@@ -201,7 +196,7 @@ if(isset($_POST["feed-delete-button"]))
                     <option value="180">180 degrees</option>
                     <option value="270">270 degrees</option>
                 </select>
-                <input type="input" class="post_post" name="input_post" id="input_post"><br>
+                <input type="input" class="post_post" name="input_post" id="input_post">
                 <input type="hidden" class="post_post" name="location_post" id="location_post">
                 <input type="submit" value="post" name="btn_post" id="btn_post">
                 <p class="form_feedback"><?php echo $feedback_post ?></p>

@@ -65,7 +65,7 @@ nav
     
     .nav_search
     {
-        /*margin: 25px 0 0 0;*/
+        margin: 25px 0 0 0;
     }
         
     .submit_input
@@ -79,7 +79,7 @@ nav
         letter-spacing: 0.25em;
         width: 90%;
         padding: 15px 0;
-        margin: 15px auto 0 auto;
+        margin: 0 0 0 auto;
         border-radius: 10px;
         border: 0;
         transition: ease-in-out, width, .35s ease-in-out;
@@ -96,3 +96,35 @@ nav
     {
         display: none;
     }
+
+#post_zone
+{
+    width: 100%;
+}
+
+    #post_zone_content
+    {
+        max-width: 960px;
+        margin: 50px auto;
+    }
+
+        .post_img
+        {
+            display: block;
+            background-color: #000000;
+            color: #FFFFFF;
+            font-variant: small-caps;
+            letter-spacing: 0.25em;
+            width: 100px;
+            height: 100px;
+            margin: 25px auto 15px auto;
+            border-radius: 50%;
+            border: 0;
+            transition: ease-in-out, transform, .35s ease-in-out;
+        }
+
+.post_img:hover
+{
+    background-color: #474747;
+    transform: rotate(360deg);
+}

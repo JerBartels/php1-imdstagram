@@ -2,6 +2,13 @@ $(document).ready(function() {
 
     $("#preview").css("display", "none");
     $(".nav_search").css("display", "none");
+    $(".post_post").css("display", "none");
+
+    //------------------ IMAGE / FILE INPUT HACK ----------------------- //
+
+    $(".post_img").on("click", function () {
+        $(".post_post").trigger('click');
+    });
 
     //------------------- SEARCH SLIDE DOWN -----------------------//
 
@@ -15,7 +22,7 @@ $(document).ready(function() {
     $(".a_search").on("mouseover", function(e){
         e.preventDefault();
 
-        $(".nav_search").slideToggle("200", "swing" ,function(){
+        $(".nav_search").slideToggle("200" ,function(){
 
         });
     });
