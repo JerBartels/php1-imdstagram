@@ -7,61 +7,106 @@ html, body
     color: #000000;
 }
 
-    .container
+.container
+{
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.content-table
+{
+    min-height: 100vh;
+    display: table;
+    margin: 0 auto;
+}
+
+.content-cell
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.header
+{
+    text-align: center;
+}
+
+h1
+{
+    font-size: 1.5em;
+    font-variant: small-caps;
+    letter-spacing: 0.5em;
+}
+
+.menu
+{
+    margin-top: 350px;
+}
+
+.btn_a
+{
+    display: block;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-variant: small-caps;
+    text-decoration: none;
+    letter-spacing: 0.25em;
+    width: 250px;
+    padding: 15px 0;
+    margin: 15px auto 0 auto;
+    border-radius: 10px;
+}
+
+    .btn_a:hover
     {
-        max-width: 960px;
-        margin: 0 auto;
-        text-align: center;
+        background-color: #000000;
+        color: #FFFFFF;
     }
 
-        .content-table
-        {
-            min-height: 100vh;
-            display: table;
-            margin: 0 auto;
-        }
+.btn_round
+{
+    display: block;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-variant: small-caps;
+    letter-spacing: 0.25em;
+    width: 50px;
+    height: 50px;
+    margin: 25px auto 15px auto;
+    border-radius: 50%;
+    border: 0;
+}
 
-            .content-cell
-            {
-                display: table-cell;
-                vertical-align: middle;
-            }
+    .btn_round:hover
+    {
+        background-color: #FFFFFF;
+        color: #000000;
+    }
 
-                .header
-                {
-                    width: 500px;
-                    margin-bottom: 175px;
-                    text-align: center;
-                }
+.my_form
+{
+    margin-top: 100px;
+}
 
-                    h1
-                    {
-                        font-size: 1.5em;
-                        font-variant: small-caps;
-                        letter-spacing: 0.5em;
-                    }
+form input
+{
+    display: block;
+    background-color: #FFFFFF;
+    text-align: center;
+    color: #000000;
+    font-variant: small-caps;
+    letter-spacing: 0.25em;
+    width: 250px;
+    padding: 15px 0;
+    margin: 15px auto 0 auto;
+    border-radius: 10px;
+    border: 0;
+}
 
-                .btns
-                {
-                    /*no styling needed*/
-                }
-
-                    .btn_a
-                    {
-                        display: block;
-                        background-color: #FFFFFF;
-                        color: #000000;
-                        font-variant: small-caps;
-                        text-decoration: none;
-                        letter-spacing: 0.25em;
-                        width: 250px;
-                        padding: 15px 0;
-                        margin: 15px auto 0 auto;
-                        border-radius: 10px;
-                    }
-
-                        .btn_a:hover
-                        {
-                            background-color: #000000;
-                            color: #FFFFFF
-                        }
+    .form_error
+    {
+        color: #AAAAAA;
+        font-size: 0.75em;
+        font-weight: 700;
+    }

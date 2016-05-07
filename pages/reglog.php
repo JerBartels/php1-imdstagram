@@ -32,12 +32,12 @@ if(isset($_POST["signup"]))
             //controleren of er al een user bestaat met dit emailadres
             if($user->Exists($user->Email, "email"))
             {
-                $feedback = "You already are a Satchmo member :)";
+                $feedback = "we know you!";
             }
             //controleren of de usernaam uniek is
             else if($user->Exists($user->Username, "username"))
             {
-                $feedback = "This username is already in use :(";
+                $feedback = "this username is already taken :(";
             }
             //twee maal false, nu effectief aanmaken in db
             else
@@ -49,7 +49,7 @@ if(isset($_POST["signup"]))
                 $_SESSION["username"] = $user->Username;
 
                 //redirect naar applicatie
-                header("location: pages/satchmo.php");
+                header("location: satchmo.php");
             }
         }
         catch(Exception $e)
@@ -78,18 +78,18 @@ if(isset($_POST["signin"]))
                 $_SESSION["username"] = $user->Username;
 
                 //doorverwijzen naar de application pagina
-                header("location: pages/satchmo.php");
+                header("location: satchmo.php");
             }
             else
             {
                 //error als passwoord niet correct is.
-                $l_feedback = "Hi dickhead, forgot your password?";
+                $l_feedback = "forgot your password?";
             }
         }
         else
         {
             //error als user niet bestaat in DB
-            $l_feedback = "No alcohol under 16!!";
+            $l_feedback = "we do not know you!";
         }
     }
     catch(Exception $e)
@@ -122,7 +122,7 @@ function validateFirstName($p_vValue)
     else
     {
         global $err_firstname;
-        $err_firstname = "<span class='form_error'>Hi cowboy, what's your name?</span>";
+        $err_firstname = "<span class='form_error'>no name?</span>";
     }
 }
 
@@ -135,7 +135,7 @@ function validateLastName($p_vValue)
     else
     {
         global $err_lastname;
-        $err_lastname = "<span class='form_error'>Hi shy-bee, we won't bite!</span>";
+        $err_lastname = "<span class='form_error'>incognito?</span>";
     }
 }
 
@@ -148,7 +148,7 @@ function validateUsername($p_vValue)
     else
     {
         global $err_username;
-        $err_username = "<span class='form_error'>Usernames are awesome, don't leave this one empty!</span>";
+        $err_username = "<span class='form_error'>no username?</span>";
     }
 }
 
@@ -163,13 +163,13 @@ function validateEmail($p_vValue)
         else
         {
             global $err_email;
-            $err_email = "<span class='form_error'>Forgot the @?</span>";
+            $err_email = "<span class='form_error'>emailaddress not valid</span>";
         }
     }
     else
     {
         global $err_email;
-        $err_email = "<span class='form_error'>No spam for you?</span>";
+        $err_email = "<span class='form_error'>no email?</span>";
     }
 }
 
@@ -189,13 +189,13 @@ function validatePass($p_vValue)
         else
         {
             global $err_pass;
-            $err_pass = "<span class='form_error'>Hackers are strong, give them a hard time (> 8 + 1x UC + 1x LC + 1x N°)</span>";
+            $err_pass = "<span class='form_error'>strong password required</span>";
         }
     }
     else
     {
         global $err_pass;
-        $err_pass = "<span class='form_error'>No password, honey?</span>";
+        $err_pass = "<span class='form_error'>no password?</span>";
     }
 }
 
