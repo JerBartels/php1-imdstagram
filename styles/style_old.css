@@ -1,0 +1,681 @@
+html,body
+{
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    width: 100%;
+    color: #2C2C2C;
+}
+
+.container
+{
+    width: 100%;
+    /*background-color: #F0F0F0;*/
+}
+
+.container_search
+{
+    width: 100%;
+    background-color: #F0F0F0;
+}
+
+.clearfix
+{
+    width: 1px;
+    visibility: hidden;
+    clear: both;
+}
+
+h1
+{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+h2
+{
+    margin-top: 75px;
+    font-weight: 600;
+}
+
+p
+{
+    color: #2C2C2C;
+}
+
+/*profile page*/
+#profile
+{
+    border-top: 1px solid #F0F0F0;
+    margin-top: 25px;
+    text-align: center;
+}
+
+
+#profile_content
+{
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px 10px;
+}
+
+.profile_pict
+{
+    border-radius: 150px;
+    margin-bottom: 10px;
+    width: 150px;
+    height: 150px;
+}
+
+#profile_form
+{
+    display: none;
+    margin-top: 25px;
+}
+
+#edit_profile
+{
+    text-align: left;
+    border-top: 1px solid #F0F0F0;
+    margin-top: 25px;
+}
+
+.edit_profile_content
+{
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px 10px;
+}
+
+#username_ajax_feedback
+{
+    display: none;
+    font-size: 0.8em;
+    font-variant: small-caps;
+    padding-top: 10px;
+    display: block;
+    color: #61AC7E;
+    margin-left: 25%;
+}
+
+.full_hr
+{
+    border-bottom: 1px solid #F0F0F0;
+    width: 100%;
+    margin-top: 50px;
+}
+
+/*satchmo applicatie pagina*/
+#nav
+{
+    width: 100%;
+    margin-top: 25px;
+}
+
+#nav_content
+{
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*speciaal andere class, daar logo anders gepositioneerd wordt*/
+.logo_app
+{
+    float: left;
+    display: inline-block;
+    text-indent: -999px;
+    background-image: url(../assets/logo.svg);
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 20px;
+    margin-left: 15px;
+}
+
+.logout_app
+{
+    float: right;
+    display: inline-block;
+    font-variant: small-caps;
+    font-weight: 800;
+    text-decoration: none;
+    width: 60px;
+    text-align: right;
+    color: black;
+    margin-right: 15px;
+}
+
+#footer
+{
+    height: 200px;
+    background-color: #2C2C2C;
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+#search
+{
+    width: 100%;
+    border-top: 1px solid #F0F0F0;
+    margin-top: 25px;
+}
+
+#search_content
+{
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form_nav
+{
+    width: 100% !important;
+    display: block;
+    /*overrule default form margin*/
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#post_zone
+{
+    border-top: 1px solid #F0F0F0;
+    margin-top: 25px;
+    text-align: center;
+    background-color: #F0F0F0;
+    padding-bottom: 50px;
+}
+
+#post_zone_content
+{
+    border-top: 1px solid #F0F0F0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#figure_preview
+{
+    max-width: 600px;
+    margin-top: 25px;
+}
+
+.ninety_degrees
+{
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.oneeighty_degrees
+{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.twoseventy_degrees
+{
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+#feed
+{
+    border-top: 1px solid #F0F0F0;
+    width: 100%;
+}
+
+.feed-feed
+{
+    border: 1px solid #F0F0F0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+}
+
+.feed-id-username
+{
+    display: inline-block;
+    width: 50%;
+    margin-top: 25px;
+    margin-bottom:25px;
+}
+
+.feed-id-username span
+{
+    font-weight: 800;
+    color: #1A5A85;
+}
+
+.feed-id-date
+{
+    display: inline-block;
+    width: 49%;
+    text-align: right;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.feed_date span
+{
+    color: lightgrey;
+}
+
+.feed_pict_img
+{
+    width: 100%;
+}
+
+
+.feed-comment-list
+{
+    margin-top: 25px;
+}
+
+.number_feed_like, .number_feed_inapp
+{
+    margin-left: 15px;
+    font-weight: 800;
+}
+
+ul
+{
+    margin-top: 15px;
+}
+
+.feed-comment-list-username
+{
+    font-weight: 800;
+    color: #1A5A85;
+    margin-left: 15px;
+    width: 25%;
+}
+
+.feed_comment_form
+{
+    display: inline-block;
+    width: 100%;
+    margin-left: -50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.btn_post_comment
+{
+    /*display: none;*/
+    display: block;
+    width: 1px;
+    height: 1px;
+    text-indent: -999px;
+}
+
+
+.feed-delete-button
+{
+    background-color: #fff;
+    color: #1A5A85;
+    width: 60px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.feed_more
+{
+    margin-top: 50px;
+}
+
+.feed_more a
+{
+    display: block;
+    text-indent: -999px;
+    background-image: url(../assets/plus.svg);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feed_more_content
+{
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button
+{
+    box-sizing: content-box;
+    background-color: #4080A8;
+    color: white;
+    font-weight: 800;
+    border: 1px solid #4080A8;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-top: 25px;
+    padding: 7px;
+    min-width: 25%;
+    max-width: 50%;
+}
+
+button:hover
+{
+    background-color: #1A5A85;
+    border: 1px solid #1A5A85;
+}
+
+.btn_a
+{
+    display: block;
+    text-decoration: none;
+    color: #2C2C2C;
+    border: 1px solid #2C2C2C;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-top: 25px;
+    padding: 10px;
+    min-width: 15%;
+    max-width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*search/feed pagina*/
+#summary
+{
+    border-top: 1px solid #f0F0F0;
+    margin-top: 25px;
+    padding-top: 75px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+#summary_content h1
+{
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+#summary_content p
+{
+    font-weight: 300;
+    font-size: 0.7em;
+}
+
+#results
+{
+    width: 100%;
+}
+
+#results_content
+{
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.results_results
+{
+    float:left;
+    position: relative;
+    width: 30%;
+    padding-bottom: 30%; /* = width for a 1:1 aspect ratio */
+    margin:1.66%;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+.input_detail
+{
+    display: none;
+}
+
+.submit_detail
+{
+}
+
+#detail_comment
+{
+    border-top: 1px solid #f0F0F0;
+    margin-top: 25px;
+}
+
+#detail_comment_content
+{
+    margin-top: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#detail_user
+{
+    margin-top: 25px;
+}
+
+.detail_username_h1
+{
+    font-weight: 800;
+    font-size: 1em;
+    color: #1A5A85;
+    width: 25%;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.detail_comment_p
+{
+    font-weight: 300;
+    font-size: 1em;
+    color: #2C2C2C;
+    width: 50%;
+    display: inline-block;
+}
+
+
+/*startpagina - login of registreer*/
+#div_content
+{
+    min-height: 100vh;
+    display: table;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#div_center
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#div_form
+{
+    background-color: #fff;
+    padding: 50px 50px 75px 50px;
+    border: 1px solid #ECECEC;
+    border-radius: 5px;
+}
+
+.logo
+{
+    display: block;
+    text-indent: -999px;
+    background-image: url(../assets/logo.svg);
+    background-repeat: no-repeat;
+
+    width: 120px;
+    height: 40px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-bottom: 25px;
+}
+
+.hr
+{
+    width: 20%;
+    border-top: 1px solid #6DACD4;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form
+{
+    /*margin-top: 50px;*/
+}
+
+input
+{
+    display: block;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #ECECEC;
+    border-radius: 5px;
+}
+
+#post_zone input
+{
+    width: 100%;
+    padding: 10px 0px;
+}
+
+input.input_change_profile
+{
+    display: inline-block;
+    width: 70%;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #ECECEC;
+    border-radius: 5px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+input[type=submit].input_change_profile
+{
+    display: block;
+    margin-left: auto;
+    margin-right: 5px;
+    width: 10%;
+}
+
+label.label_change_profile
+{
+    display: inline-block;
+    width: 25%;
+    font-size: 0.8em;
+}
+
+input:focus
+{
+    border: 1px solid #4080A8;
+    outline: 0;
+}
+
+input[type=submit]
+{
+    box-sizing: content-box;
+    background-color: #4080A8;
+    color: white;
+    font-weight: 700;
+    border: 1px solid #4080A8;
+    font-variant: small-caps;
+}
+
+input[type=submit]:hover
+{
+    background-color: #1A5A85;
+    border: 1px solid #1A5A85;
+}
+
+#load
+{
+    color: #2C2C2C;
+    background-color: #FFFFFF;
+    border: 1px solid #2C2C2C;
+    font-variant: small-caps;
+    width: 20%;
+}
+
+#load:hover
+{
+    background-color: #2C2C2C;
+    border: 1px solid #F0F0F0;
+    color: #FFFFFF;
+}
+
+#load:disabled
+{
+    background-color: #ffffff;
+    color: #F0F0F0;
+    border: 1px solid #F0F0F0;
+}
+
+#load:disabled:hover
+{
+    background-color: #ffffff;
+    color: #F0F0F0;
+    border: 1px solid #F0F0F0;
+}
+
+#submit_search
+{
+    display: none;
+}
+
+.form_error
+{
+    font-size: 0.7em;
+    font-style: italic;
+    display: block;
+    text-align: center;
+}
+
+.form_feedback
+{
+    font-size: 0.7em;
+    font-style: italic;
+    padding-top: 5px;
+    display: block;
+    text-align: center;
+}
+
+.change_feedback
+{
+    font-size: 1em;
+    font-variant: small-caps;
+    padding-top: 10px;
+    display: block;
+    color: #61AC7E;
+}
+
+
+#register
+{
+
+}
+
+#login
+{
+
+}
+

@@ -22,7 +22,7 @@ alreadyLoggedIn();
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='https://fonts.googleapis.com/css?family=Lato:400,700italic,300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="styles/reset.css">
-        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/index.css">
     </head>
 
     <body>
@@ -34,8 +34,6 @@ alreadyLoggedIn();
                     <header>
                         <a href="index.php" class="logo">logo</a>
                     </header>
-
-                    <div class="hr">
 
                     </div>
 

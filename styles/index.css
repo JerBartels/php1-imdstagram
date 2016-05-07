@@ -1,0 +1,67 @@
+html, body
+{
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    width: 100%;
+    background-color: #EBEBEB;
+    color: #000000;
+}
+
+    .container
+    {
+        max-width: 960px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+        .content-table
+        {
+            min-height: 100vh;
+            display: table;
+            margin: 0 auto;
+        }
+
+            .content-cell
+            {
+                display: table-cell;
+                vertical-align: middle;
+            }
+
+                .header
+                {
+                    width: 500px;
+                    margin-bottom: 175px;
+                    text-align: center;
+                }
+
+                    h1
+                    {
+                        font-size: 1.5em;
+                        font-variant: small-caps;
+                        letter-spacing: 0.5em;
+                    }
+
+                .btns
+                {
+                    /*no styling needed*/
+                }
+
+                    .btn_a
+                    {
+                        display: block;
+                        background-color: #FFFFFF;
+                        color: #000000;
+                        font-variant: small-caps;
+                        text-decoration: none;
+                        letter-spacing: 0.25em;
+                        width: 250px;
+                        padding: 15px 0;
+                        margin: 15px auto 0 auto;
+                        border-radius: 10px;
+                    }
+
+                        .btn_a:hover
+                        {
+                            background-color: #000000;
+                            color: #FFFFFF
+                        }
