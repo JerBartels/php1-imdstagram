@@ -32,7 +32,7 @@ alreadyLoggedIn();
         <div class="content-cell">
 
             <div class="header">
-                <h1>satchmo cc</h1>
+                <h1><a class="a_logo" href="#">satchmo cc</a></h1>
             </div>
 
             <div class="menu">

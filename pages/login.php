@@ -27,7 +27,7 @@ include_once("reglog.php");
         <div class="content-cell">
 
             <div class="header">
-                <h1>satchmo cc</h1>
+                <h1><a class="a_logo" href="../index.php">satchmo cc</a></h1>
             </div>
 
             <div class="my_form">

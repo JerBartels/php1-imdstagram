@@ -2,6 +2,7 @@ html, body
 {
     font-family: 'Lato', sans-serif;
     font-size: 16px;
+    font-weight: 400;
     width: 100%;
     background-color: #EBEBEB;
     color: #000000;
@@ -39,6 +40,14 @@ h1
     letter-spacing: 0.5em;
 }
 
+    .a_logo
+    {
+        text-decoration: none;
+        font-variant: small-caps;
+        letter-spacing: 0.5em;
+        color: #000000;
+    }
+
 .menu
 {
     margin-top: 350px;
@@ -49,6 +58,7 @@ h1
     display: block;
     background-color: #FFFFFF;
     color: #000000;
+    font-size: 0.8em;
     font-variant: small-caps;
     text-decoration: none;
     letter-spacing: 0.25em;
@@ -76,12 +86,14 @@ h1
     margin: 25px auto 15px auto;
     border-radius: 50%;
     border: 0;
+    transition: ease-in-out, transform, .35s ease-in-out;
 }
 
     .btn_round:hover
     {
         background-color: #FFFFFF;
         color: #000000;
+        transform: rotate(360deg);
     }
 
 .my_form
@@ -89,20 +101,41 @@ h1
     margin-top: 100px;
 }
 
-form input
+form input[type=text],
+form input[type=password]
 {
     display: block;
     background-color: #FFFFFF;
     text-align: center;
     color: #000000;
     font-variant: small-caps;
+    font-size: 0.8em;
     letter-spacing: 0.25em;
     width: 250px;
     padding: 15px 0;
     margin: 15px auto 0 auto;
     border-radius: 10px;
     border: 0;
+    transition: ease-in-out, width, .35s ease-in-out;
 }
+
+    form input[type=text]:focus,
+    form input[type=password]:focus
+    {
+        outline: none;
+        width: 300px;
+    }
+
+form input[type=submit]
+{
+    transition: ease-in-out, transform, .35s ease-in-out;
+}
+
+    form input[type=submit]:focus
+    {
+        outline: none;
+        transform: rotate(360deg);
+    }
 
     .form_error
     {
