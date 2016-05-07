@@ -1,6 +1,25 @@
 $(document).ready(function() {
 
     $("#preview").css("display", "none");
+    $(".nav_search").css("display", "none");
+
+    //------------------- SEARCH SLIDE DOWN -----------------------//
+
+    $('.nav_search').each(function() {
+        $height = $(this).height();
+        $(this).css('height', $height);
+        $(this).hide();
+    });
+
+
+    $(".a_search").on("mouseover", function(e){
+        e.preventDefault();
+
+        $(".nav_search").slideToggle("200", "swing" ,function(){
+
+        });
+    });
+
 
     //------------------- JQUERY PHOTO PREVIEW -------------------//
 

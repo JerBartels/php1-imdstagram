@@ -1,0 +1,98 @@
+html, body
+{
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    width: 100%;
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.clearfix
+{
+    width: 1px;
+    visibility: hidden;
+    clear: both;
+}
+
+nav
+{
+    width: 100%;
+    background-color: #EBEBEB;
+}
+
+.nav_content
+{
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 25px 15px;
+    position: relative;
+}
+
+    .nav_right
+    {
+        float: right;
+    }
+
+    .a_nav
+    {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        text-decoration: none;
+        color: #000000;
+        text-indent: -9999px;
+        background-repeat: no-repeat;
+        margin: 0 0 0 25px;
+
+    }
+
+        .a_profile
+        {
+            background-image: url("../assets/icons/user.svg");
+        }
+        
+        .a_search
+        {
+            background-image: url("../assets/icons/search.svg");
+        }
+
+        .a_logout
+        {
+            background-image: url("../assets/icons/power.svg");
+        }
+
+    
+    .nav_search
+    {
+        /*margin: 25px 0 0 0;*/
+    }
+        
+    .submit_input
+    {
+        display: block;
+        background-color: #FFFFFF;
+        text-align: center;
+        color: #000000;
+        font-variant: small-caps;
+        font-size: 0.8em;
+        letter-spacing: 0.25em;
+        width: 90%;
+        padding: 15px 0;
+        margin: 15px auto 0 auto;
+        border-radius: 10px;
+        border: 0;
+        transition: ease-in-out, width, .35s ease-in-out;
+    }
+
+        form input[type=text]:focus,
+        form input[type=password]:focus
+        {
+            outline: none;
+            width: 100%;
+        }
+
+    .submit_search
+    {
+        display: none;
+    }

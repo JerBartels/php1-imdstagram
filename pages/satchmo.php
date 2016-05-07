@@ -118,29 +118,39 @@ if(isset($_POST["feed-delete-button"]))
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700italic,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/cssgram.css">
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/satchmo.css">
 </head>
 
 <body>
 
-<nav id="nav">
-    <div id="nav_content">
-        <a href="../index.php" class="logo_app">logo</a>
-        <a href="logout.php" class="logout_app">log out</a>
+<nav>
+    <div class="nav_content">
+        <div class="nav_right">
+            <a class="a_logout a_nav" href="logout.php">logout</a>
+            <a class="a_search a_nav" href="#">search</a>
+            <a class="a_profile a_nav" href="profile.php">profile</a>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="nav_search">
+            <form method="post" action="search.php" class ="form_nav" autocomplete="off">
+                <input type="text" placeholder="search" class="submit_input" name="input_search">
+                <input type="submit" value="find" name="submit_search" class="submit_search" id="submit_search">
+            </form>
+        </div>
     </div>
 </nav>
 
-<div class="clearfix"></div>
-
-<div id="search">
+<!--<div id="search">
     <div id="search_content">
         <form method="post" action="search.php" class ="form_nav" autocomplete="off">
             <input type="text" placeholder="search" name="input_search">
-            <!-- Wordt display:none in css, daar zoeken via enter zal gebeuren -->
+            Wordt display:none in css, daar zoeken via enter zal gebeuren
             <input type="submit" value="find" name="submit_search" id="submit_search">
         </form>
     </div>
-</div>
+</div>-->
 
 <div class="container">
     <div>
