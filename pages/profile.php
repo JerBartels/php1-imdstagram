@@ -157,15 +157,30 @@ if(isset($_POST["btn_accept_love"]))
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700italic,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../styles/reset.css">
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/satchmo.css">
 </head>
 
 <body>
 
-<nav id="nav">
-    <div id="nav_content">
-        <a href="../index.php" class="logo_app">logo</a>
-        <a href="logout.php" class="logout_app">log out</a>
+<nav>
+    <div class="nav_content">
+        <div class="nav_right">
+            <a class="a_search a_nav" href="#">search</a>
+            <a class="a_profile a_nav" href="profile.php">profile</a>
+            <a class="a_logout a_nav" href="logout.php">logout</a>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="nav_search">
+            <form method="post" action="search.php" class ="form_nav" autocomplete="off">
+                <input type="text" placeholder="search" class="submit_input" name="input_search">
+                <input type="submit" value="find" name="submit_search" class="submit_search" id="submit_search">
+            </form>
+        </div>
+
+        <div class="clearfix"></div>
+
     </div>
 </nav>
 
@@ -177,8 +192,7 @@ if(isset($_POST["btn_accept_love"]))
             <h2>Edit profile picture</h2>
             <p class="change_feedback"><?php echo $feedback_profile_pic ?></p>
 
-            <form enctype="multipart/form-data" method="post" action="">
-                <!--<input type="hidden" name="MAX_FILE_SIZE" value="32768"/>-->
+            <form enctype="multipart/form-data" method="post" action="" class="profile_form">
                 <label class=label_change_profile for="profile_pic">Picture</label><input type="file" class="input_change_profile" name="profile_pic" id="profile_pic"><br>
                 <input type="submit" value="send" name="btn_profile_pic" class="input_change_profile" id="btn_profile_pic">
             </form>
@@ -190,7 +204,7 @@ if(isset($_POST["btn_accept_love"]))
             <h2>Change profile</h2>
             <p class="change_feedback" id="change_feedback"><?php echo $feedback ?></p>
 
-            <form action="" method="post" autocomplete="off">
+            <form action="" method="post" autocomplete="off" class="profile_form">
                 <label class=label_change_profile for="input_change_username">Username</label><input type="text" name="username" id="input_change_username" class="input_change_profile" value="<?php print $user->Username; ?>"><br>
                 <?php if(isset($_POST['username']) && !validateUsername($_POST['username'])){echo $err_username;} ?>
                 <p id="username_ajax_feedback"></p>
@@ -212,7 +226,7 @@ if(isset($_POST["btn_accept_love"]))
             <h2>Privacy</h2>
             <p class="change_feedback" id="change_feedback"><?php echo $feedback_privacy ?></p>
 
-            <form action="" method="post" autocomplete="off">
+            <form action="" method="post" autocomplete="off" class="profile_form">
                 <label class=label_change_profile for="input_change_privacy">Profile type</label>
                 <select name="input_change_privacy" id="input_change_privacy">
                     <option value="private"<?=$user->Private == True ? ' selected="selected"' : '';?>>Private</option>
@@ -236,7 +250,7 @@ if(isset($_POST["btn_accept_love"]))
                     foreach($follows as $follow)
                     {
                 ?>
-                        <form action="" method="POST">
+                        <form action="" method="POST" class="profile_form">
                             <label for=""><a href="user.php?username=<?php echo $follow["fan"] ?>"><?php echo $follow["fan"] ?></a></label>
                             <input type="hidden" value="<?php echo $follow["fan"] ?>" name="input_accept_love">
                             <input type="submit" value="accept" name="btn_accept_love">

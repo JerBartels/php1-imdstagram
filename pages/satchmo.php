@@ -162,7 +162,7 @@ if(isset($_POST["feed-delete-button"]))
         <div id="post_zone_content">
             <div id="image_preview">
                 <figure id="figure_preview">
-                    <img id="preview" src="#" alt="your image">
+                    <img id="preview" src="#" alt="your profile image">
                 </figure>
             </div>
 
