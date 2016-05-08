@@ -1,3 +1,4 @@
+/* start general */
 html, body
 {
     font-family: 'Lato', sans-serif;
@@ -21,6 +22,10 @@ html, body
     font-size: 0.75em;
     font-weight: 700;
 }
+
+/* end general */
+
+/* start navigation */
 
 nav
 {
@@ -103,6 +108,10 @@ nav
         display: none;
     }
 
+/* end navigation */
+
+/* start post zone */
+
 #post_zone
 {
     width: 100%;
@@ -163,7 +172,7 @@ nav
             letter-spacing: 0.25em;
             width: 50px;
             height: 50px;
-            margin: 25px auto 15px auto;
+            margin: 25px auto 0px auto;
             border-radius: 50%;
             border: 0;
             transition: ease-in-out, transform, .35s ease-in-out;
@@ -176,13 +185,119 @@ nav
                 transform: rotate(360deg);
             }
 
-
-        #image_preview
-        {
-            text-align: center;
-        }
-
         #preview
         {
+            width: 100%;
             max-width: 600px;
+            border-radius: 10px;
         }
+
+        #figure_preview
+        {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+
+/* end post zone */
+
+/* start feed */
+
+#feed
+{
+    width: 100%;
+    /* niet met padding op feed-feed => te veel spatie tussen posts */
+    margin: 50px 0;
+}
+
+    .feed-feed
+    {
+        max-width: 600px;
+        margin: 0 auto 15px auto;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #EBEBEB;
+    }
+
+        .feed-id
+        {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+            .feed-id-username
+            {
+                display: inline-block;
+                width: 48%;
+            }
+
+            .feed-id-date
+            {
+                display: inline-block;
+                text-align: end;
+                width: 50%;
+            }
+
+            .feed-image
+            {
+                width: 100%;
+                max-width: 600px;
+            }
+
+        .feed-comment-list
+        {
+            width: 100%;
+        }
+
+            .feed-like-form
+            {
+                display: inline-block;
+                width: 48%;
+                margin: 15px 0;
+            }
+
+                .number_feed_like,
+                .number_feed_inapp
+                {
+                    color: #474747;
+                    font-weight: 700;
+                }
+
+                .btn_feed_like
+                {
+                    width: 20px;
+                    height: 20px;
+                    background-image: url("../assets/icons/heart.svg");
+                    display: block;
+                    margin-top: 15px;
+                }
+
+            .feed_inap_form
+            {
+                display: inline-block;
+                text-align: end;
+                width: 50%;
+                margin: 25px 0;
+            }
+
+                .btn_feed_inapp
+                {
+                    width: 20px;
+                    height: 20px;
+                    background-image: url("../assets/icons/forbidden.svg");
+                    display: block;
+                    margin: 15px 0 0 auto;
+                }
+
+            .feed-comment-list-username
+            {
+                display: inline-block;
+                width: 30%;
+            }
+
+    .feed-feed a
+    {
+        font-weight: 700;
+        text-decoration: none;
+        color: #AAAAAA;
+    }
