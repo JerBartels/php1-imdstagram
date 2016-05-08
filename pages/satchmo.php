@@ -50,7 +50,7 @@ if(isset($_POST["btn_post"]))
                 $post->Inapp = 0;
                 $post->Filter = $_POST["post_filter"];
 
-                switch($_POST["post_rotation"])
+                /*switch($_POST["post_rotation"])
                 {
                     case '90':
                         $post->Rotation = "ninety_degrees";
@@ -64,7 +64,7 @@ if(isset($_POST["btn_post"]))
                     default:
                         $post->Rotation = "";
                         break;
-                }
+                }*/
 
 
                 if($_POST["location_post"] != "")
@@ -167,8 +167,8 @@ if(isset($_POST["feed-delete-button"]))
                         <img id="preview" src="#" alt="your image" style="max-width: 600px">
                     </figure>
                 </div>
-                <button class="post_img">+</button>
                 <input type="file" class="post_post" name="post_post" id="post_post">
+                <input type="button" class="post_img" value="+">
                 <select name="post_filter" id="post_filter">
                     <option value="">No filter</option>
                     <option value="aden">Aden</option>
@@ -189,12 +189,6 @@ if(isset($_POST["feed-delete-button"]))
                     <option value="moon">Moon</option>
                     <option value="clarendon">Clarendon</option>
                     <option value="willow">Willow</option>
-                </select>
-                <select name="post_rotation" id="post_rotation">
-                    <option value="">No rotation</option>
-                    <option value="90">90 degrees</option>
-                    <option value="180">180 degrees</option>
-                    <option value="270">270 degrees</option>
                 </select>
                 <input type="input" class="post_post" name="input_post" id="input_post">
                 <input type="hidden" class="post_post" name="location_post" id="location_post">

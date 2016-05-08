@@ -1,18 +1,22 @@
 $(document).ready(function() {
 
-    $("#preview").css("display", "none");
-    $(".nav_search").css("display", "none");
-    $(".post_post").css("display", "none");
+    var $nav_search = $(".nav_search");
+    var $post_post = $("#post_post");
+    var $post_preview = $("#preview");
+
+    $post_preview.css("display", "none");
+    $nav_search.css("display", "none");
+    $post_post.css('display', 'none');
 
     //------------------ IMAGE / FILE INPUT HACK ----------------------- //
 
     $(".post_img").on("click", function () {
-        $(".post_post").trigger('click');
+        $post_post.trigger('click');
     });
 
     //------------------- SEARCH SLIDE DOWN -----------------------//
 
-    $('.nav_search').each(function() {
+    $nav_search.each(function() {
         $height = $(this).height();
         $(this).css('height', $height);
         $(this).hide();
@@ -22,7 +26,7 @@ $(document).ready(function() {
     $(".a_search").on("mouseover", function(e){
         e.preventDefault();
 
-        $(".nav_search").slideToggle("200" ,function(){
+        $nav_search.slideToggle("200" ,function(){
 
         });
     });
@@ -30,7 +34,7 @@ $(document).ready(function() {
 
     //------------------- JQUERY PHOTO PREVIEW -------------------//
 
-    $("#post_post").on("change", function()
+    $post_post.on("change", function()
     {
         if (this.files && this.files[0])
         {
@@ -38,8 +42,8 @@ $(document).ready(function() {
 
             reader.onload = function (e)
             {
-                $("#preview").show();
-                $('#preview').attr('src', e.target.result);
+                $post_preview.show();
+                $post_preview.attr('src', e.target.result);
             }
 
             reader.readAsDataURL(this.files[0]);

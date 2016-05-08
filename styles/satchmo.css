@@ -123,8 +123,15 @@ nav
             transition: ease-in-out, transform, .35s ease-in-out;
         }
 
-.post_img:hover
-{
-    background-color: #474747;
-    transform: rotate(360deg);
-}
+            .post_img:focus
+            {
+                outline: none;
+                border: none;
+            }
+
+            .post_img:hover
+            {
+                background-color: #474747;
+                transform: rotate(360deg);
+            }
+

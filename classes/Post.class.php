@@ -14,7 +14,6 @@ class Post
     private $m_iInapp;
     private $m_sCity;
     private $m_sFilter;
-    private $m_sRotation;
 
     //set methode
     public function __set($p_sProperty, $p_vValue)
@@ -45,9 +44,6 @@ class Post
             case 'Filter':
                 $this->m_sFilter = $p_vValue;
                 break;
-            case 'Rotation':
-                $this->m_sRotation = $p_vValue;
-                break;
             default:
                 echo "Error: " . $p_sProperty . " does not exist.";
         }
@@ -74,8 +70,6 @@ class Post
                 return $this->m_sCity;
             case 'Filter':
                 return $this->m_sFilter;
-            case 'Rotation':
-                return $this->m_sRotation;
             default:
                 echo "Error: " . $p_sProperty . " does not exist.";
         }
@@ -194,7 +188,7 @@ class Post
     {
         $p_dDb = Db::getInstance();
 
-        $p_sStmt = $p_dDb->prepare("INSERT INTO post (photo, comment, username, likes, date, inapp, city, filter, rotation) VALUES(:photo, :comment, :username, :likes, :date, :inapp, :city, :filter, :rotation)");
+        $p_sStmt = $p_dDb->prepare("INSERT INTO post (photo, comment, username, likes, date, inapp, city, filter) VALUES(:photo, :comment, :username, :likes, :date, :inapp, :city, :filter)");
 
         $p_sStmt->bindParam(':photo', $this->Photo);
         $p_sStmt->bindParam(':comment', $this->Comment);
@@ -204,7 +198,6 @@ class Post
         $p_sStmt->bindParam(':inapp', $this->Inapp);
         $p_sStmt->bindParam(':city', $this->m_sCity);
         $p_sStmt->bindParam(':filter', $this->m_sFilter);
-        $p_sStmt->bindParam(':rotation', $this->m_sRotation);
 
         $p_sStmt->execute();
 
