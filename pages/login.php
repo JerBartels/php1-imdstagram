@@ -34,7 +34,7 @@ include_once("reglog.php");
                 <form action="" method="post" autocomplete="off">
                     <input type="text" name="l_username" id="l_username" placeholder="username" value="<?php if(isset($_POST['l_username'])){ print $_POST['l_username']; } ?>">
                     <?php if(isset($_POST['l_username']) && !validateUsername($_POST['l_username'])){echo $err_username;} ?>
-                    <input type="password" name="l_pass" id="l_pass" placeholder="******" value="<?php if(isset($_POST['l_pass'])){ print $_POST['l_pass']; } ?>">
+                    <input type="password" name="l_pass" id="l_pass" placeholder="password" value="<?php if(isset($_POST['l_pass'])){ print $_POST['l_pass']; } ?>">
                     <?php if(isset($_POST['l_pass']) && !validatePass($_POST['l_pass'])){echo $err_pass;} ?>
                     <input type="submit" name="signin" id="signin" value=">" class="btn_round">
                 </form>

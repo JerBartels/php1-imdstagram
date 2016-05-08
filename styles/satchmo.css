@@ -125,6 +125,11 @@ nav
         margin: 0 auto;
     }
 
+        select
+        {
+            text-indent: 15px;
+        }
+
         #input_post,
         #post_filter,
         .post_img
@@ -142,6 +147,7 @@ nav
             border-radius: 10px;
             border: 1px solid #EBEBEB;
             transition: ease-in-out, width, .35s ease-in-out;
+            -webkit-appearance: none;
         }
 
             .post_img:focus
@@ -214,7 +220,7 @@ nav
     .feed-feed
     {
         max-width: 600px;
-        margin: 0 auto 15px auto;
+        margin: 0 auto 25px auto;
         padding-bottom: 25px;
         border-bottom: 1px solid #EBEBEB;
     }
@@ -222,7 +228,7 @@ nav
         .feed-id
         {
             width: 100%;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
         }
 
             .feed-id-username
@@ -270,6 +276,7 @@ nav
                     background-image: url("../assets/icons/heart.svg");
                     display: block;
                     margin-top: 15px;
+                    cursor: pointer;
                 }
 
             .feed_inap_form
@@ -287,6 +294,7 @@ nav
                     background-image: url("../assets/icons/forbidden.svg");
                     display: block;
                     margin: 15px 0 0 auto;
+                    cursor: pointer;
                 }
 
             .feed-comment-list-username
@@ -294,6 +302,42 @@ nav
                 display: inline-block;
                 width: 30%;
             }
+
+        .feed_comment_form
+        {
+            margin: 37px 0 0 0;
+        }
+
+            .feed_comment_form input
+            {
+                display: block;
+                background-color: #FFFFFF;
+                text-align: center;
+                color: #000000;
+                font-variant: small-caps;
+                font-size: 0.8em;
+                letter-spacing: 0.25em;
+                width: 90%;
+                max-width: 600px;
+                padding: 15px 0;
+                margin: 0 auto;
+                border: none;
+                border-top: 1px solid #EBEBEB;
+                border-bottom: 1px solid #EBEBEB;
+                transition: ease-in-out, width, .35s ease-in-out;
+            }
+
+                .feed_comment_form input:focus
+                {
+                    outline: none;
+                    width: 100%;
+                }
+
+                .feed_comment_form button
+                {
+                    position: absolute;
+                    left: -999em;
+                }
 
     .feed-feed a
     {

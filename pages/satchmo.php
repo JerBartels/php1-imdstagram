@@ -171,7 +171,7 @@ if(isset($_POST["feed-delete-button"]))
                 <input type="file" class="post_post" name="post_post" id="post_post">
                 <input type="button" class="post_img" value="+">
                 <select name="post_filter" id="post_filter">
-                    <option value=""></option>
+                    <option value="" selected>no filter</option>
                     <option value="aden">aden</option>
                     <option value="reyes">reyes</option>
                     <option value="perpetua">perpetua</option>
@@ -283,7 +283,7 @@ if(isset($_POST["feed-delete-button"]))
                                         </ul>
 
                                         <form action="" method="post" class="feed_comment_form">
-                                            <?php print '<input type="input" placeholder="Add a comment..." name="input_post_comment" class="input_post_comment" id="input_' . $post["id"] . '">'; ?>
+                                            <?php print '<input type="input" placeholder="add comment..." name="input_post_comment" class="input_post_comment" id="input_' . $post["id"] . '">'; ?>
                                             <?php print '<button type="submit" value="submit" name="btn_post_comment" class="btn_post_comment" id="btn_' . $post["id"] . '">'; ?>
                                         </form>
 
