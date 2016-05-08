@@ -77,12 +77,12 @@ if(isset($_POST["btn_post"]))
                 }
 
                 $post->Save();
-                $feedback_post = "You rock!";
+                $feedback_post = "you rock!";
             }
         }
         else
         {
-            $feedback_post = "All fields need input, doefus!";
+            $feedback_post = "all fields need input.";
         }
     }
     catch(Exception $e)
@@ -126,9 +126,9 @@ if(isset($_POST["feed-delete-button"]))
 <nav>
     <div class="nav_content">
         <div class="nav_right">
-            <a class="a_logout a_nav" href="logout.php">logout</a>
             <a class="a_search a_nav" href="#">search</a>
             <a class="a_profile a_nav" href="profile.php">profile</a>
+            <a class="a_logout a_nav" href="logout.php">logout</a>
         </div>
 
         <div class="clearfix"></div>
@@ -160,41 +160,44 @@ if(isset($_POST["feed-delete-button"]))
 
     <div id="post_zone">
         <div id="post_zone_content">
+            <div id="image_preview">
+                <figure id="figure_preview">
+                    <img id="preview" src="#" alt="your image">
+                </figure>
+            </div>
+
             <form enctype="multipart/form-data" method="post" action="" autocomplete="off">
                 <!--<input type="hidden" name="MAX_FILE_SIZE" value="32768"/>-->
-                <div id="image_preview">
-                    <figure id="figure_preview">
-                        <img id="preview" src="#" alt="your image" style="max-width: 600px">
-                    </figure>
-                </div>
                 <input type="file" class="post_post" name="post_post" id="post_post">
                 <input type="button" class="post_img" value="+">
                 <select name="post_filter" id="post_filter">
-                    <option value="">No filter</option>
-                    <option value="aden">Aden</option>
-                    <option value="reyes">Reyes</option>
-                    <option value="perpetua">Perpetua</option>
-                    <option value="inkwell">Inkwell</option>
-                    <option value="toaster">Toaster</option>
-                    <option value="walden">Walden</option>
-                    <option value="hudson">Hudson</option>
-                    <option value="gingham">Gingham</option>
-                    <option value="mayfair">Mayfair</option>
-                    <option value="lofi">Lo-Fi</option>
-                    <option value="xpro2">X Pro II</option>
+                    <option value=""></option>
+                    <option value="aden">aden</option>
+                    <option value="reyes">reyes</option>
+                    <option value="perpetua">perpetua</option>
+                    <option value="inkwell">inkwell</option>
+                    <option value="toaster">toaster</option>
+                    <option value="walden">walden</option>
+                    <option value="hudson">hudson</option>
+                    <option value="gingham">gingham</option>
+                    <option value="mayfair">mayfair</option>
+                    <option value="lofi">lo-fi</option>
+                    <option value="xpro2">x pro ii</option>
                     <option value="_1977">1977</option>
-                    <option value="brooklyn">Brooklyn</option>
-                    <option value="nashville">Nashville</option>
-                    <option value="lark">Lark</option>
-                    <option value="moon">Moon</option>
-                    <option value="clarendon">Clarendon</option>
-                    <option value="willow">Willow</option>
+                    <option value="brooklyn">brooklyn</option>
+                    <option value="nashville">nashville</option>
+                    <option value="lark">lark</option>
+                    <option value="moon">moon</option>
+                    <option value="clarendon">clarendon</option>
+                    <option value="willow">willow</option>
                 </select>
-                <input type="input" class="post_post" name="input_post" id="input_post">
+                <input type="input" class="post_post" name="input_post" id="input_post" placeholder="who what where when">
                 <input type="hidden" class="post_post" name="location_post" id="location_post">
-                <input type="submit" value="post" name="btn_post" id="btn_post">
-                <p class="form_feedback"><?php echo $feedback_post ?></p>
+                <input type="submit" value="ok" name="btn_post" id="btn_post">
             </form>
+
+            <p class="form_feedback"><?php echo $feedback_post ?></p>
+
         </div>
     </div>
     <div id="feed">

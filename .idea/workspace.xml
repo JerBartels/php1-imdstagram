@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34bb4e86-3ca2-4480-945a-371423a43fd6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Post.class.php" afterPath="$PROJECT_DIR$/classes/Post.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/satchmo.php" afterPath="$PROJECT_DIR$/pages/satchmo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/script.js" afterPath="$PROJECT_DIR$/scripts/script.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/satchmo.css" afterPath="$PROJECT_DIR$/styles/satchmo.css" />
     </list>
     <ignored path="php1-satchmo.iws" />
@@ -55,8 +54,8 @@
           <file leaf-file-name="satchmo.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/styles/satchmo.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.92455995">
-                  <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.06957251">
+                  <caret line="108" column="36" selection-start-line="108" selection-start-column="36" selection-end-line="108" selection-end-column="36" />
                   <folding />
                 </state>
               </provider>
@@ -65,8 +64,8 @@
           <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/styles/index.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-9.708333">
-                  <caret line="83" column="16" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
+                <state vertical-scroll-proportion="-42.833332">
+                  <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="144" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -111,15 +110,15 @@
           <file leaf-file-name="satchmo.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pages/satchmo.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.30176026">
-                  <caret line="66" column="19" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
+                <state vertical-scroll-proportion="0.28918692">
+                  <caret line="181" column="48" selection-start-line="181" selection-start-column="48" selection-end-line="181" selection-end-column="48" />
                   <folding>
                     <element signature="e#66#141#0#PHP" expanded="false" />
                     <element signature="e#1587#2139#0#PHP" expanded="false" />
-                    <marker date="1462689596000" expanded="false" signature="2985:3004" placeholder="..." />
-                    <marker date="1462689596000" expanded="true" signature="3414:3421" placeholder="..." />
-                    <marker date="1462689596000" expanded="true" signature="4193:4208" placeholder="..." />
-                    <marker date="1462689596000" expanded="true" signature="10160:10217" placeholder="..." />
+                    <marker date="1462691872000" expanded="false" signature="2977:2996" placeholder="..." />
+                    <marker date="1462691872000" expanded="true" signature="3406:3413" placeholder="..." />
+                    <marker date="1462691872000" expanded="true" signature="4185:4200" placeholder="..." />
+                    <marker date="1462691872000" expanded="true" signature="10129:10186" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -187,9 +186,9 @@
         <option value="$PROJECT_DIR$/pages/login.php" />
         <option value="$PROJECT_DIR$/pages/register.php" />
         <option value="$PROJECT_DIR$/styles/index.css" />
-        <option value="$PROJECT_DIR$/pages/satchmo.php" />
         <option value="$PROJECT_DIR$/classes/Post.class.php" />
         <option value="$PROJECT_DIR$/scripts/script.js" />
+        <option value="$PROJECT_DIR$/pages/satchmo.php" />
         <option value="$PROJECT_DIR$/styles/satchmo.css" />
       </list>
     </option>
@@ -878,14 +877,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.708333">
-          <caret line="83" column="16" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/Post.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.25">
@@ -914,26 +905,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/satchmo.css">
+    <entry file="file://$PROJECT_DIR$/styles/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.92455995">
-          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+        <state vertical-scroll-proportion="-42.833332">
+          <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="144" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/satchmo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30176026">
-          <caret line="66" column="19" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.28918692">
+          <caret line="181" column="48" selection-start-line="181" selection-start-column="48" selection-end-line="181" selection-end-column="48" />
           <folding>
             <element signature="e#66#141#0#PHP" expanded="false" />
             <element signature="e#1587#2139#0#PHP" expanded="false" />
-            <marker date="1462689596000" expanded="false" signature="2985:3004" placeholder="..." />
-            <marker date="1462689596000" expanded="true" signature="3414:3421" placeholder="..." />
-            <marker date="1462689596000" expanded="true" signature="4193:4208" placeholder="..." />
-            <marker date="1462689596000" expanded="true" signature="10160:10217" placeholder="..." />
+            <marker date="1462691872000" expanded="false" signature="2977:2996" placeholder="..." />
+            <marker date="1462691872000" expanded="true" signature="3406:3413" placeholder="..." />
+            <marker date="1462691872000" expanded="true" signature="4185:4200" placeholder="..." />
+            <marker date="1462691872000" expanded="true" signature="10129:10186" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/satchmo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06957251">
+          <caret line="108" column="36" selection-start-line="108" selection-start-column="36" selection-end-line="108" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
