@@ -193,7 +193,10 @@ if(isset($_POST["feed-delete-button"]))
                 </select>
                 <input type="input" class="post_post" name="input_post" id="input_post" placeholder="who what where when">
                 <input type="hidden" class="post_post" name="location_post" id="location_post">
-                <input type="submit" value="ok" name="btn_post" id="btn_post">
+                <div id="button_center">
+                    <input type="submit" value="ok" name="btn_post" id="btn_post">
+                    <input type="reset" value="x" id='btn_reset'>
+                </div>
             </form>
 
             <p class="form_feedback"><?php echo $feedback_post ?></p>
@@ -294,7 +297,7 @@ if(isset($_POST["feed-delete-button"]))
                                         if ($post["username"] == $_SESSION["username"]) {
                                             print '<form class="feed-delete-form" action="" method="post">';
                                             print '<input type="hidden" class="feed-delete-post" name="feed-delete-post" value="' . $post["id"] . '">';
-                                            print '<input class="feed-delete-button" name="feed-delete-button" type="submit" value="delete post">';
+                                            print '<input class="feed-delete-button" name="feed-delete-button" type="submit" value="x">';
                                             print '</form>';
                                         }
                                         ?>

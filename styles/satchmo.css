@@ -169,9 +169,14 @@ nav
                 border: 1px solid #AAAAAA;
             }
 
+        #button_center
+        {
+            text-align: center;
+        }
+
         #btn_post
         {
-            display: block;
+            display: inline-block;
             background-color: #000000;
             color: #FFFFFF;
             font-variant: small-caps;
@@ -188,6 +193,26 @@ nav
             {
                 background-color: #474747;
                 color: #FFFFFF;
+                transform: rotate(360deg);
+            }
+
+        #btn_reset
+        {
+            display: inline-block;
+            background-color: #FFFFFF;
+            color: #474747;
+            font-variant: small-caps;
+            letter-spacing: 0.25em;
+            width: 50px;
+            height: 50px;
+            margin: 25px auto 0px auto;
+            border-radius: 50%;
+            border: 1px solid #474747;
+            transition: ease-in-out, transform, .35s ease-in-out;
+        }
+
+            #btn_reset:hover
+            {
                 transform: rotate(360deg);
             }
 
@@ -337,6 +362,33 @@ nav
                 {
                     position: absolute;
                     left: -999em;
+                }
+
+        .feed-delete
+        {
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+            .feed-delete-button
+            {
+                display: inline-block;
+                background-color: #FFFFFF;
+                color: #474747;
+                font-variant: small-caps;
+                letter-spacing: 0.25em;
+                width: 20px;
+                height: 20px;
+                margin: 25px auto 0px auto;
+                border-radius: 50%;
+                border: 1px solid #474747;
+                transition: ease-in-out, transform, .35s ease-in-out;
+            }
+
+                .feed-delete-button:hover
+                {
+                    transform: rotate(360deg);
                 }
 
     .feed-feed a

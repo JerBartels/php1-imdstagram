@@ -14,6 +14,13 @@ $(document).ready(function() {
         $post_post.trigger('click');
     });
 
+    $("#btn_reset").on("click", function(){
+
+        $post_preview.hide();
+        $post_preview.attr('src', '');
+
+    });
+
     //------------------- SEARCH SLIDE DOWN -----------------------//
 
     $nav_search.each(function() {

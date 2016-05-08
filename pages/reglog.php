@@ -19,10 +19,10 @@ if(isset($_POST["signup"]))
             $default_profilepic = "noprofilepict.jpg";
 
             $user = new User();
-            $user->Username = $_POST["username"];
-            $user->Firstname = $_POST["firstname"];
-            $user->Lastname = $_POST["lastname"];
-            $user->Email = $_POST["email"];
+            $user->Username = strip_tags($_POST["username"]);
+            $user->Firstname = strip_tags($_POST["firstname"]);
+            $user->Lastname = strip_tags($_POST["lastname"]);
+            $user->Email = strip_tags($_POST["email"]);
             $user->ProfilePic = $default_profilepic;
             $user->Private = false;
 
