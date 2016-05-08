@@ -169,7 +169,7 @@ if(isset($_POST["feed-delete-button"]))
             <form enctype="multipart/form-data" method="post" action="" autocomplete="off">
                 <!--<input type="hidden" name="MAX_FILE_SIZE" value="32768"/>-->
                 <input type="file" class="post_post" name="post_post" id="post_post">
-                <input type="button" class="post_img" value="+">
+                <input type="button" class="post_img" value="select picture">
                 <select name="post_filter" id="post_filter">
                     <option value="" selected>no filter</option>
                     <option value="aden">aden</option>
@@ -317,12 +317,10 @@ if(isset($_POST["feed-delete-button"]))
     </div>
 
     <div class="feed_more">
-        <div class="feed_more_content">
-            <form action="../ajax/load-more.php" method="post">
-                <input type="hidden" id="result_no" value="2">
-                <input type="submit" id="load" value="load more" name="load">
-            </form>
-        </div>
+        <form action="../ajax/load-more.php" method="post">
+            <input type="hidden" id="result_no" value="2">
+            <input type="submit" id="load" value="v" name="load">
+        </form>
     </div>
 
     <div id="footer">
