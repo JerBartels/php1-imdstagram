@@ -575,7 +575,7 @@ label
     height: 200px;
     overflow: hidden;
     border-radius: 50%;
-    margin: 0 0 50px 0;
+    margin: 0 0 0 0;
 }
 
 .profile_pict img
@@ -596,7 +596,7 @@ label
     letter-spacing: 0.25em;
     width: 50%;
     padding: 15px 0;
-    margin: 0 auto;
+    margin: 50px auto 0 auto;
     border-radius: 10px;
     border: 1px solid #EBEBEB;
     transition: ease-in-out, width, .35s ease-in-out;

@@ -176,7 +176,7 @@ if(isset($_POST["feed-delete-button"]))
             <form enctype="multipart/form-data" method="post" action="" autocomplete="off">
                 <!--<input type="hidden" name="MAX_FILE_SIZE" value="32768"/>-->
                 <input type="file" class="post_post" name="post_post" id="post_post">
-                <input type="button" class="post_img" value="select picture">
+                <input type="button" id="post_img" class="post_img" value="select picture">
                 <select name="post_filter" id="post_filter">
                     <option value="" selected>no filter</option>
                     <option value="aden">aden</option>

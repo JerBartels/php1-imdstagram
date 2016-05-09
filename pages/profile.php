@@ -194,13 +194,28 @@ if(isset($_POST["btn_accept_love"]))
 <div class="clearfix"></div>
 
 <div class="container">
+
+    <div class="summary">
+        <div class="summary_content">
+            <div>
+                <h1><?php echo $user->Username ?></h1>
+                <h3><?php echo $user->Firstname . " " . $user->Lastname ?></h3>
+                <div class="profile_pict">
+                    <img id="img_profile_pict" src="../assets/<?php echo $user->ProfilePic ?>" alt="profile-pic">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div id="edit_profile">
         <div class="edit_profile_content">
             <h2>Edit profile picture</h2>
             <p class="change_feedback"><?php echo $feedback_profile_pic ?></p>
 
             <form enctype="multipart/form-data" method="post" action="" class="profile_form">
-                <label class=label_change_profile for="profile_pic">Picture</label><input type="file" class="input_change_profile" name="profile_pic" id="profile_pic"><br>
+                <input type="file" class="input_change_profile" name="profile_pic" id="profile_pic">
+                <input type="button" id="post_profile_img" class="post_img" value="select picture">
                 <input type="submit" value="send" name="btn_profile_pic" class="input_change_profile" id="btn_profile_pic">
             </form>
         </div>

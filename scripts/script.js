@@ -3,15 +3,21 @@ $(document).ready(function() {
     var $nav_search = $(".nav_search");
     var $post_post = $("#post_post");
     var $post_preview = $("#preview");
+    var $profile_pic = $("#profile_pic");
 
     $post_preview.css("display", "none");
     $nav_search.css("display", "none");
     $post_post.css('display', 'none');
+    $profile_pic.css('display', 'none');
 
     //------------------ IMAGE / FILE INPUT HACK ----------------------- //
 
-    $(".post_img").on("click", function () {
+    $("#post_img").on("click", function () {
         $post_post.trigger('click');
+    });
+
+    $("#post_profile_img").on("click", function () {
+        $profile_pic.trigger('click');
     });
 
     $("#btn_reset").on("click", function(){
@@ -57,32 +63,26 @@ $(document).ready(function() {
         }
     });
 
+    $profile_pic.on("change", function()
+    {
+        if (this.files && this.files[0])
+        {
+            var reader = new FileReader();
+
+            reader.onload = function (e)
+            {
+                $("#img_profile_pict").attr('src', "").attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+
     $("#post_filter").on("change", function()
     {
         var myFilter = $(this).val();
         $("#figure_preview").removeClass().addClass(myFilter);
     });
-
-    $("#post_rotation").on("change", function(){
-        var rotation = $(this).val();
-
-        switch(rotation){
-            case '90':
-                $("#image_preview").removeClass().addClass("ninety_degrees");
-                break;
-            case '180':
-                $("#image_preview").removeClass().addClass("oneeighty_degrees");
-                break;
-            case '270':
-                $("#image_preview").removeClass().addClass("twoseventy_degrees");
-                break;
-            default:
-                $("#image_preview").removeClass();
-                break;
-        }
-
-
-    })
 
 
     //------------------- HTML5 GEOLOCATION -------------------//

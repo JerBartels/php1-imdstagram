@@ -112,15 +112,14 @@ if(isset($_POST["btn_hate"]))
 
 <div>
 
-    <div id="summary">
-        <div id="summary_content">
+    <div class="summary">
+        <div class="summary_content">
             <div>
                 <h1><?php echo $selected_user["username"] ?></h1>
                 <h3><?php echo $selected_user["firstname"] . " " . $selected_user["lastname"] ?></h3>
                 <div class="profile_pict">
                     <img src="../assets/<?php echo $selected_user["profilepic"] ?>" alt="profile-pic">
                 </div>
-
             </div>
 
             <div>
@@ -144,8 +143,8 @@ if(isset($_POST["btn_hate"]))
         </div>
     </div>
 
-    <div id="results">
-        <div id="results_content">
+    <div class="results">
+        <div class="results_content">
             <?php
 
             $follow = new Follow();
