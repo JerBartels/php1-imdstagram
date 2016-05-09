@@ -210,7 +210,7 @@ if(isset($_POST["btn_accept_love"]))
 
     <div id="edit_profile">
         <div class="edit_profile_content">
-            <h2>Edit picture</h2>
+            <p class="title">edit picture</p>
             <p class="change_feedback"><?php echo $feedback_profile_pic ?></p>
 
             <form enctype="multipart/form-data" method="post" action="" class="profile_form">
@@ -225,7 +225,7 @@ if(isset($_POST["btn_accept_love"]))
         <div class="full_hr"></div>
 
         <div class="edit_profile_content">
-            <h2>Change profile</h2>
+            <p class="title">change profile</p>
             <p class="change_feedback" id="change_feedback"><?php echo $feedback ?></p>
 
             <form action="" method="post" autocomplete="off" class="profile_form">
@@ -247,7 +247,7 @@ if(isset($_POST["btn_accept_love"]))
         </div>
 
         <div class="edit_profile_content">
-            <h2>Privacy</h2>
+            <p class="title">Privacy</p>
             <p class="change_feedback" id="change_feedback"><?php echo $feedback_privacy ?></p>
 
             <form action="" method="post" autocomplete="off" class="profile_form">
@@ -265,7 +265,7 @@ if(isset($_POST["btn_accept_love"]))
         <?php if($user->Private){ ?>
 
             <div class="edit_profile_content">
-                <h2>Accept love requests</h2>
+                <p class="title">Accept love requests</p>
                 <p class="change_feedback" id="change_feedback"><?php echo $feedback_love_requests ?></p>
 
                 <ul>
