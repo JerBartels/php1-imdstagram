@@ -210,13 +210,15 @@ if(isset($_POST["btn_accept_love"]))
 
     <div id="edit_profile">
         <div class="edit_profile_content">
-            <h2>Edit profile picture</h2>
+            <h2>Edit picture</h2>
             <p class="change_feedback"><?php echo $feedback_profile_pic ?></p>
 
             <form enctype="multipart/form-data" method="post" action="" class="profile_form">
                 <input type="file" class="input_change_profile" name="profile_pic" id="profile_pic">
                 <input type="button" id="post_profile_img" class="post_img" value="select picture">
-                <input type="submit" value="send" name="btn_profile_pic" class="input_change_profile" id="btn_profile_pic">
+                <div class="button_center">
+                    <input type="submit" value="send" name="btn_profile_pic" class="input_change_profile" id="btn_profile_pic">
+                </div>
             </form>
         </div>
 
@@ -227,64 +229,66 @@ if(isset($_POST["btn_accept_love"]))
             <p class="change_feedback" id="change_feedback"><?php echo $feedback ?></p>
 
             <form action="" method="post" autocomplete="off" class="profile_form">
-                <label class=label_change_profile for="input_change_username">Username</label><input type="text" name="username" id="input_change_username" class="input_change_profile" value="<?php print $user->Username; ?>"><br>
+                <label class=label_change_profile for="input_change_username">Username: </label><input type="text" name="username" id="input_change_username" class="input_change_profile" value="<?php print $user->Username; ?>">
                 <?php if(isset($_POST['username']) && !validateUsername($_POST['username'])){echo $err_username;} ?>
                 <p id="username_ajax_feedback"></p>
-                <label class=label_change_profile for="firstname">Firstname</label><input type="text" name="firstname" id="firstname" class="input_change_profile" value="<?php print $user->Firstname; ?>"><br>
+                <label class=label_change_profile for="firstname">Firstname: </label><input type="text" name="firstname" id="firstname" class="input_change_profile" value="<?php print $user->Firstname; ?>">
                 <?php if(isset($_POST['firstname']) && !validateFirstname($_POST['firstname'])){echo $err_firstname;} ?>
-                <label class=label_change_profile for="lastname">Lastname</label><input type="text" name="lastname" id="lastname" class="input_change_profile" value="<?php print $user->Lastname; ?>"><br>
+                <label class=label_change_profile for="lastname">Lastname: </label><input type="text" name="lastname" id="lastname" class="input_change_profile" value="<?php print $user->Lastname; ?>">
                 <?php if(isset($_POST['lastname']) && !validateLastname($_POST['lastname'])){echo $err_lastname;} ?>
-                <label class=label_change_profile for="email">Email</label><input type="text" name="email" id="email" class="input_change_profile" value="<?php print $user->Email; ?>"><br>
+                <label class=label_change_profile for="email">Email: </label><input type="text" name="email" id="email" class="input_change_profile" value="<?php print $user->Email; ?>">
                 <?php if(isset($_POST['email']) && !validateEmail($_POST['email'])){echo $err_email;} ?>
-                <label class=label_change_profile for="pass">Password</label><input type="password" name="pass" id="pass" class="input_change_profile" value="<?php print $user->Pass; ?>"><br>
+                <label class=label_change_profile for="pass">Password: </label><input type="password" name="pass" id="pass" class="input_change_profile" value="<?php print $user->Pass; ?>">
                 <?php if(isset($_POST['pass']) && !validatePass($_POST['pass'])){echo $err_pass;} ?>
-                <input type="submit" name="save" id="btn_save" class="button input_change_profile" value="send" />
+                <div class="button_center">
+                    <input type="submit" name="save" id="btn_save" class="button input_change_profile" value="send" />
+                </div>
             </form>
         </div>
-
-        <div class="full_hr"></div>
 
         <div class="edit_profile_content">
             <h2>Privacy</h2>
             <p class="change_feedback" id="change_feedback"><?php echo $feedback_privacy ?></p>
 
             <form action="" method="post" autocomplete="off" class="profile_form">
-                <label class=label_change_profile for="input_change_privacy">Profile type</label>
+                <label class=label_change_profile for="input_change_privacy">Profile type: </label>
                 <select name="input_change_privacy" id="input_change_privacy">
-                    <option value="private"<?=$user->Private == True ? ' selected="selected"' : '';?>>Private</option>
-                    <option value="public"<?=$user->Private == False ? ' selected="selected"' : '';?>>Public</option>
+                    <option value="private"<?=$user->Private == True ? ' selected="selected"' : '';?>>private</option>
+                    <option value="public"<?=$user->Private == False ? ' selected="selected"' : '';?>>public</option>
                 </select>
-                <input type="submit" name="change" id="btn_privacy" class="button input_change_profile" value="send" />
+                <div class="button_center">
+                    <input type="submit" name="change" id="btn_privacy" class="button input_change_profile" value="send" />
+                </div>
             </form>
         </div>
 
-        <div class="full_hr"></div>
+        <?php if($user->Private){ ?>
 
-        <div class="edit_profile_content">
-            <h2>Accept love requests</h2>
-            <p class="change_feedback" id="change_feedback"><?php echo $feedback_love_requests ?></p>
+            <div class="edit_profile_content">
+                <h2>Accept love requests</h2>
+                <p class="change_feedback" id="change_feedback"><?php echo $feedback_love_requests ?></p>
 
-            <ul>
-                <?php
+                <ul>
+                    <?php
 
-                    $follows = $follow->getAllFollows($user->Username);
+                        $follows = $follow->getAllFollows($user->Username);
 
-                    foreach($follows as $follow)
-                    {
-                ?>
-                        <form action="" method="POST" class="profile_form">
-                            <label for=""><a href="user.php?username=<?php echo $follow["fan"] ?>"><?php echo $follow["fan"] ?></a></label>
-                            <input type="hidden" value="<?php echo $follow["fan"] ?>" name="input_accept_love">
-                            <input type="submit" value="accept" name="btn_accept_love">
-                        </form>
-                <?php
-                    }
-                ?>
-            </ul>
+                        foreach($follows as $follow)
+                        {
+                    ?>
+                            <form action="" method="POST" class="profile_form">
+                                <label for=""><a href="user.php?username=<?php echo $follow["fan"] ?>"><?php echo $follow["fan"] ?></a></label>
+                                <input type="hidden" value="<?php echo $follow["fan"] ?>" name="input_accept_love">
+                                <input type="submit" value="ok" name="btn_accept_love">
+                            </form>
+                    <?php
+                        }
+                    ?>
+                </ul>
 
-        </div>
+            </div>
 
-        <div class="full_hr"></div>
+        <?php } ?>
 
     </div>
 </div>

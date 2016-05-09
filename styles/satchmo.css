@@ -17,7 +17,8 @@ html, body
     clear: both;
 }
 
-.form_feedback
+.form_feedback,
+.change_feedback
 {
     color: #AAAAAA;
     font-size: 0.75em;
@@ -206,7 +207,7 @@ select
     width: 100%;
 }
 
-#button_center
+.button_center
 {
     text-align: center;
 }
@@ -459,14 +460,16 @@ select
     transform: rotate(360deg);
 }
 
-.feed-feed a
+.feed-feed a,
+label a
 {
     font-weight: 700;
     text-decoration: none;
     color: #AAAAAA;
 }
 
-.feed-feed a:hover
+.feed-feed a:hover,
+label a:hover
 {
     color: #474747;
 }
@@ -516,6 +519,7 @@ select
     max-width: 960px;
     padding: 50px 15px;
     margin: 0 auto;
+    border-bottom: 1px solid #EBEBEB;
 }
 
 label
@@ -525,9 +529,10 @@ label
 }
 
 .profile_form input[type="text"],
+#input_change_privacy,
 .profile_form input[type="password"]
 {
-    display: inline-block;
+    display: block;
     background-color: #FFFFFF;
     text-align: center;
     color: #000000;
@@ -543,11 +548,52 @@ label
     -webkit-appearance: none;
 }
 
-.profile_form input:focus[type="text"],
-.profile_form input:focus[type="password"]
+.profile_form input[type="text"]:focus,
+#input_change_privacy:focus,
+.profile_form input[type="password"]:focus
 {
     width: 100%;
     outline: none;
+    border: 1px solid #AAAAAA;
+}
+
+.profile_form input[type="text"]:hover,
+#input_change_privacy:hover,
+.profile_form input[type="password"]:hover
+{
+    width: 100%;
+    border: 1px solid #AAAAAA;
+}
+
+
+.profile_form input[type="submit"]
+{
+    display: inline-block;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-variant: small-caps;
+    letter-spacing: 0.25em;
+    width: 50px;
+    height: 50px;
+    margin: 25px auto 0px auto;
+    border-radius: 50%;
+    border: 0;
+    transition: ease-in-out, transform, .35s ease-in-out;
+}
+
+.profile_form input[type="submit"]:hover
+{
+    background-color: #474747;
+    color: #FFFFFF;
+    transform: rotate(360deg);
+}
+
+.profile_form input[type="submit"]:focus
+{
+    background-color: #474747;
+    color: #FFFFFF;
+    outline: none;
+    transform: rotate(360deg);
 }
 
 /* end profile change */

@@ -200,7 +200,7 @@ if(isset($_POST["feed-delete-button"]))
                 </select>
                 <input type="input" class="post_post" name="input_post" id="input_post" placeholder="who what where when">
                 <input type="hidden" class="post_post" name="location_post" id="location_post">
-                <div id="button_center">
+                <div class="button_center">
                     <input type="submit" value="ok" name="btn_post" id="btn_post">
                     <input type="reset" value="x" id='btn_reset'>
                 </div>
