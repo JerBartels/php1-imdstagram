@@ -287,7 +287,7 @@ select
 
 /* start feed */
 
-#feed
+.feed
 {
     width: 100%;
     /* niet met padding op feed-feed => te veel spatie tussen posts */

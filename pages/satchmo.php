@@ -210,7 +210,7 @@ if(isset($_POST["feed-delete-button"]))
 
         </div>
     </div>
-    <div id="feed">
+    <div class="feed">
 
             <?php
 
