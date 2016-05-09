@@ -8,11 +8,12 @@ if(!isset($_SESSION["username"]))
     header("location: ../index.php");
 }
 
+$post = new Post();
+
 if(isset($_POST["submit_search"]))
 {
     try
     {
-        $post = new Post();
         $results = $post->searchPosts($_POST["input_search"]);
         $number_of_results = count($results);
     }
@@ -21,6 +22,20 @@ if(isset($_POST["submit_search"]))
         echo $e;
     }
 }
+
+if(isset($_GET["city_search"]))
+{
+    try
+    {
+        $results = $post->searchPosts($_GET["city_search"]);
+        $number_of_results = count($results);
+    }
+    catch(Exception $e)
+    {
+        echo $e;
+    }
+}
+
 ?>
 
 <!doctype html>
@@ -32,53 +47,67 @@ if(isset($_POST["submit_search"]))
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700italic,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../styles/reset.css">
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/satchmo.css">
     <link rel="stylesheet" href="../styles/cssgram.css">
 </head>
 
 <body>
 
-<nav id="nav">
-    <div id="nav_content">
-        <a href="../index.php" class="logo_app">logo</a>
-        <a href="logout.php" class="logout_app">log out</a>
+<nav>
+    <div class="nav_content">
+
+        <div class="nav_left">
+            <a href="../index.php" class="nav_back a_nav">back</a>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="nav_right">
+            <a class="a_search a_nav" href="#">search</a>
+            <a class="a_profile a_nav" href="profile.php">profile</a>
+            <a class="a_logout a_nav" href="logout.php">logout</a>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="nav_search">
+            <form method="post" action="search.php" class ="form_nav" autocomplete="off">
+                <input type="text" placeholder="search" class="submit_input" name="input_search">
+                <input type="submit" value="find" name="submit_search" class="submit_search" id="submit_search">
+            </form>
+        </div>
+
+        <div class="clearfix"></div>
+
     </div>
 </nav>
 
 <div class="clearfix"></div>
 
-<div id="search">
-    <div id="search_content">
-        <form method="post" action="search.php" class ="form_nav" autocomplete="off">
-            <input type="text" placeholder="search" name="input_search">
-            <!-- Wordt display:none in css, daar zoeken via enter zal gebeuren -->
-            <input type="submit" value="find" name="submit_search" id="submit_search">
-        </form>
-    </div>
-</div>
-
 <div class="container_search">
 
-    <div id="summary">
-        <div id="summary_content">
-            <h1>#<?php echo $_POST["input_search"] ?></h1>
+    <div class="summary">
+        <div class="summary_content">
+            <h1>#<?php echo $_POST["input_search"] . "" . $_GET["city_search"]?></h1>
             <p><?php echo  $number_of_results ?> posts</p>
         </div>
     </div>
 
-    <div id="results">
-        <div id="results_content">
+    <div class="results">
+        <div class="results_content">
             <?php
                 foreach($results as $result)
                 {
                     {
                         ?>
 
-                        <figure class="<?php echo $result["filter"] ?>">
-                            <a href="detail.php?post=<?php echo $result["id"]?>">
-                                <img class=results_results src="../assets/posts/<?php echo $result["photo"] ?>" alt="<?php echo $_POST["input_search"] ?>">
-                            </a>
-                        </figure>
+                        <div class="figure_cell">
+                            <figure class="figure_square <?php echo $result["filter"] ?>">
+                                <a href="detail.php?post=<?php echo $result["id"]?>">
+                                    <img class=results_results src="../assets/posts/<?php echo $result["photo"] ?>" alt="<?php echo $_POST["input_search"] ?>">
+                                </a>
+                            </figure>
+                        </div>
 
                         <?php
 

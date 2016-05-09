@@ -164,6 +164,13 @@ if(isset($_POST["btn_accept_love"]))
 
 <nav>
     <div class="nav_content">
+
+        <div class="nav_left">
+            <a href="../index.php" class="nav_back a_nav">back</a>
+        </div>
+
+        <div class="clearfix"></div>
+
         <div class="nav_right">
             <a class="a_search a_nav" href="#">search</a>
             <a class="a_profile a_nav" href="profile.php">profile</a>

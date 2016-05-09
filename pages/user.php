@@ -76,44 +76,71 @@ if(isset($_POST["btn_hate"]))
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700italic,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../styles/reset.css">
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/satchmo.css">
 </head>
 
 <body>
 
-<nav id="nav">
-    <div id="nav_content">
-        <a href="../index.php" class="logo_app">logo</a>
-        <a href="logout.php" class="logout_app">log out</a>
+<nav>
+    <div class="nav_content">
+
+        <div class="nav_left">
+            <a href="../index.php" class="nav_back a_nav">back</a>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="nav_right">
+            <a class="a_search a_nav" href="#">search</a>
+            <a class="a_profile a_nav" href="profile.php">profile</a>
+            <a class="a_logout a_nav" href="logout.php">logout</a>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="nav_search">
+            <form method="post" action="search.php" class ="form_nav" autocomplete="off">
+                <input type="text" placeholder="search" class="submit_input" name="input_search">
+                <input type="submit" value="find" name="submit_search" class="submit_search" id="submit_search">
+            </form>
+        </div>
+
+        <div class="clearfix"></div>
+
     </div>
 </nav>
-
-<div class="clearfix"></div>
 
 <div>
 
     <div id="summary">
         <div id="summary_content">
-            <h1><?php echo $selected_user["username"] ?></h1>
-            <img src="../assets/<?php echo $selected_user["profilepic"] ?>" alt="profile-pic" class="profile_pict">
-        </div>
-        <div>
-            <?php
-                if($follow->AlreadyFan($active_user["username"],$selected_user["username"])){
-            ?>
-                    <form action="" method="post">
-                        <input type="submit" value="break my heart" name="btn_hate">
-                    </form>
-            <?php
-                }
-                else {
-            ?>
-                    <form action="" method="post">
-                        <input type="submit" value="love me" name="btn_love">
-                    </form>
-            <?php
-                }
-            ?>
+            <div>
+                <h1><?php echo $selected_user["username"] ?></h1>
+                <h3><?php echo $selected_user["firstname"] . " " . $selected_user["lastname"] ?></h3>
+                <div class="profile_pict">
+                    <img src="../assets/<?php echo $selected_user["profilepic"] ?>" alt="profile-pic">
+                </div>
+
+            </div>
+
+            <div>
+                <?php
+                    if($follow->AlreadyFan($active_user["username"],$selected_user["username"])){
+                ?>
+                        <form action="" method="post">
+                            <input type="submit" value="break my heart" name="btn_hate" class="btn_follow">
+                        </form>
+                <?php
+                    }
+                    else {
+                ?>
+                        <form action="" method="post">
+                            <input type="submit" value="love me" name="btn_love" class="btn_follow">
+                        </form>
+                <?php
+                    }
+                ?>
+            </div>
         </div>
     </div>
 
@@ -132,10 +159,9 @@ if(isset($_POST["btn_hate"]))
                     {
                         ?>
 
-                        <figure class="<?php echo $result["filter"] ?>">
+                        <figure class="figure_square <?php echo $result["filter"] ?>">
                             <a href="detail.php?post=<?php echo $result["id"] ?>">
-                                <img class=results_results src="../assets/posts/<?php echo $result["photo"] ?>"
-                                     alt="<?php echo $_POST["input_search"] ?>">
+                                <img class=results_results src="../assets/posts/<?php echo $result["photo"] ?>" alt="<?php echo $_POST["input_search"] ?>">
                             </a>
                         </figure>
 
@@ -154,12 +180,14 @@ if(isset($_POST["btn_hate"]))
                         if($result["username"] == $selected_user["username"])
                         {
                             ?>
+                            <div class="figure_cell">
+                                <figure class="figure_square <?php echo $result["filter"] ?>">
+                                    <a href="detail.php?post=<?php echo $result["id"]?>">
+                                        <img class=results_results src="../assets/posts/<?php echo $result["photo"] ?>" alt="<?php echo $_POST["input_search"] ?>">
+                                    </a>
+                                </figure>
+                            </div>
 
-                            <figure class="<?php echo $result["filter"] ?>">
-                                <a href="detail.php?post=<?php echo $result["id"]?>">
-                                    <img class=results_results src="../assets/posts/<?php echo $result["photo"] ?>" alt="<?php echo $_POST["input_search"] ?>">
-                                </a>
-                            </figure>
 
             <?php
                         }
