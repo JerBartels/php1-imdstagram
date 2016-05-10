@@ -116,7 +116,7 @@ class Follow
     {
         $p_dDb = Db::getInstance();
 
-        $p_sStmt = $p_dDb->prepare("UPDATE post SET fan = :new_username WHERE fan = :old_username");
+        $p_sStmt = $p_dDb->prepare("UPDATE follow SET fan = :new_username WHERE fan = :old_username");
 
         $p_sStmt->bindParam(':new_username', $p_sNewUsername);
         $p_sStmt->bindParam(':old_username', $p_sOldUsername);
@@ -130,7 +130,7 @@ class Follow
     {
         $p_dDb = Db::getInstance();
 
-        $p_sStmt = $p_dDb->prepare("UPDATE post SET target = :new_username WHERE target = :old_username");
+        $p_sStmt = $p_dDb->prepare("UPDATE follow SET target = :new_username WHERE target = :old_username");
 
         $p_sStmt->bindParam(':new_username', $p_sNewUsername);
         $p_sStmt->bindParam(':old_username', $p_sOldUsername);

@@ -25,6 +25,8 @@ $user->ProfilePic = $db_user["profilepic"];
 $user->Private = $db_user["private"];
 
 $follow = new Follow();
+$comment = new Comment();
+$post = new Post();
 
 //check of button geklikt wordt
 if(isset($_POST["save"]))
@@ -68,6 +70,11 @@ if(isset($_POST["save"]))
                 else {
                     //user bewaren in DB
                     $user->Update($old_username);
+                    //tabellen die gebruik maken van username updaten
+                    $follow->updateUsernameFan($old_username, $user->Username);
+                    $follow->updateUsernameTarget($old_username, $user->Username);
+                    $comment->updateUsername($old_username, $user->Username);
+                    $post->updateUsername($old_username, $user->Username);
 
                     //sessie aanmaken zodat tijdens zelfde sessie niet opnieuw ingelogd moet worden
                     $_SESSION["username"] = $user->Username;

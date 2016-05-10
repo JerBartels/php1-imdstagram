@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="34bb4e86-3ca2-4480-945a-371423a43fd6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Follow.class.php" afterPath="$PROJECT_DIR$/classes/Follow.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/profile.php" afterPath="$PROJECT_DIR$/pages/profile.php" />
     </list>
     <ignored path="php1-satchmo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -82,6 +83,20 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="Likes.class.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/classes/Likes.class.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.84911984">
+                  <caret line="84" column="32" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
+                  <folding>
+                    <marker date="1462004144000" expanded="true" signature="1051:1116" placeholder="SELECT * FRO... likes" />
+                    <marker date="1462004144000" expanded="true" signature="1592:1654" placeholder="INSERT INTO likes... " />
+                    <marker date="1462004144000" expanded="true" signature="1999:2062" placeholder="DELETE FROM " />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="Comment.class.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/classes/Comment.class.php">
               <provider selected="true" editor-type-id="text-editor">
@@ -100,22 +115,22 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Follow.class.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Follow.class.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/classes/Follow.class.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.729254">
-                  <caret line="125" column="22" selection-start-line="125" selection-start-column="22" selection-end-line="125" selection-end-column="22" />
+                <state vertical-scroll-proportion="-38.125">
+                  <caret line="132" column="49" selection-start-line="132" selection-start-column="49" selection-end-line="132" selection-end-column="49" />
                   <folding>
-                    <marker date="1462888111000" expanded="true" signature="1174:1232" placeholder="SELECT * FRO... follow" />
-                    <marker date="1462888111000" expanded="true" signature="1652:1730" placeholder="SELECT * FRO... follow" />
-                    <marker date="1462888111000" expanded="true" signature="2159:2235" placeholder="UPDATE follo... " />
-                    <marker date="1462888111000" expanded="true" signature="2595:2656" placeholder="UPDATE follo... " />
-                    <marker date="1462888111000" expanded="true" signature="2981:3042" placeholder="UPDATE post " />
-                    <marker date="1462888111000" expanded="true" signature="3388:3455" placeholder="UPDATE post " />
-                    <marker date="1462888111000" expanded="true" signature="3772:3853" placeholder="SELECT * FRO... follow" />
-                    <marker date="1462888111000" expanded="true" signature="4133:4209" placeholder="INSERT INTO follow... " />
-                    <marker date="1462888111000" expanded="true" signature="4608:4658" placeholder="DELETE FROM " />
-                    <marker date="1462888111000" expanded="true" signature="4608:4664" placeholder="DELETE FROM " />
+                    <marker date="1462888419000" expanded="true" signature="1174:1232" placeholder="SELECT * FRO... follow" />
+                    <marker date="1462888419000" expanded="true" signature="1652:1730" placeholder="SELECT * FRO... follow" />
+                    <marker date="1462888419000" expanded="true" signature="2159:2235" placeholder="UPDATE follo... " />
+                    <marker date="1462888419000" expanded="true" signature="2595:2656" placeholder="UPDATE follo... " />
+                    <marker date="1462888419000" expanded="true" signature="2981:3044" placeholder="UPDATE follo... " />
+                    <marker date="1462888419000" expanded="true" signature="3390:3459" placeholder="UPDATE follo... " />
+                    <marker date="1462888419000" expanded="true" signature="3776:3857" placeholder="SELECT * FRO... follow" />
+                    <marker date="1462888419000" expanded="true" signature="4137:4213" placeholder="INSERT INTO follow... " />
+                    <marker date="1462888419000" expanded="true" signature="4612:4662" placeholder="DELETE FROM " />
+                    <marker date="1462888419000" expanded="true" signature="4612:4668" placeholder="DELETE FROM " />
                   </folding>
                 </state>
               </provider>
@@ -195,8 +210,8 @@
           <file leaf-file-name="profile.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pages/profile.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.85163456">
-                  <caret line="262" column="14" selection-start-line="262" selection-start-column="8" selection-end-line="262" selection-end-column="14" />
+                <state vertical-scroll-proportion="0.49036044">
+                  <caret line="62" column="63" selection-start-line="62" selection-start-column="63" selection-end-line="62" selection-end-column="63" />
                   <folding />
                 </state>
               </provider>
@@ -263,11 +278,11 @@
         <option value="$PROJECT_DIR$/scripts/script.js" />
         <option value="$PROJECT_DIR$/pages/satchmo.php" />
         <option value="$PROJECT_DIR$/pages/detail.php" />
-        <option value="$PROJECT_DIR$/pages/profile.php" />
         <option value="$PROJECT_DIR$/styles/satchmo.css" />
         <option value="$PROJECT_DIR$/classes/Post.class.php" />
         <option value="$PROJECT_DIR$/classes/Comment.class.php" />
         <option value="$PROJECT_DIR$/classes/Follow.class.php" />
+        <option value="$PROJECT_DIR$/pages/profile.php" />
       </list>
     </option>
   </component>
@@ -561,7 +576,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/classes/Follow.class.php</url>
+          <line>87</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -717,13 +739,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Likes.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-32.375">
-          <caret line="84" column="32" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/styles/cssgram.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -842,6 +857,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.75">
           <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -930,19 +946,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.85163456">
-          <caret line="262" column="14" selection-start-line="262" selection-start-column="8" selection-end-line="262" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/styles/satchmo.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.375">
           <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Comment.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-37.583332">
+          <caret line="93" column="5" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
+          <folding>
+            <marker date="1462888032000" expanded="true" signature="1407:1444" placeholder="SELECT * FRO... comments" />
+            <marker date="1462888032000" expanded="true" signature="1407:1448" placeholder="SELECT * FRO... comments" />
+            <marker date="1462888032000" expanded="true" signature="1735:1757" placeholder="SELECT * FRO... comments" />
+            <marker date="1462888032000" expanded="true" signature="2019:2060" placeholder="SELECT * FRO... post" />
+            <marker date="1462888032000" expanded="true" signature="2019:2085" placeholder="SELECT * FRO... comments" />
+            <marker date="1462888032000" expanded="true" signature="2457:2532" placeholder="UPDATE comme... " />
+            <marker date="1462888032000" expanded="true" signature="2858:2952" placeholder="INSERT INTO comments... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Follow.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-38.125">
+          <caret line="132" column="49" selection-start-line="132" selection-start-column="49" selection-end-line="132" selection-end-column="49" />
+          <folding>
+            <marker date="1462888419000" expanded="true" signature="1174:1232" placeholder="SELECT * FRO... follow" />
+            <marker date="1462888419000" expanded="true" signature="1652:1730" placeholder="SELECT * FRO... follow" />
+            <marker date="1462888419000" expanded="true" signature="2159:2235" placeholder="UPDATE follo... " />
+            <marker date="1462888419000" expanded="true" signature="2595:2656" placeholder="UPDATE follo... " />
+            <marker date="1462888419000" expanded="true" signature="2981:3044" placeholder="UPDATE follo... " />
+            <marker date="1462888419000" expanded="true" signature="3390:3459" placeholder="UPDATE follo... " />
+            <marker date="1462888419000" expanded="true" signature="3776:3857" placeholder="SELECT * FRO... follow" />
+            <marker date="1462888419000" expanded="true" signature="4137:4213" placeholder="INSERT INTO follow... " />
+            <marker date="1462888419000" expanded="true" signature="4612:4662" placeholder="DELETE FROM " />
+            <marker date="1462888419000" expanded="true" signature="4612:4668" placeholder="DELETE FROM " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -967,38 +1010,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Comment.class.php">
+    <entry file="file://$PROJECT_DIR$/classes/Likes.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-37.583332">
-          <caret line="93" column="5" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.84911984">
+          <caret line="84" column="32" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
           <folding>
-            <marker date="1462888032000" expanded="true" signature="1407:1444" placeholder="SELECT * FRO... comments" />
-            <marker date="1462888032000" expanded="true" signature="1407:1448" placeholder="SELECT * FRO... comments" />
-            <marker date="1462888032000" expanded="true" signature="1735:1757" placeholder="SELECT * FRO... comments" />
-            <marker date="1462888032000" expanded="true" signature="2019:2060" placeholder="SELECT * FRO... post" />
-            <marker date="1462888032000" expanded="true" signature="2019:2085" placeholder="SELECT * FRO... comments" />
-            <marker date="1462888032000" expanded="true" signature="2457:2532" placeholder="UPDATE comme... " />
-            <marker date="1462888032000" expanded="true" signature="2858:2952" placeholder="INSERT INTO comments... " />
+            <marker date="1462004144000" expanded="true" signature="1051:1116" placeholder="SELECT * FRO... likes" />
+            <marker date="1462004144000" expanded="true" signature="1592:1654" placeholder="INSERT INTO likes... " />
+            <marker date="1462004144000" expanded="true" signature="1999:2062" placeholder="DELETE FROM " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Follow.class.php">
+    <entry file="file://$PROJECT_DIR$/pages/profile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.729254">
-          <caret line="125" column="22" selection-start-line="125" selection-start-column="22" selection-end-line="125" selection-end-column="22" />
-          <folding>
-            <marker date="1462888111000" expanded="true" signature="1174:1232" placeholder="SELECT * FRO... follow" />
-            <marker date="1462888111000" expanded="true" signature="1652:1730" placeholder="SELECT * FRO... follow" />
-            <marker date="1462888111000" expanded="true" signature="2159:2235" placeholder="UPDATE follo... " />
-            <marker date="1462888111000" expanded="true" signature="2595:2656" placeholder="UPDATE follo... " />
-            <marker date="1462888111000" expanded="true" signature="2981:3042" placeholder="UPDATE post " />
-            <marker date="1462888111000" expanded="true" signature="3388:3455" placeholder="UPDATE post " />
-            <marker date="1462888111000" expanded="true" signature="3772:3853" placeholder="SELECT * FRO... follow" />
-            <marker date="1462888111000" expanded="true" signature="4133:4209" placeholder="INSERT INTO follow... " />
-            <marker date="1462888111000" expanded="true" signature="4608:4658" placeholder="DELETE FROM " />
-            <marker date="1462888111000" expanded="true" signature="4608:4664" placeholder="DELETE FROM " />
-          </folding>
+        <state vertical-scroll-proportion="0.49036044">
+          <caret line="62" column="63" selection-start-line="62" selection-start-column="63" selection-end-line="62" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>
