@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34bb4e86-3ca2-4480-945a-371423a43fd6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Post.class.php" afterPath="$PROJECT_DIR$/classes/Post.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Comment.class.php" afterPath="$PROJECT_DIR$/classes/Comment.class.php" />
     </list>
     <ignored path="php1-satchmo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,11 +59,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Post.class.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Post.class.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/classes/Post.class.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.33361274">
-                  <caret line="186" column="5" selection-start-line="186" selection-start-column="5" selection-end-line="186" selection-end-column="5" />
+                <state vertical-scroll-proportion="-15.958333">
+                  <caret line="185" column="0" selection-start-line="185" selection-start-column="0" selection-end-line="197" selection-end-column="5" />
                   <folding>
                     <marker date="1462887973000" expanded="true" signature="2108:2145" placeholder="SELECT * FRO... post" />
                     <marker date="1462887973000" expanded="true" signature="2432:2466" placeholder="SELECT * FRO... post" />
@@ -78,6 +77,24 @@
                     <marker date="1462887973000" expanded="true" signature="4983:5054" placeholder="UPDATE post " />
                     <marker date="1462887973000" expanded="true" signature="5380:5532" placeholder="INSERT INTO post... " />
                     <marker date="1462887973000" expanded="true" signature="6178:6209" placeholder="DELETE FROM " />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Comment.class.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/classes/Comment.class.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.79379714">
+                  <caret line="96" column="59" selection-start-line="96" selection-start-column="59" selection-end-line="96" selection-end-column="59" />
+                  <folding>
+                    <marker date="1462888032000" expanded="true" signature="1407:1444" placeholder="SELECT * FRO... comments" />
+                    <marker date="1462888032000" expanded="true" signature="1407:1448" placeholder="SELECT * FRO... comments" />
+                    <marker date="1462888032000" expanded="true" signature="1735:1757" placeholder="SELECT * FRO... comments" />
+                    <marker date="1462888032000" expanded="true" signature="2019:2060" placeholder="SELECT * FRO... post" />
+                    <marker date="1462888032000" expanded="true" signature="2019:2085" placeholder="SELECT * FRO... comments" />
+                    <marker date="1462888032000" expanded="true" signature="2457:2532" placeholder="UPDATE comme... " />
+                    <marker date="1462888032000" expanded="true" signature="2858:2952" placeholder="INSERT INTO comments... " />
                   </folding>
                 </state>
               </provider>
@@ -193,7 +210,6 @@
         <option value="$PROJECT_DIR$/ajax/change-username.php" />
         <option value="$PROJECT_DIR$/ajax/dislike-post.php" />
         <option value="$PROJECT_DIR$/classes/Likes.class.php" />
-        <option value="$PROJECT_DIR$/classes/Comment.class.php" />
         <option value="$PROJECT_DIR$/ajax/load-more.php" />
         <option value="$PROJECT_DIR$/classes/Follow.class.php" />
         <option value="$PROJECT_DIR$/facebook-php-sdk-v4/src/Facebook/Facebook.php" />
@@ -230,6 +246,7 @@
         <option value="$PROJECT_DIR$/pages/profile.php" />
         <option value="$PROJECT_DIR$/styles/satchmo.css" />
         <option value="$PROJECT_DIR$/classes/Post.class.php" />
+        <option value="$PROJECT_DIR$/classes/Comment.class.php" />
       </list>
     </option>
   </component>
@@ -789,13 +806,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Comment.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-67.5">
-          <caret line="108" column="1" selection-start-line="108" selection-start-column="1" selection-end-line="108" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ajax/post-comment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -934,8 +944,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/Post.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33361274">
-          <caret line="186" column="5" selection-start-line="186" selection-start-column="5" selection-end-line="186" selection-end-column="5" />
+        <state vertical-scroll-proportion="-15.958333">
+          <caret line="185" column="0" selection-start-line="185" selection-start-column="0" selection-end-line="197" selection-end-column="5" />
           <folding>
             <marker date="1462887973000" expanded="true" signature="2108:2145" placeholder="SELECT * FRO... post" />
             <marker date="1462887973000" expanded="true" signature="2432:2466" placeholder="SELECT * FRO... post" />
@@ -949,6 +959,22 @@
             <marker date="1462887973000" expanded="true" signature="4983:5054" placeholder="UPDATE post " />
             <marker date="1462887973000" expanded="true" signature="5380:5532" placeholder="INSERT INTO post... " />
             <marker date="1462887973000" expanded="true" signature="6178:6209" placeholder="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Comment.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.79379714">
+          <caret line="96" column="59" selection-start-line="96" selection-start-column="59" selection-end-line="96" selection-end-column="59" />
+          <folding>
+            <marker date="1462888032000" expanded="true" signature="1407:1444" placeholder="SELECT * FRO... comments" />
+            <marker date="1462888032000" expanded="true" signature="1407:1448" placeholder="SELECT * FRO... comments" />
+            <marker date="1462888032000" expanded="true" signature="1735:1757" placeholder="SELECT * FRO... comments" />
+            <marker date="1462888032000" expanded="true" signature="2019:2060" placeholder="SELECT * FRO... post" />
+            <marker date="1462888032000" expanded="true" signature="2019:2085" placeholder="SELECT * FRO... comments" />
+            <marker date="1462888032000" expanded="true" signature="2457:2532" placeholder="UPDATE comme... " />
+            <marker date="1462888032000" expanded="true" signature="2858:2952" placeholder="INSERT INTO comments... " />
           </folding>
         </state>
       </provider>

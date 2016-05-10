@@ -90,6 +90,20 @@ class Comment
         return $result;
     }
 
+    public function updateUsername($p_sOldUsername, $p_sNewUsername)
+    {
+        $p_dDb = Db::getInstance();
+
+        $p_sStmt = $p_dDb->prepare("UPDATE comments SET username = :new_username WHERE username = :old_username");
+
+        $p_sStmt->bindParam(':new_username', $p_sNewUsername);
+        $p_sStmt->bindParam(':old_username', $p_sOldUsername);
+
+        $p_sStmt->execute();
+
+        $p_dDb = null;
+    }
+
     //methode om te bewaren
     public function Save()
     {
