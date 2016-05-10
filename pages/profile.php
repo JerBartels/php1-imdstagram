@@ -61,10 +61,10 @@ if(isset($_POST["save"]))
                 if (!($old_username === $user->Username) && !($old_email === $user->Email)) {
                     //controleren of er al een user bestaat met dit emailadres
                     if ($user->Exists($user->Email, "email")) {
-                        $feedback = "Too late! Already in use! :)";
+                        $feedback = "too late! already in use! :)";
                     } //controleren of de usernaam uniek is
                     else if ($user->Exists($user->Username, "username")) {
-                        $feedback = "This username is already in use :(";
+                        $feedback = "this username is already in use :(";
                     }
                 } //twee maal false, nu effectief aanmaken in db
                 else {
@@ -78,8 +78,7 @@ if(isset($_POST["save"]))
 
                     //sessie aanmaken zodat tijdens zelfde sessie niet opnieuw ingelogd moet worden
                     $_SESSION["username"] = $user->Username;
-
-                    $feedback = "you're changed!";
+                    $feedback = "profile changed!";
                 }
             } catch (Exception $e) {
                 $feedback = $e->getMessage();
@@ -99,8 +98,9 @@ if(isset($_POST["btn_profile_pic"]))
             $target = GW_UPLOADPATH . $profile_picture;
             if(move_uploaded_file($_FILES['profile_pic']['tmp_name'], $target))
             {
+                $user->ProfilePic = $target;
                 $user->SaveProfilePicture($user->Username, $profile_picture);
-                $feedback_profile_pic = "you're still ugly!";
+                $feedback_profile_pic = "nice one!";
             }
         }
     }
@@ -214,13 +214,43 @@ if(isset($_POST["btn_accept_love"]))
         </div>
     </div>
 
+    <?php
+
+    $follows = $follow->getAllFollows($user->Username);
+
+    if($user->Private && count($follows)>0){ ?>
+
+        <div class="edit_profile_content">
+            <p class="title">accept love requests</p>
+            <p class="change_feedback" id="change_feedback"><?php echo $feedback_love_requests ?></p>
+
+            <ul>
+                <?php
+
+                foreach($follows as $follow)
+                {
+                    ?>
+                    <form action="" method="POST" class="profile_form">
+                        <label for=""><a href="user.php?username=<?php echo $follow["fan"] ?>"><?php echo $follow["fan"] ?></a></label>
+                        <input type="hidden" value="<?php echo $follow["fan"] ?>" name="input_accept_love">
+                        <input type="submit" value="ok" name="btn_accept_love">
+                    </form>
+                    <?php
+                }
+                ?>
+            </ul>
+
+        </div>
+
+    <?php } ?>
+
 
     <div id="edit_profile">
         <div class="edit_profile_content">
             <p class="title">edit picture</p>
             <p class="change_feedback"><?php echo $feedback_profile_pic ?></p>
 
-            <form enctype="multipart/form-data" method="post" action="" class="profile_form">
+            <form method="post" action="" class="profile_form" enctype="multipart/form-data" >
                 <input type="file" class="input_change_profile" name="profile_pic" id="profile_pic">
                 <input type="button" id="post_profile_img" class="post_img" value="select picture">
                 <div class="button_center">
@@ -268,34 +298,6 @@ if(isset($_POST["btn_accept_love"]))
                 </div>
             </form>
         </div>
-
-        <?php if($user->Private){ ?>
-
-            <div class="edit_profile_content">
-                <p class="title">Accept love requests</p>
-                <p class="change_feedback" id="change_feedback"><?php echo $feedback_love_requests ?></p>
-
-                <ul>
-                    <?php
-
-                        $follows = $follow->getAllFollows($user->Username);
-
-                        foreach($follows as $follow)
-                        {
-                    ?>
-                            <form action="" method="POST" class="profile_form">
-                                <label for=""><a href="user.php?username=<?php echo $follow["fan"] ?>"><?php echo $follow["fan"] ?></a></label>
-                                <input type="hidden" value="<?php echo $follow["fan"] ?>" name="input_accept_love">
-                                <input type="submit" value="ok" name="btn_accept_love">
-                            </form>
-                    <?php
-                        }
-                    ?>
-                </ul>
-
-            </div>
-
-        <?php } ?>
 
     </div>
 </div>

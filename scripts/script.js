@@ -38,7 +38,6 @@ $(document).ready(function() {
 
     $(".a_search").on("mouseover", function(e){
         e.preventDefault();
-
         $nav_search.slideToggle("200" ,function(){
 
         });
@@ -71,7 +70,7 @@ $(document).ready(function() {
 
             reader.onload = function (e)
             {
-                $("#img_profile_pict").attr('src', "").attr('src', e.target.result);
+                $("#img_profile_pict").attr('src', e.target.result);
             }
 
             reader.readAsDataURL(this.files[0]);
@@ -105,10 +104,10 @@ $(document).ready(function() {
     {
         if(err.code == 1)
         {
-            alert("error: access is denied!");
+            console.log("error: access is denied!");
         }
         else if( err.code == 2) {
-            alert("error: position is unavailable!");
+            console.log("error: position is unavailable!");
         }
     }
 
@@ -122,7 +121,7 @@ $(document).ready(function() {
         }
         else
         {
-            alert("sorry, browser does not support geolocation!");
+            console.log("sorry, browser does not support geolocation!");
         }
     }
 
