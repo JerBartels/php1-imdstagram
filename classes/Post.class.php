@@ -183,6 +183,20 @@ class Post
         $p_dDb = null;
     }
 
+    public function updateUsername($p_sOldUsername, $p_sNewUsername)
+    {
+        $p_dDb = Db::getInstance();
+
+        $p_sStmt = $p_dDb->prepare("UPDATE post SET username = :new_username WHERE username = :old_username");
+
+        $p_sStmt->bindParam(':new_username', $p_sNewUsername);
+        $p_sStmt->bindParam(':old_username', $p_sOldUsername);
+
+        $p_sStmt->execute();
+
+        $p_dDb = null;
+    }
+
     //methode om te bewaren
     public function Save()
     {
