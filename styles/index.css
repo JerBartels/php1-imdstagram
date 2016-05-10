@@ -79,6 +79,7 @@ h1
     position: absolute;
     bottom: 50px;
     width: 100%;
+    text-align: center;
 }
 
 .btn_a_bottom
@@ -93,7 +94,7 @@ h1
     letter-spacing: 0.25em;
     width: 150px;
     padding: 15px 0;
-    margin: 15px auto 0 auto;
+    margin: 0 auto;
     border-radius: 10px;
 }
 

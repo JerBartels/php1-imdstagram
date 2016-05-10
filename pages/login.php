@@ -43,11 +43,10 @@ include_once("reglog.php");
 
         </div>
     </div>
+</div>
 
-    <div class="btn_bottom">
-        <a class="btn_a_bottom" href="../index.php">home</a>
-    </div>
-
+<div class="btn_bottom">
+    <a class="btn_a_bottom" href="../index.php">home</a>
 </div>
 
 </body>

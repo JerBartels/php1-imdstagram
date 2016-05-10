@@ -287,7 +287,7 @@ if(isset($_POST["btn_accept_love"]))
         </div>
 
         <div class="edit_profile_content">
-            <p class="title">Privacy</p>
+            <p class="title">privacy</p>
 
             <form action="" method="post" autocomplete="off" class="profile_form">
                 <label class=label_change_profile for="input_change_privacy">Profile type: </label>
