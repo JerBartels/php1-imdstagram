@@ -42,30 +42,13 @@ if(isset($_POST["btn_post"]))
             if(move_uploaded_file($_FILES['post_post']['tmp_name'], $target))
             {
                 $post = new Post();
-                $post->Photo = $post_post;
-                $post->Comment = $input_post;
+                $post->Photo = strip_tags($post_post);
+                $post->Comment = strip_tags($input_post);
                 $post->Username = $user->Username;
                 $post->Likes = 0;
                 $post->Date = $date_post;
                 $post->Inapp = 0;
                 $post->Filter = $_POST["post_filter"];
-
-                /*switch($_POST["post_rotation"])
-                {
-                    case '90':
-                        $post->Rotation = "ninety_degrees";
-                        break;
-                    case '180':
-                        $post->Rotation = "oneeighty_degrees";
-                        break;
-                    case '270':
-                        $post->Rotation = "twoseventy_degrees";
-                        break;
-                    default:
-                        $post->Rotation = "";
-                        break;
-                }*/
-
 
                 if($_POST["location_post"] != "")
                 {
@@ -153,17 +136,6 @@ if(isset($_POST["feed-delete-button"]))
 </nav>
 
 <div class="container">
-    <div>
-        <p id="geolocation"></p>
-    </div>
-
-<!--    <div id="profile">
-        <div id="profile_content">
-            <?php /*echo '<img src="../assets/' . $user->ProfilePic . '"alt="profile_pict" class="profile_pict">' */?>
-            <h1><?php /*print $user->Firstname . " " . $user->Lastname*/?></h1>
-            <a class="btn_a" href="profile.php">change profile</a>
-        </div>
-    </div>-->
 
     <div id="post_zone">
         <div id="post_zone_content">
@@ -224,7 +196,7 @@ if(isset($_POST["feed-delete-button"]))
 
                 foreach($posts as $post)
                 {
-                    if($follow->AlreadyAcceptedFan($user->Username, $post["username"]) || $post["username"] == $user->Username)
+                    if($follow->AlreadyAcceptedFan($user->Username, $post["username"]) || $post["username"] == $_SESSION["username"])
                     {
                         if ($post["inapp"] < 3) {
                             {
@@ -329,11 +301,6 @@ if(isset($_POST["feed-delete-button"]))
             <input type="submit" id="load" value="v" name="load">
         </form>
     </div>
-
-    <div id="footer">
-
-    </div>
-
 
 </div>
 

@@ -47,10 +47,10 @@ if(isset($_POST["save"]))
         if (validateInput()) {
             try {
                 //dan user updaten
-                $user->Username = $_POST["username"];
-                $user->Firstname = $_POST["firstname"];
-                $user->Lastname = $_POST["lastname"];
-                $user->Email = $_POST["email"];
+                $user->Username = strip_tags($_POST["username"]);
+                $user->Firstname = strip_tags($_POST["firstname"]);
+                $user->Lastname = strip_tags($_POST["lastname"]);
+                $user->Email = strip_tags($_POST["email"]);
 
                 if($old_pass !==  $_POST["pass"])
                 {
@@ -98,7 +98,7 @@ if(isset($_POST["btn_profile_pic"]))
             $target = GW_UPLOADPATH . $profile_picture;
             if(move_uploaded_file($_FILES['profile_pic']['tmp_name'], $target))
             {
-                $user->ProfilePic = $target;
+                $user->ProfilePic = strip_tags($target);
                 $user->SaveProfilePicture($user->Username, $profile_picture);
                 $feedback_profile_pic = "nice one!";
             }
@@ -198,8 +198,6 @@ if(isset($_POST["btn_accept_love"]))
     </div>
 </nav>
 
-<div class="clearfix"></div>
-
 <div class="container">
 
     <div class="summary">
@@ -222,7 +220,6 @@ if(isset($_POST["btn_accept_love"]))
 
         <div class="edit_profile_content">
             <p class="title">accept love requests</p>
-            <p class="change_feedback" id="change_feedback"><?php echo $feedback_love_requests ?></p>
 
             <ul>
                 <?php
@@ -235,6 +232,9 @@ if(isset($_POST["btn_accept_love"]))
                         <input type="hidden" value="<?php echo $follow["fan"] ?>" name="input_accept_love">
                         <input type="submit" value="ok" name="btn_accept_love">
                     </form>
+
+                    <p class="change_feedback" id="change_feedback"><?php echo $feedback_love_requests ?></p>
+
                     <?php
                 }
                 ?>
@@ -248,7 +248,6 @@ if(isset($_POST["btn_accept_love"]))
     <div id="edit_profile">
         <div class="edit_profile_content">
             <p class="title">edit picture</p>
-            <p class="change_feedback"><?php echo $feedback_profile_pic ?></p>
 
             <form method="post" action="" class="profile_form" enctype="multipart/form-data" >
                 <input type="file" class="input_change_profile" name="profile_pic" id="profile_pic">
@@ -257,13 +256,14 @@ if(isset($_POST["btn_accept_love"]))
                     <input type="submit" value="send" name="btn_profile_pic" class="input_change_profile" id="btn_profile_pic">
                 </div>
             </form>
+
+            <p class="change_feedback"><?php echo $feedback_profile_pic ?></p>
         </div>
 
         <div class="full_hr"></div>
 
         <div class="edit_profile_content">
             <p class="title">change profile</p>
-            <p class="change_feedback" id="change_feedback"><?php echo $feedback ?></p>
 
             <form action="" method="post" autocomplete="off" class="profile_form">
                 <label class=label_change_profile for="input_change_username">Username: </label><input type="text" name="username" id="input_change_username" class="input_change_profile" value="<?php print $user->Username; ?>">
@@ -281,11 +281,13 @@ if(isset($_POST["btn_accept_love"]))
                     <input type="submit" name="save" id="btn_save" class="button input_change_profile" value="send" />
                 </div>
             </form>
+
+            <p class="change_feedback" id="change_feedback"><?php echo $feedback ?></p>
+
         </div>
 
         <div class="edit_profile_content">
             <p class="title">Privacy</p>
-            <p class="change_feedback" id="change_feedback"><?php echo $feedback_privacy ?></p>
 
             <form action="" method="post" autocomplete="off" class="profile_form">
                 <label class=label_change_profile for="input_change_privacy">Profile type: </label>
@@ -297,6 +299,8 @@ if(isset($_POST["btn_accept_love"]))
                     <input type="submit" name="change" id="btn_privacy" class="button input_change_profile" value="send" />
                 </div>
             </form>
+
+            <p class="change_feedback" id="change_feedback"><?php echo $feedback_privacy ?></p>
         </div>
 
     </div>

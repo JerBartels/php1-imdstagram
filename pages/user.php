@@ -172,7 +172,7 @@ if(isset($_POST["btn_hate"]))
             //als user private is mogen de posts enkel getoond worden als de follow geaccepteerd werd
             else
             {
-                if($follow->AlreadyAcceptedFan($active_user["username"],$selected_user["username"]) || $result["username"] == $selected_user["username"])
+                if($follow->AlreadyAcceptedFan($active_user["username"],$selected_user["username"]) || $_SESSION["username"] == $selected_user["username"])
                 {
                     foreach($results as $result)
                     {

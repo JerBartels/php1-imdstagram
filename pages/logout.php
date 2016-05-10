@@ -1,7 +1,6 @@
 <?php
 
 include_once("init.php");
-//include_once("session.php");
 
 //sessie verwijderen
 session_destroy();

@@ -14,7 +14,7 @@ if(isset($_POST["submit_search"]))
 {
     try
     {
-        $results = $post->searchPosts($_POST["input_search"]);
+        $results = $post->searchPosts(strip_tags($_POST["input_search"]));
         $number_of_results = count($results);
     }
     catch(Exception $e)
@@ -27,7 +27,7 @@ if(isset($_GET["city_search"]))
 {
     try
     {
-        $results = $post->searchPosts($_GET["city_search"]);
+        $results = $post->searchPosts(strip_tags($_GET["city_search"]));
         $number_of_results = count($results);
     }
     catch(Exception $e)
@@ -82,9 +82,7 @@ if(isset($_GET["city_search"]))
     </div>
 </nav>
 
-<div class="clearfix"></div>
-
-<div class="container_search">
+<div class="container">
 
     <div class="summary">
         <div class="summary_content">
@@ -116,13 +114,6 @@ if(isset($_GET["city_search"]))
             ?>
         </div>
     </div>
-
-    <div class="clearfix"></div>
-
-    <div id="footer">
-
-    </div>
-
 
 </div>
 

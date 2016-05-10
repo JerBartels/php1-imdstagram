@@ -74,6 +74,36 @@ h1
         color: #FFFFFF;
     }
 
+.btn_bottom
+{
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+}
+
+.btn_a_bottom
+{
+
+    display: block;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-size: 0.8em;
+    font-variant: small-caps;
+    text-decoration: none;
+    letter-spacing: 0.25em;
+    width: 150px;
+    padding: 15px 0;
+    margin: 15px auto 0 auto;
+    border-radius: 10px;
+}
+
+    .btn_a_bottom:hover
+    {
+        background-color: #000000;
+        color: #FFFFFF;
+    }
+
+
 .btn_round
 {
     display: block;
@@ -83,7 +113,7 @@ h1
     letter-spacing: 0.25em;
     width: 50px;
     height: 50px;
-    margin: 25px auto 15px auto;
+    margin: 50px auto 15px auto;
     border-radius: 50%;
     border: 0;
     transition: ease-in-out, transform, .35s ease-in-out;
@@ -143,3 +173,4 @@ form input[type=submit]
         font-size: 0.75em;
         font-weight: 700;
     }
+

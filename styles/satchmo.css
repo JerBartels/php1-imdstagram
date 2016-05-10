@@ -23,6 +23,9 @@ html, body
     color: #AAAAAA;
     font-size: 0.75em;
     font-weight: 700;
+    display: block;
+    text-align: center;
+    margin-top: 25px;
 }
 
 h1
@@ -63,6 +66,10 @@ nav
 {
     width: 100%;
     background-color: #EBEBEB;
+    display: block;
+    position: fixed;
+    top: 0;
+    z-index: 99;
 }
 
 .nav_content
@@ -152,6 +159,11 @@ nav
     display: none;
 }
 
+.container
+{
+
+}
+
 /* end navigation */
 
 /* start post zone */
@@ -160,6 +172,7 @@ nav
 {
     width: 100%;
     border-bottom: 1px solid #EBEBEB;
+    margin-top: 70px;
 }
 
 #post_zone_content
@@ -607,7 +620,13 @@ label
 /* end profile change */
 
 /* start user page */
-.summary,
+.summary
+{
+    width: 100%;
+    border-bottom: 1px solid #EBEBEB;
+    padding-top: 70px;
+}
+
 .results
 {
     width: 100%;
@@ -698,3 +717,7 @@ label
     opacity: 0.5;
 }
 
+#feed_detail_page
+{
+    padding-top: 70px;
+}

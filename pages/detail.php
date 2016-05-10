@@ -83,9 +83,11 @@ if ($sincePost->d >= 1) {
     </div>
 </nav>
 
+</div>
+
 <div class="container">
 
-    <div class="feed">
+    <div class="feed" id="feed_detail_page">
         <div class="feed-feed">
 
             <div class="feed-id">
@@ -143,7 +145,7 @@ if ($sincePost->d >= 1) {
             <div class="feed-delete">
                 <?php
                 if ($post->Username == $_SESSION["username"]) {
-                    print '<form class="feed-delete-form" action="" method="post">';
+                    print '<form class="feed-delete-form" action="satchmo.php" method="post">';
                     print '<input type="hidden" class="feed-delete-post" name="feed-delete-post" value="' . $result["id"] . '">';
                     print '<input class="feed-delete-button" name="feed-delete-button" type="submit" value="x">';
                     print '</form>';

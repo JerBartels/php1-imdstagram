@@ -243,7 +243,7 @@ $(document).ready(function() {
                 var username = data["username"];
                 var comment = data["comment"];
 
-                var new_comment = '<li><span class="feed-comment-list-username">' + username + '</span>' + comment + '</li>';
+                var new_comment = '<li><span class="feed-comment-list-username"><a href="user.php?username=' + username + '">' + username + '</a></span>' + comment + '</li>';
 
                 $("#" + data["post"]).append(new_comment);
             }
