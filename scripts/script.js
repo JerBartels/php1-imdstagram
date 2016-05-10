@@ -208,9 +208,37 @@ $(document).ready(function() {
 
             success: function (data) {
                 var $span = $($current_post).prev("span");
+                $current_post.removeClass().addClass("btn_feed_dislike");
+                $current_post.css("background-image", "url('../assets/icons/heart_full.svg')");
                 $span.text(data["likes"] + " likes");
             },
            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+        });
+
+        return (false);
+    });
+
+    $(document).on("click", ".btn_feed_dislike", function(){
+
+        var $current_post = $(this);
+        var current_id = $current_post.attr("id").slice(4);
+
+        $.ajax({
+            type: 'POST',
+            url: "../ajax/like-post.php",
+            data: {current_id: current_id},
+            dataType: "JSON",
+
+            success: function (data) {
+                var $span = $($current_post).prev("span");
+                $current_post.removeClass().addClass("btn_feed_like");
+                $current_post.css("background-image", "url('../assets/icons/heart.svg')");
+                $span.text(data["likes"] + " likes");
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
                 alert(xhr.status);
                 alert(thrownError);
             }

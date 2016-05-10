@@ -384,6 +384,16 @@ select
     cursor: pointer;
 }
 
+.btn_feed_dislike
+{
+    width: 20px;
+    height: 20px;
+    background-image: url("../assets/icons/heart_full.svg");
+    display: block;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
 .feed_inap_form
 {
     display: inline-block;

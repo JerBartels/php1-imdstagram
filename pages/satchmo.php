@@ -236,7 +236,18 @@ if(isset($_POST["feed-delete-button"]))
 
                                         <div class="feed-like-form">
                                             <span class="number_feed_like"><?php echo $post["likes"] ?> likes</span>
-                                            <?php print '<span class="btn_feed_like" id="btn_' . $post["photo"] . '"></span>' ?>
+                                            <?php
+                                            $already_liked = $like->AlreadyLiked($db_user["id"], $post["id"]);
+
+                                            if($already_liked)
+                                            {
+                                                print '<span class="btn_feed_dislike" id="btn_' . $post["photo"] . '"></span>';
+                                            }
+                                            else
+                                            {
+                                                print '<span class="btn_feed_like" id="btn_' . $post["photo"] . '"></span>';
+                                            }
+                                            ?>
                                         </div>
 
                                         <div class="feed_inap_form">
