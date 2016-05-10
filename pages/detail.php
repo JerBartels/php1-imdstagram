@@ -20,6 +20,23 @@ $post->Likes = $result["likes"];
 $post->Inapp = $result["inapp"];
 $post->City = $result["city"];
 
+$postTime = new DateTime($post->Date);
+$actualTime = new DateTime();
+$sincePost = $postTime->diff($actualTime);
+$formattedTime;
+
+if ($sincePost->d >= 1) {
+    $formattedTime = $sincePost->d . ' dagen';
+} else {
+    $formattedTime = $sincePost->h . ' uren, ' . $sincePost->i . ' min';
+}
+
+if ($sincePost->d >= 1) {
+    $formattedTime = $sincePost->d . ' dagen';
+} else {
+    $formattedTime = $sincePost->h . ' uren, ' . $sincePost->i . ' min';
+}
+
 ?>
 
 <!doctype html>
@@ -75,7 +92,7 @@ $post->City = $result["city"];
                 <div class="feed-id-username">
                     <span><a href="user.php?username=<?php echo $post->Username ?>"><?php echo $post->Username ?></a></span>
                 </div>
-                <div class="feed-id-date"><span><?php ?> / <span><a href="search.php?city_search=<?php echo $post->City ?>"><?php echo $post->City ?></a></span></span></div>
+                <div class="feed-id-date"><span><?php echo $formattedTime ?> / <span><a href="search.php?city_search=<?php echo $post->City ?>"><?php echo $post->City ?></a></span></span></div>
             </div>
 
             <div class="feed-image">

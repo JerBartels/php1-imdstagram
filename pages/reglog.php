@@ -26,7 +26,7 @@ if(isset($_POST["signup"]))
             $user->ProfilePic = $default_profilepic;
             $user->Private = false;
 
-            $pass = password_hash($_POST["pass"], PASSWORD_DEFAULT);
+            $pass = strip_tags(password_hash($_POST["pass"], PASSWORD_DEFAULT));
             $user->Pass = $pass;
 
             //controleren of er al een user bestaat met dit emailadres
@@ -189,7 +189,7 @@ function validatePass($p_vValue)
         else
         {
             global $err_pass;
-            $err_pass = "<span class='form_error'>strong password required</span>";
+            $err_pass = "<span class='form_error'>strong password required?<br>8 characters: uppercase, lowercase, letters, numbers</span>";
         }
     }
     else
