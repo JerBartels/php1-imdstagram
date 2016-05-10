@@ -112,6 +112,34 @@ class Follow
         $p_dDb = null;
     }
 
+    public function updateUsernameFan($p_sOldUsername, $p_sNewUsername)
+    {
+        $p_dDb = Db::getInstance();
+
+        $p_sStmt = $p_dDb->prepare("UPDATE post SET fan = :new_username WHERE fan = :old_username");
+
+        $p_sStmt->bindParam(':new_username', $p_sNewUsername);
+        $p_sStmt->bindParam(':old_username', $p_sOldUsername);
+
+        $p_sStmt->execute();
+
+        $p_dDb = null;
+    }
+
+    public function updateUsernameTarget($p_sOldUsername, $p_sNewUsername)
+    {
+        $p_dDb = Db::getInstance();
+
+        $p_sStmt = $p_dDb->prepare("UPDATE post SET target = :new_username WHERE target = :old_username");
+
+        $p_sStmt->bindParam(':new_username', $p_sNewUsername);
+        $p_sStmt->bindParam(':old_username', $p_sOldUsername);
+
+        $p_sStmt->execute();
+
+        $p_dDb = null;
+    }
+
     public function getAllFollows($p_sTarget)
     {
         $p_dDb = DB::getInstance();
