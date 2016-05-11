@@ -412,6 +412,16 @@ select
     cursor: pointer;
 }
 
+.btn_feed_disinapp
+{
+    width: 20px;
+    height: 20px;
+    background-image: url("../assets/icons/forbidden_full.svg");
+    display: block;
+    margin: 15px 0 0 auto;
+    cursor: pointer;
+}
+
 .feed-comment-list-username
 {
     display: inline-block;

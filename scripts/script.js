@@ -177,12 +177,13 @@ $(document).ready(function() {
 
             success: function (data) {
                 var $span = $($current_post).prev("span");
+                $current_post.removeClass().addClass("btn_feed_disinapp");
+                $current_post.css("background-image", "url('../assets/icons/forbidden_full.svg')");
                 $span.text(data["inapp"] + " inapps");
 
                 if(data["inapp"] > 2){
                     $current_post.parents('.feed-feed').fadeOut();
                 }
-
             },
             error: function (xhr, ajaxOptions, thrownError) {
                 alert(xhr.status);
@@ -190,7 +191,33 @@ $(document).ready(function() {
             }
         });
 
-        //return (false);
+        return (false);
+    });
+
+    $(document).on("click", ".btn_feed_disinapp", function(){
+
+        var $current_post = $(this);
+        var current_id = $current_post.attr("id").slice(10);
+
+        $.ajax({
+            type: 'POST',
+            url: "../ajax/inapp-post.php",
+            data: {current_id: current_id},
+            dataType: "JSON",
+
+            success: function (data) {
+                var $span = $($current_post).prev("span");
+                $current_post.removeClass().addClass("btn_feed_inapp");
+                $current_post.css("background-image", "url('../assets/icons/forbidden.svg')");
+                $span.text(data["inapp"] + " inapps");
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+        });
+
+        return (false);
     });
 
     //------------------- AJAX - LIKE POST -------------------//

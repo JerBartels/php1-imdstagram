@@ -11,6 +11,9 @@ if(!isset($_SESSION["username"]))
 $post = new Post();
 $result = $post->getPostById($_GET["post"]);
 
+$user =  new User();
+$db_user = $user->getUserByUsername($_SESSION["username"]);
+
 $post->Photo = $result["photo"];
 $post->Username = $result["username"];
 $post->Date = $result["date"];
@@ -107,12 +110,44 @@ if ($sincePost->d >= 1) {
 
                 <div class="feed-like-form">
                     <span class="number_feed_like"><?php echo $post->Likes ?> likes</span>
-                    <?php print '<span class="btn_feed_like" id="btn_' . $post->Photo . '"></span>' ?>
+
+                    <?php
+
+                    $like = new Likes();
+                    $already_liked = $like->AlreadyLiked($db_user["id"], $result["id"]);
+
+                    if($already_liked)
+                    {
+                        print '<span class="btn_feed_dislike" id="btn_' . $post->Photo . '"></span>';
+                    }
+                    else
+                    {
+                        print '<span class="btn_feed_like" id="btn_' . $post->Photo . '"></span>';
+                    }
+
+                    ?>
+
                 </div>
 
                 <div class="feed_inap_form">
                     <span class="number_feed_inapp"><?php echo $post->Inapp ?> inapps</span>
-                    <?php print '<span class="btn_feed_inapp" id="btn_inapp_' . $post->Photo . '"></span>' ?>
+
+                    <?php
+
+                    $inapp = new Inapp();
+                    $already_inapp = $inapp->AlreadyInapped($db_user["id"], $result["id"]);
+
+                    if($already_inapp)
+                    {
+                        print '<span class="btn_feed_disinapp" id="btn_inapp_' . $post->Photo . '"></span>';
+                    }
+                    else
+                    {
+                        print '<span class="btn_feed_inapp" id="btn_inapp_' . $post->Photo . '"></span>';
+                    }
+
+                    ?>
+
                 </div>
 
                 <?php print '<ul id="' . $result["id"] . '">' ?>

@@ -201,8 +201,7 @@ if(isset($_POST["feed-delete-button"]))
                         if ($post["inapp"] < 3) {
                             {
                                 $like = new Likes();
-                                $like->Username = $post["username"];
-                                $like->Picture = $post["photo"];
+                                $inapp = new Inapp();
 
                                 $postTime = new DateTime($post["date"]);
                                 $sincePost = $postTime->diff($actualTime);
@@ -252,7 +251,23 @@ if(isset($_POST["feed-delete-button"]))
 
                                         <div class="feed_inap_form">
                                             <span class="number_feed_inapp"><?php echo $post["inapp"] ?> inapps</span>
-                                            <?php print '<span class="btn_feed_inapp" id="btn_inapp_' . $post["photo"] . '"></span>' ?>
+
+                                            <?php
+
+
+                                            $already_inapp = $inapp->AlreadyInapped($db_user["id"], $post["id"]);
+
+                                            if($already_inapp)
+                                            {
+                                                print '<span class="btn_feed_disinapp" id="btn_inapp_' . $post["photo"] . '"></span>';
+                                            }
+                                            else
+                                            {
+                                                print '<span class="btn_feed_inapp" id="btn_inapp_' . $post["photo"] . '"></span>';
+                                            }
+
+                                            ?>
+
                                         </div>
 
                                         <?php print '<ul id="' . $post["id"] . '">' ?>
