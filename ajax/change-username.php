@@ -1,7 +1,7 @@
 <?php
 
-include_once("../classes/User.class.php");
-include_once ("../pages/reglog.php");
+include_once "../pages/init.php";
+include_once "../pages/reglog.php";
 
 $user = new User();
 

@@ -1,10 +1,7 @@
 <?php
 
-include_once("classes/Db.class.php");
-include_once("classes/User.class.php");
-include_once("pages/session.php");
-include_once("pages/reglog.php");
-
+include_once "pages/session.php";
+include_once "pages/reglog.php";
 require_once __DIR__ . '/Facebook/autoload.php';
 
 //kijken of user al ingelogd is

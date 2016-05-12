@@ -1,9 +1,7 @@
 <?php
 
-include_once("../classes/Comment.class.php");
-include_once("../classes/User.class.php");
-include_once("../classes/Post.class.php");
-include_once ("../pages/reglog.php");
+include_once "../pages/init.php";
+include_once "../pages/reglog.php";
 
 $post = new Post();
 $user = new User();

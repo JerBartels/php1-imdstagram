@@ -1,6 +1,7 @@
 <?php
 
-include_once("../pages/init.php");
+include_once "../pages/init.php";
+include_once "../pages/reglog.php";
 
 
 $post = new Post();

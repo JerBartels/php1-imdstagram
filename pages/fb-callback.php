@@ -2,8 +2,15 @@
 
     session_start();
 
-    require_once('../Facebook/autoload.php');
-    require_once('init.php');
+    require_once '../Facebook/autoload.php';
+
+    //classes
+    include_once "../classes/Db.class.php";
+    include_once "../classes/User.class.php";
+
+    //specific pages
+    include_once "reglog.php";
+
 
     $fb = new Facebook\Facebook
     ([
@@ -74,7 +81,7 @@
             $_SESSION["username"] = $user->Username;
 
             //redirect naar applicatie
-            header("location: satchmo.php");
+            header("location: http://satch.cc");
         }
         catch (Exception $e)
         {
@@ -99,7 +106,7 @@
                 $_SESSION["username"] = $user->Username;
 
                 //doorverwijzen naar de application pagina
-                header("location: satchmo.php");
+                header("location: http://satch.cc");
             }
             else
             {

@@ -1,12 +1,21 @@
 <?php
 
-require_once("init.php");
+//classes
+include_once "init.php" ;
+
+//specific pages
+include_once "session.php";
+include_once "reglog.php";
+
 
 //kijken of user al ingelogd is
 if(!isset($_SESSION["username"]))
 {
     header("location: ../index.php");
 }
+
+//Set default timezone
+date_default_timezone_set("Europe/Brussels");
 
 $post = new Post();
 

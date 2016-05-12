@@ -2,7 +2,7 @@
 
     session_start();
 
-    require_once( '../Facebook/autoload.php' );
+    require_once '../Facebook/autoload.php';
 
     $fb = new Facebook\Facebook
     ([
@@ -14,7 +14,7 @@
     $helper = $fb->getRedirectLoginHelper();
 
     $permissions = ['email'];
-    $loginUrl = $helper->getLoginUrl('http://localhost:8888/php1-satchmo/pages/fb-callback.php', $permissions);
+    $loginUrl = $helper->getLoginUrl('http://satch.cc/pages/fb-callback.php', $permissions);
 
     header("location: ".$loginUrl);
 

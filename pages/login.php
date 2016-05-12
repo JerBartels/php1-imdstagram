@@ -1,9 +1,11 @@
 <?php
 
-include_once("../classes/Db.class.php");
-include_once("../classes/User.class.php");
-include_once("session.php");
-include_once("reglog.php");
+//classes
+include_once "init.php" ;
+
+//specific pages
+include_once "session.php";
+include_once "reglog.php";
 
 ?>
 

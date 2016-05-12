@@ -1,15 +1,24 @@
 <?php
 
-require_once("init.php");
+//upload path
+define('GW_UPLOADPATH', '../assets/posts/');
+
+//Set default timezone
+date_default_timezone_set("Europe/Brussels");
+
+//classes
+include_once "init.php" ;
+
+//specific pages
+include_once "session.php";
+include_once "reglog.php";
+
 
 //kijken of user al ingelogd is
 if(!isset($_SESSION["username"]))
 {
     header("location: ../index.php");
 }
-
-//upload path
-define('GW_UPLOADPATH', '../assets/posts/');
 
 //nieuwe user aanmaken
 $user =  new User();
@@ -31,36 +40,44 @@ if(isset($_POST["btn_post"]))
         //naam van de foto die opgeladen wordt
         //time zorgt ervoor dat het opladen van foto's met dezelfde naam geen overwrite met zich meebrengt
         $post_post = time() . $_FILES['post_post']['name'];
+        $imageFileType = pathinfo($post_post,PATHINFO_EXTENSION);
         $input_post = $_POST['input_post'];
         $date_post = date('Y-m-d H:i:s', time());
 
 
         if(!($_FILES['post_post']['size'] == 0) && !empty($input_post))
         {
-            $target = GW_UPLOADPATH . $post_post;
-
-            if(move_uploaded_file($_FILES['post_post']['tmp_name'], $target))
+            if($imageFileType == "jpg" || $imageFileType == "JPG" || $imageFileType == "png" || $imageFileType == "PNG" || $imageFileType == "jpeg" || $imageFileType == "JPEG")
             {
-                $post = new Post();
-                $post->Photo = strip_tags($post_post);
-                $post->Comment = strip_tags($input_post);
-                $post->Username = $user->Username;
-                $post->Likes = 0;
-                $post->Date = $date_post;
-                $post->Inapp = 0;
-                $post->Filter = $_POST["post_filter"];
+                $target = GW_UPLOADPATH . $post_post;
 
-                if($_POST["location_post"] != "")
+                if(move_uploaded_file($_FILES['post_post']['tmp_name'], $target))
                 {
-                    $post->City = $_POST["location_post"];
-                }
-                else
-                {
-                    $post->City = "Undefined";
-                }
+                    $post = new Post();
+                    $post->Photo = strip_tags($post_post);
+                    $post->Comment = strip_tags($input_post);
+                    $post->Username = $user->Username;
+                    $post->Likes = 0;
+                    $post->Date = $date_post;
+                    $post->Inapp = 0;
+                    $post->Filter = $_POST["post_filter"];
 
-                $post->Save();
-                $feedback_post = "you rock!";
+                    if($_POST["location_post"] != "")
+                    {
+                        $post->City = $_POST["location_post"];
+                    }
+                    else
+                    {
+                        $post->City = "Undefined";
+                    }
+
+                    $post->Save();
+                    $feedback_post = "you rock!";
+                }
+            }
+            else
+            {
+                $feedback_post = "only jpg, jpeg and png allowed.";
             }
         }
         else
@@ -116,7 +133,7 @@ if(isset($_POST["feed-delete-button"]))
         <div class="clearfix"></div>
 
         <div class="nav_right">
-            <a class="a_search a_nav" href="#">search</a>
+            <a class="a_search a_nav" href="">search</a>
             <a class="a_profile a_nav" href="profile.php">profile</a>
             <a class="a_logout a_nav" href="logout.php">logout</a>
         </div>
@@ -141,7 +158,7 @@ if(isset($_POST["feed-delete-button"]))
         <div id="post_zone_content">
             <div id="image_preview">
                 <figure id="figure_preview">
-                    <img id="preview" src="#" alt="your profile image">
+                    <img id="preview" src="" alt="your profile image">
                 </figure>
             </div>
 

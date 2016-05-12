@@ -1,9 +1,13 @@
 <?php
 
-//deze pagina dekt zowel het inloggen als het registreren van een nieuw profiel
-//om geen gigantische index.php te krijgen deze functies in afzonderlijke file gezet
+//Set default timezone
+date_default_timezone_set("Europe/Brussels");
 
-include_once("init.php");
+//classes
+include_once "init.php";
+
+//specific pages
+include_once "session.php";
 
 // --------- ** SIGN UP ** --------- //
 
